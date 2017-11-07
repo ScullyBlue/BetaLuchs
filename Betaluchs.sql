@@ -1,333 +1,198 @@
-CREATE DATABASE  IF NOT EXISTS `BetaLuchs_Dev` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `BetaRead_Dev`;
--- MySQL dump 10.13  Distrib 5.5.47, for debian-linux-gnu (x86_64)
---
--- Host: 127.0.0.1    Database: BetaRead_Dev
--- ------------------------------------------------------
--- Server version	5.5.47-0ubuntu0.14.04.1
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server Version:               10.2.9-MariaDB - mariadb.org binary distribution
+-- Server Betriebssystem:        Win64
+-- HeidiSQL Version:             9.4.0.5125
+-- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Table structure for table `BeLu_BetaFeedback`
---
 
-DROP TABLE IF EXISTS `BeLu_BetaFeedback`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `BeLu_BetaFeedback` (
-  `betafbid` int(11) NOT NULL AUTO_INCREMENT,
-  `geduld` int(11) DEFAULT NULL,
-  `freundlich` int(11) DEFAULT NULL,
-  `flexibel` int(11) DEFAULT NULL,
-  `sorgfalt` int(11) DEFAULT NULL,
-  `bewerter` int(11) NOT NULL,
-  `date` date DEFAULT NULL,
-  PRIMARY KEY (`betafbid`),
-  UNIQUE KEY `betafbid_UNIQUE` (`betafbid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+-- Exportiere Datenbank Struktur für betaluchs
+CREATE DATABASE IF NOT EXISTS `betaluchs` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_german1_ci */;
+USE `betaluchs`;
 
---
--- Table structure for table `BeLu_Betadienst`
---
+-- Exportiere Struktur von Tabelle betaluchs.belu_betareader
+CREATE TABLE IF NOT EXISTS `belu_betareader` (
+  `BetaID` int(11) NOT NULL AUTO_INCREMENT,
+  `UserID` int(11) NOT NULL,
+  `Capacity` int(11) DEFAULT NULL COMMENT 'Maximal number of projects, this betareader reads for',
+  PRIMARY KEY (`BetaID`),
+  UNIQUE KEY `UserID` (`UserID`),
+  CONSTRAINT `UserID` FOREIGN KEY (`UserID`) REFERENCES `belu_user` (`UserID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci COMMENT='Table of all betareaders and their bind attributes';
 
-DROP TABLE IF EXISTS `BeLu_Betadienst`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `BeLu_Betadienst` (
-  `dienstid` int(11) NOT NULL AUTO_INCREMENT,
-  `uid` int(11) NOT NULL,
-  `kapazitat` int(11) DEFAULT NULL,
-  PRIMARY KEY (`dienstid`),
-  UNIQUE KEY `dienstid_UNIQUE` (`dienstid`),
-  UNIQUE KEY `uid_UNIQUE` (`uid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+-- Daten Export vom Benutzer nicht ausgewählt
+-- Exportiere Struktur von Tabelle betaluchs.belu_beta_genre
+CREATE TABLE IF NOT EXISTS `belu_beta_genre` (
+  `BetaID` int(11) NOT NULL,
+  `GenreID` int(11) NOT NULL,
+  `GenrePriority` int(1) DEFAULT NULL COMMENT 'Preference of betareader for genre',
+  PRIMARY KEY (`BetaID`,`GenreID`),
+  KEY `GenreID` (`GenreID`),
+  CONSTRAINT `BetaID` FOREIGN KEY (`BetaID`) REFERENCES `belu_betareader` (`BetaID`),
+  CONSTRAINT `GenreID` FOREIGN KEY (`GenreID`) REFERENCES `belu_genre` (`GenreID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci COMMENT='List of genres for a betareader';
 
---
--- Table structure for table `BeLu_FBVerifizierung`
---
+-- Daten Export vom Benutzer nicht ausgewählt
+-- Exportiere Struktur von Tabelle betaluchs.belu_beta_job
+CREATE TABLE IF NOT EXISTS `belu_beta_job` (
+  `JobID` int(11) NOT NULL AUTO_INCREMENT,
+  `BetaID` int(11) NOT NULL,
+  `DocumentID` int(11) NOT NULL,
+  `StartDate` date DEFAULT NULL COMMENT 'The day the job gets "In Progress"',
+  `Jobstatus` enum('Wait','In Progress','Canceled','Ready','Finished') COLLATE latin1_german1_ci NOT NULL,
+  `EndDate` date DEFAULT NULL COMMENT 'The day the betareader set the status on Ready',
+  `deadline` date DEFAULT NULL COMMENT 'The day the projectowner wants the betareader to finish the job',
+  PRIMARY KEY (`JobID`),
+  KEY `BetaJobID` (`BetaID`),
+  KEY `DocumentID` (`DocumentID`),
+  CONSTRAINT `BetaJobID` FOREIGN KEY (`BetaID`) REFERENCES `belu_betareader` (`BetaID`),
+  CONSTRAINT `DocumentID` FOREIGN KEY (`DocumentID`) REFERENCES `belu_document` (`DocumentID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci COMMENT='Table of betajobs on ducumentlevel with their status.';
 
-DROP TABLE IF EXISTS `BeLu_FBVerifizierung`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `BeLu_FBVerifizierung` (
-  `vid` int(11) NOT NULL AUTO_INCREMENT,
-  `betafbid` int(11) NOT NULL,
-  `verifizierer` int(11) NOT NULL,
-  PRIMARY KEY (`vid`),
-  UNIQUE KEY `VID_UNIQUE` (`vid`),
-  UNIQUE KEY `betafbid_UNIQUE` (`betafbid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+-- Daten Export vom Benutzer nicht ausgewählt
+-- Exportiere Struktur von Tabelle betaluchs.belu_beta_project
+CREATE TABLE IF NOT EXISTS `belu_beta_project` (
+  `ProjectID` int(11) NOT NULL,
+  `BetaID` int(11) NOT NULL,
+  `KooperationID` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`KooperationID`),
+  UNIQUE KEY `ProjectID` (`ProjectID`,`BetaID`),
+  KEY `Beta_ID` (`BetaID`),
+  CONSTRAINT `Beta_ID` FOREIGN KEY (`BetaID`) REFERENCES `belu_betareader` (`BetaID`),
+  CONSTRAINT `Projekt_ID` FOREIGN KEY (`ProjectID`) REFERENCES `belu_project` (`ProjectID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci COMMENT='Link betareader with projects';
 
---
--- Table structure for table `BeLu_FeBa`
---
+-- Daten Export vom Benutzer nicht ausgewählt
+-- Exportiere Struktur von Tabelle betaluchs.belu_beta_textsort
+CREATE TABLE IF NOT EXISTS `belu_beta_textsort` (
+  `BetaID` int(11) NOT NULL,
+  `TestsortID` int(11) NOT NULL,
+  `SortPriority` int(1) DEFAULT NULL,
+  PRIMARY KEY (`BetaID`,`TestsortID`),
+  KEY `TestsortID` (`TestsortID`),
+  CONSTRAINT `BetareaderID` FOREIGN KEY (`BetaID`) REFERENCES `belu_betareader` (`BetaID`),
+  CONSTRAINT `TestsortID` FOREIGN KEY (`TestsortID`) REFERENCES `belu_textsort` (`TextsortID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci COMMENT='Table of textsortpreferences of betareader';
 
-DROP TABLE IF EXISTS `BeLu_FeBa`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `BeLu_FeBa` (
-  `FBID` int(11) NOT NULL AUTO_INCREMENT,
-  `interpunktion` int(11) DEFAULT NULL,
-  `schreibung` int(11) DEFAULT NULL,
-  `rechtschreibung` int(11) DEFAULT NULL,
-  `zeiten` int(11) DEFAULT NULL,
-  `uid` int(11) NOT NULL,
-  `type` enum('Self','Test') DEFAULT NULL,
-  `date` date NOT NULL,
-  PRIMARY KEY (`FBID`),
-  UNIQUE KEY `FBID_UNIQUE` (`FBID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+-- Daten Export vom Benutzer nicht ausgewählt
+-- Exportiere Struktur von Tabelle betaluchs.belu_beta_theme
+CREATE TABLE IF NOT EXISTS `belu_beta_theme` (
+  `BetaID` int(11) NOT NULL,
+  `ThemeID` int(11) NOT NULL,
+  `Priority` int(1) DEFAULT NULL COMMENT 'Preference of betareader for theme ',
+  PRIMARY KEY (`ThemeID`,`BetaID`),
+  KEY `BetaThemeID` (`BetaID`),
+  CONSTRAINT `BetaThemeID` FOREIGN KEY (`BetaID`) REFERENCES `belu_betareader` (`BetaID`),
+  CONSTRAINT `ThemeID` FOREIGN KEY (`ThemeID`) REFERENCES `belu_theme` (`themeID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci COMMENT='Table of themepreferences of betareader';
 
---
--- Table structure for table `BeLu_Genre`
---
+-- Daten Export vom Benutzer nicht ausgewählt
+-- Exportiere Struktur von Tabelle betaluchs.belu_document
+CREATE TABLE IF NOT EXISTS `belu_document` (
+  `DocumentID` int(11) NOT NULL AUTO_INCREMENT,
+  `Title` varchar(255) COLLATE latin1_german1_ci NOT NULL,
+  `DocumentType` enum('Chapter','Draft','Charakterstudy','Summary') COLLATE latin1_german1_ci NOT NULL DEFAULT 'Chapter',
+  `ProjectID` int(11) NOT NULL,
+  `UploadDate` date NOT NULL,
+  `Path` tinytext COLLATE latin1_german1_ci NOT NULL,
+  PRIMARY KEY (`DocumentID`),
+  KEY `ProjectID` (`ProjectID`),
+  CONSTRAINT `ProjectID` FOREIGN KEY (`ProjectID`) REFERENCES `belu_project` (`ProjectID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci COMMENT='Documents of all projects. Every Document belongs to one project, which has a owner, who is implicit the owner of the documents. The document can be approved to a betareader for korrection.';
 
-DROP TABLE IF EXISTS `BeLu_Genre`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `BeLu_Genre` (
-  `genreid` int(11) NOT NULL AUTO_INCREMENT,
-  `genre` varchar(15) NOT NULL,
-  `definition` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`genreid`),
-  UNIQUE KEY `genreid_UNIQUE` (`genreid`),
-  UNIQUE KEY `genre_UNIQUE` (`genre`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+-- Daten Export vom Benutzer nicht ausgewählt
+-- Exportiere Struktur von Tabelle betaluchs.belu_genre
+CREATE TABLE IF NOT EXISTS `belu_genre` (
+  `GenreID` int(11) NOT NULL AUTO_INCREMENT,
+  `TextsortID` int(11) NOT NULL,
+  `Genre` varchar(50) COLLATE latin1_german1_ci NOT NULL COMMENT 'Name of Genre',
+  `Definition` tinytext COLLATE latin1_german1_ci DEFAULT NULL COMMENT 'Definition of Genre',
+  PRIMARY KEY (`GenreID`),
+  KEY `TextsortID` (`TextsortID`),
+  CONSTRAINT `TextsortID` FOREIGN KEY (`TextsortID`) REFERENCES `belu_textsort` (`TextsortID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci COMMENT='List of valid genres for projects';
 
---
--- Table structure for table `BeLu_Genre_Beta`
---
+-- Daten Export vom Benutzer nicht ausgewählt
+-- Exportiere Struktur von Tabelle betaluchs.belu_project
+CREATE TABLE IF NOT EXISTS `belu_project` (
+  `ProjectID` int(11) NOT NULL AUTO_INCREMENT,
+  `Title` varchar(255) COLLATE latin1_german1_ci NOT NULL,
+  `TextsortID` int(11) NOT NULL,
+  `GenreID` int(11) NOT NULL,
+  `Description` text COLLATE latin1_german1_ci DEFAULT NULL COMMENT 'Projektdescription (eg. Shortsummary)',
+  `UserID` int(11) NOT NULL COMMENT 'ID of the owner the project',
+  PRIMARY KEY (`ProjectID`),
+  KEY `SortID` (`TextsortID`),
+  KEY `ProjektGenreID` (`GenreID`),
+  KEY `ProjektUser` (`UserID`),
+  CONSTRAINT `ProjektGenreID` FOREIGN KEY (`GenreID`) REFERENCES `belu_genre` (`GenreID`),
+  CONSTRAINT `ProjektUser` FOREIGN KEY (`UserID`) REFERENCES `belu_user` (`UserID`),
+  CONSTRAINT `SortID` FOREIGN KEY (`TextsortID`) REFERENCES `belu_textsort` (`TextsortID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci COMMENT='Table of writingprojects from users';
 
-DROP TABLE IF EXISTS `BeLu_Genre_Beta`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `BeLu_Genre_Beta` (
-  `genreid` int(11) NOT NULL,
-  `betaid` varchar(45) NOT NULL,
-  PRIMARY KEY (`genreid`,`betaid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+-- Daten Export vom Benutzer nicht ausgewählt
+-- Exportiere Struktur von Tabelle betaluchs.belu_project_theme
+CREATE TABLE IF NOT EXISTS `belu_project_theme` (
+  `ThemeID` int(11) NOT NULL,
+  `ProjektID` int(11) NOT NULL,
+  PRIMARY KEY (`ThemeID`,`ProjektID`),
+  KEY `_ProjektID` (`ProjektID`),
+  CONSTRAINT `ProjektThemeID` FOREIGN KEY (`ThemeID`) REFERENCES `belu_theme` (`themeID`),
+  CONSTRAINT `_ProjektID` FOREIGN KEY (`ProjektID`) REFERENCES `belu_project` (`ProjectID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci COMMENT='Link projects with one or many themes';
 
---
--- Table structure for table `BeLu_Genre_Projekt`
---
+-- Daten Export vom Benutzer nicht ausgewählt
+-- Exportiere Struktur von Tabelle betaluchs.belu_textsort
+CREATE TABLE IF NOT EXISTS `belu_textsort` (
+  `TextsortID` int(11) NOT NULL AUTO_INCREMENT,
+  `Textsort` tinytext COLLATE latin1_german1_ci NOT NULL DEFAULT '0' COMMENT 'Name of Textsort',
+  `SortDefinition` text COLLATE latin1_german1_ci DEFAULT NULL COMMENT 'Definition of Textsort',
+  PRIMARY KEY (`TextsortID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci COMMENT='List of valid sorts of texts';
 
-DROP TABLE IF EXISTS `BeLu_Genre_Projekt`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `BeLu_Genre_Projekt` (
-  `genreid` int(11) NOT NULL,
-  `projektid` int(11) NOT NULL,
-  PRIMARY KEY (`genreid`,`projektid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+-- Daten Export vom Benutzer nicht ausgewählt
+-- Exportiere Struktur von Tabelle betaluchs.belu_theme
+CREATE TABLE IF NOT EXISTS `belu_theme` (
+  `themeID` int(11) NOT NULL AUTO_INCREMENT,
+  `theme` varchar(20) COLLATE latin1_german1_ci NOT NULL COMMENT 'Name of theme',
+  `definition` text COLLATE latin1_german1_ci NOT NULL COMMENT 'Definition of theme',
+  `themereference` int(11) DEFAULT NULL COMMENT 'Reference to a other theme via ID (eg. ID of ''Fantasy'' for ''Dark Fantasy'')',
+  PRIMARY KEY (`themeID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci;
 
---
--- Table structure for table `BeLu_Kooperation`
---
+-- Daten Export vom Benutzer nicht ausgewählt
+-- Exportiere Struktur von Tabelle betaluchs.belu_user
+CREATE TABLE IF NOT EXISTS `belu_user` (
+  `UserID` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Unique User-ID',
+  `BirthDate` date NOT NULL COMMENT 'Users Birthdate',
+  `RegisterDate` date NOT NULL COMMENT 'Date of Registration',
+  `AgeDisplay` enum('Y','N','Range') COLLATE latin1_german1_ci NOT NULL DEFAULT 'N' COMMENT 'Show Age of User in profile in Years (20 Y), Range (20-30 Y) or not',
+  `Email` varchar(50) COLLATE latin1_german1_ci NOT NULL COMMENT 'Email-Adress of User',
+  `EmailDisplay` enum('Y','N') COLLATE latin1_german1_ci NOT NULL DEFAULT 'N' COMMENT 'Show Email (Y) or not in profile (N)',
+  `Username` varchar(25) COLLATE latin1_german1_ci NOT NULL,
+  `PGP-Public` tinytext COLLATE latin1_german1_ci DEFAULT NULL COMMENT 'Public PGP-Key of User',
+  `Password` char(224) COLLATE latin1_german1_ci NOT NULL COMMENT 'SHA3-Hash',
+  PRIMARY KEY (`UserID`),
+  UNIQUE KEY `Email` (`Email`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci COMMENT='Usertable';
 
-DROP TABLE IF EXISTS `BeLu_Kooperation`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `BeLu_Kooperation` (
-  `projektid` int(11) NOT NULL,
-  `betaid` int(11) NOT NULL,
-  `Status` enum('Aktiv','Abgeschlossen','Abgebrochen','Pausiert') NOT NULL,
-  `start` date NOT NULL,
-  `frist` date NOT NULL,
-  `ende` date DEFAULT NULL,
-  PRIMARY KEY (`projektid`,`betaid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+-- Daten Export vom Benutzer nicht ausgewählt
+-- Exportiere Struktur von Tabelle betaluchs.belu_user_absence
+CREATE TABLE IF NOT EXISTS `belu_user_absence` (
+  `UserID` int(11) NOT NULL,
+  `AbsenceID` int(11) NOT NULL AUTO_INCREMENT,
+  `StartDate` date NOT NULL,
+  `EndDate` date NOT NULL,
+  PRIMARY KEY (`AbsenceID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci COMMENT='Absencetime of users.';
 
---
--- Table structure for table `BeLu_Krypto`
---
-
-DROP TABLE IF EXISTS `BeLu_Krypto`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `BeLu_Krypto` (
-  `kryptid` int(11) NOT NULL AUTO_INCREMENT,
-  `pgpkey` varchar(45) NOT NULL,
-  `uid` int(11) NOT NULL,
-  PRIMARY KEY (`kryptid`),
-  UNIQUE KEY `Krypt-ID_UNIQUE` (`kryptid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `BeLu_Projekt`
---
-
-DROP TABLE IF EXISTS `BeLu_Projekt`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `BeLu_Projekt` (
-  `projektid` int(11) NOT NULL AUTO_INCREMENT,
-  `titel` varchar(45) NOT NULL,
-  `uid` int(11) NOT NULL,
-  `ziel` enum('Keine','Internet','Verlag','Selfpublish') NOT NULL,
-  `rating` enum('Ab 6','Ab 12','Ab 16','Ab 18','18+') NOT NULL,
-  `status` enum('In Planung','In Arbeit','Pausiert','Beendet') NOT NULL,
-  PRIMARY KEY (`projektid`),
-  UNIQUE KEY `projektid_UNIQUE` (`projektid`),
-  UNIQUE KEY `uid_UNIQUE` (`uid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `BeLu_Textart`
---
-
-DROP TABLE IF EXISTS `BeLu_Textart`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `BeLu_Textart` (
-  `textid` int(11) NOT NULL AUTO_INCREMENT,
-  `textart` varchar(20) NOT NULL,
-  `definition` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`textid`),
-  UNIQUE KEY `textid_UNIQUE` (`textid`),
-  UNIQUE KEY `textart_UNIQUE` (`textart`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `BeLu_Textart_Beta`
---
-
-DROP TABLE IF EXISTS `BeLu_Textart_Beta`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `BeLu_Textart_Beta` (
-  `textartid` int(11) NOT NULL,
-  `betaid` int(11) NOT NULL,
-  PRIMARY KEY (`textartid`,`betaid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `BeLu_Textart_Projekt`
---
-
-DROP TABLE IF EXISTS `BeLu_Textart_Projekt`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `BeLu_Textart_Projekt` (
-  `textartid` int(11) NOT NULL,
-  `projektid` int(11) NOT NULL,
-  PRIMARY KEY (`textartid`,`projektid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `BeLu_Thema_Beta`
---
-
-DROP TABLE IF EXISTS `BeLu_Thema_Beta`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `BeLu_Thema_Beta` (
-  `themenid` int(11) NOT NULL,
-  `projektid` int(11) NOT NULL,
-  PRIMARY KEY (`themenid`,`projektid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `BeLu_Thema_Projekt`
---
-
-DROP TABLE IF EXISTS `BeLu_Thema_Projekt`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `BeLu_Thema_Projekt` (
-  `themenid` int(11) NOT NULL,
-  `projektid` int(11) NOT NULL,
-  PRIMARY KEY (`themenid`,`projektid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `BeLu_Users`
---
-
-DROP TABLE IF EXISTS `BeLu_Users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `BeLu_Users` (
-  `uid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'User-ID',
-  `gebdate` date DEFAULT NULL,
-  `beta` binary(1) NOT NULL DEFAULT '0',
-  `autor` binary(1) NOT NULL DEFAULT '0',
-  `nickname` varchar(20) NOT NULL,
-  `email` varchar(45) NOT NULL,
-  `password` char(41) NOT NULL COMMENT 'User-Tabelle',
-  PRIMARY KEY (`uid`),
-  UNIQUE KEY `uid_UNIQUE` (`uid`),
-  UNIQUE KEY `nickname_UNIQUE` (`nickname`),
-  UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `BeLu_abwesend`
---
-
-DROP TABLE IF EXISTS `BeLu_abwesend`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `BeLu_abwesend` (
-  `aid` int(11) NOT NULL AUTO_INCREMENT,
-  `uid` int(11) NOT NULL,
-  `start` date NOT NULL,
-  `ende` date DEFAULT NULL,
-  PRIMARY KEY (`aid`),
-  UNIQUE KEY `aid_UNIQUE` (`aid`),
-  UNIQUE KEY `uid_UNIQUE` (`uid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `BeLu_thema`
---
-
-DROP TABLE IF EXISTS `BeLu_thema`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `BeLu_thema` (
-  `themenid` int(11) NOT NULL AUTO_INCREMENT,
-  `thema` varchar(20) NOT NULL,
-  `definition` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`themenid`),
-  UNIQUE KEY `themenid_UNIQUE` (`themenid`),
-  UNIQUE KEY `thema_UNIQUE` (`thema`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+-- Daten Export vom Benutzer nicht ausgewählt
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2016-05-31 21:16:42
