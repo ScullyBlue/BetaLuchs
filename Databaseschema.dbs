@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="BeLuII.sql" id="Project_d632bc" template="Default" database="MySql" >
+	<schema name="Default" schemaname="Default" >
+		<table name="`belu_beta_genre`" >
+			<comment><![CDATA[List of genres for a betareader]]></comment>
+			<column name="`BetaID`" type="int" length="11" jt="4" mandatory="y" />
+			<column name="`GenreID`" type="int" length="11" jt="4" mandatory="y" />
+			<column name="`GenrePriority`" type="int" length="1" jt="4" >
+				<comment><![CDATA[Preference of betareader for genre]]></comment>
+			</column>
+			<index name="Primary" unique="NORMAL" >
+				<column name="`BetaID`" />
+				<column name="`GenreID`" />
+			</index>
+			<index name="`GenreID`" unique="NORMAL" >
+				<column name="`GenreID`" />
+			</index>
+			<fk name="`BetaID`" to_schema="Default" to_table="`belu_betareader`" >
+				<fk_column name="`BetaID`" pk="`BetaID`" />
+			</fk>
+			<fk name="fk_`belu_beta_genre`" to_schema="Default" to_table="`belu_genre`" >
+				<fk_column name="`GenreID`" pk="`GenreID`" />
+			</fk>
+		</table>
+		<table name="`belu_beta_job`" >
+			<comment><![CDATA[Table of betajobs on ducumentlevel with their status.]]></comment>
+			<column name="`JobID`" type="int" length="11" jt="4" mandatory="y" autoincrement="y" />
+			<column name="`BetaID`" type="int" length="11" jt="4" mandatory="y" />
+			<column name="`DocumentID`" type="int" length="11" jt="4" mandatory="y" />
+			<column name="`StartDate`" type="date" jt="91" >
+				<comment><![CDATA[The day the job gets "In Progress"]]></comment>
+			</column>
+			<column name="`Jobstatus`" type="enum" jt="12" mandatory="y" />
+			<column name="`EndDate`" type="date" jt="91" >
+				<comment><![CDATA[The day the betareader set the status on Ready]]></comment>
+			</column>
+			<column name="`deadline`" type="date" jt="91" >
+				<comment><![CDATA[The day the projectowner wants the betareader to finish the job]]></comment>
+			</column>
+			<index name="Primary" unique="NORMAL" >
+				<column name="`JobID`" />
+			</index>
+			<index name="`BetaJobID`" unique="NORMAL" >
+				<column name="`BetaID`" />
+			</index>
+			<index name="`DocumentID`" unique="NORMAL" >
+				<column name="`DocumentID`" />
+			</index>
+			<fk name="`BetaJobID`" to_schema="Default" to_table="`belu_betareader`" >
+				<fk_column name="`BetaID`" pk="`BetaID`" />
+			</fk>
+			<fk name="fk_`belu_beta_job`" to_schema="Default" to_table="`belu_document`" >
+				<fk_column name="`DocumentID`" pk="`DocumentID`" />
+				<comment><![CDATA[link job with documentinfos]]></comment>
+			</fk>
+		</table>
+		<table name="`belu_beta_project`" >
+			<comment><![CDATA[Link betareader with projects]]></comment>
+			<column name="`ProjectID`" type="int" length="11" jt="4" mandatory="y" />
+			<column name="`BetaID`" type="int" length="11" jt="4" mandatory="y" />
+			<column name="`KooperationID`" type="int" length="11" jt="4" mandatory="y" autoincrement="y" />
+			<index name="Primary" unique="NORMAL" >
+				<column name="`KooperationID`" />
+			</index>
+			<index name="`ProjectID`" unique="NORMAL" >
+				<column name="`ProjectID`" />
+				<column name="`BetaID`" />
+			</index>
+			<index name="`Beta_ID`" unique="NORMAL" >
+				<column name="`BetaID`" />
+			</index>
+			<fk name="`Beta_ID`" to_schema="Default" to_table="`belu_betareader`" >
+				<fk_column name="`BetaID`" pk="`BetaID`" />
+			</fk>
+		</table>
+		<table name="`belu_beta_textsort`" >
+			<comment><![CDATA[Table of textsortpreferences of betareader]]></comment>
+			<column name="`BetaID`" type="int" length="11" jt="4" mandatory="y" />
+			<column name="`TestsortID`" type="int" length="11" jt="4" mandatory="y" />
+			<column name="`SortPriority`" type="int" length="1" jt="4" />
+			<index name="Primary" unique="NORMAL" >
+				<column name="`BetaID`" />
+				<column name="`TestsortID`" />
+			</index>
+			<index name="`TestsortID`" unique="NORMAL" >
+				<column name="`TestsortID`" />
+			</index>
+			<fk name="`BetareaderID`" to_schema="Default" to_table="`belu_betareader`" >
+				<fk_column name="`BetaID`" pk="`BetaID`" />
+			</fk>
+			<fk name="fk_`belu_beta_textsort`" to_schema="Default" to_table="`belu_textsort`" >
+				<fk_column name="`TestsortID`" pk="`TextsortID`" />
+			</fk>
+		</table>
+		<table name="`belu_beta_theme`" >
+			<comment><![CDATA[Table of themepreferences of betareader]]></comment>
+			<column name="`BetaID`" type="int" length="11" jt="4" mandatory="y" />
+			<column name="`ThemeID`" type="int" length="11" jt="4" mandatory="y" />
+			<column name="`Priority`" type="int" length="1" jt="4" >
+				<comment><![CDATA[Preference of betareader for theme]]></comment>
+			</column>
+			<index name="Primary" unique="NORMAL" >
+				<column name="`ThemeID`" />
+				<column name="`BetaID`" />
+			</index>
+			<index name="`BetaThemeID`" unique="NORMAL" >
+				<column name="`BetaID`" />
+			</index>
+			<index name="idx_`belu_beta_theme`_`themeid`" unique="NORMAL" >
+				<column name="`ThemeID`" />
+			</index>
+			<fk name="`BetaThemeID`" to_schema="Default" to_table="`belu_betareader`" >
+				<fk_column name="`BetaID`" pk="`BetaID`" />
+			</fk>
+			<fk name="fk_`belu_beta_theme`" to_schema="Default" to_table="`belu_theme`" >
+				<fk_column name="`ThemeID`" pk="`themeID`" />
+				<comment><![CDATA[link betareader to themeinfos]]></comment>
+			</fk>
+		</table>
+		<table name="`belu_betareader`" >
+			<comment><![CDATA[Table of all betareaders and their bind attributes]]></comment>
+			<column name="`BetaID`" type="int" length="11" jt="4" mandatory="y" autoincrement="y" />
+			<column name="`UserID`" type="int" length="11" jt="4" mandatory="y" />
+			<column name="`Capacity`" type="int" length="11" jt="4" >
+				<comment><![CDATA[Maximal number of projects, this betareader reads for]]></comment>
+			</column>
+			<index name="Primary" unique="UNIQUE" >
+				<column name="`BetaID`" />
+			</index>
+			<index name="`UserID`" unique="NORMAL" >
+				<column name="`UserID`" />
+			</index>
+			<fk name="fk_`belu_betareader`" to_schema="Default" to_table="`belu_user`" >
+				<fk_column name="`UserID`" pk="`UserID`" />
+				<comment><![CDATA[link betareader to userinfo]]></comment>
+			</fk>
+		</table>
+		<table name="`belu_document`" >
+			<comment><![CDATA[Documents of all projects. Every Document belongs to one project, which has a owner, who is implicit the owner of the documents. The document can be approved to a betareader for korrection.]]></comment>
+			<column name="`DocumentID`" type="int" length="11" jt="4" mandatory="y" autoincrement="y" />
+			<column name="`Title`" type="varchar" length="255" jt="12" mandatory="y" />
+			<column name="`DocumentType`" type="enum" jt="12" mandatory="y" >
+				<defo>&#039;Chapter&#039;</defo>
+			</column>
+			<column name="`ProjectID`" type="int" length="11" jt="4" mandatory="y" />
+			<column name="`UploadDate`" type="date" jt="91" mandatory="y" />
+			<column name="`Path`" type="tinytext" jt="-1" mandatory="y" />
+			<index name="Primary" unique="UNIQUE" >
+				<column name="`DocumentID`" />
+			</index>
+			<index name="`ProjectID`" unique="NORMAL" >
+				<column name="`ProjectID`" />
+			</index>
+			<fk name="fk_`belu_document`" to_schema="Default" to_table="`belu_project`" >
+				<fk_column name="`ProjectID`" pk="`ProjectID`" />
+				<comment><![CDATA[link document with projectinfos]]></comment>
+			</fk>
+		</table>
+		<table name="`belu_genre`" >
+			<comment><![CDATA[List of valid genres for projects]]></comment>
+			<column name="`GenreID`" type="int" length="11" jt="4" mandatory="y" autoincrement="y" />
+			<column name="`TextsortID`" type="int" length="11" jt="4" mandatory="y" />
+			<column name="`Genre`" type="varchar" length="50" jt="12" mandatory="y" >
+				<comment><![CDATA[Name of Genre]]></comment>
+			</column>
+			<column name="`Definition`" type="tinytext" jt="-1" >
+				<comment><![CDATA[Definition of Genre]]></comment>
+			</column>
+			<index name="Primary" unique="UNIQUE" >
+				<column name="`GenreID`" />
+			</index>
+			<index name="`TextsortID`" unique="NORMAL" >
+				<column name="`TextsortID`" />
+			</index>
+		</table>
+		<table name="`belu_project_theme`" >
+			<comment><![CDATA[Link projects with one or many themes]]></comment>
+			<column name="`ThemeID`" type="int" length="11" jt="4" mandatory="y" />
+			<column name="`ProjektID`" type="int" length="11" jt="4" mandatory="y" />
+			<index name="Primary" unique="NORMAL" >
+				<column name="`ThemeID`" />
+				<column name="`ProjektID`" />
+			</index>
+			<index name="`_ProjektID`" unique="NORMAL" >
+				<column name="`ProjektID`" />
+			</index>
+			<index name="idx_`belu_project_theme`_`themeid`" unique="NORMAL" >
+				<column name="`ThemeID`" />
+			</index>
+			<fk name="`_ProjektID`" to_schema="Default" to_table="`belu_project`" >
+				<fk_column name="`ProjektID`" pk="`ProjectID`" />
+			</fk>
+			<fk name="fk_`belu_project_theme`" to_schema="Default" to_table="`belu_theme`" >
+				<fk_column name="`ThemeID`" pk="`themeID`" />
+				<comment><![CDATA[link project to themeinfos]]></comment>
+			</fk>
+		</table>
+		<table name="`belu_project`" >
+			<comment><![CDATA[Table of writingprojects from users]]></comment>
+			<column name="`ProjectID`" type="int" length="11" jt="4" mandatory="y" autoincrement="y" />
+			<column name="`Title`" type="varchar" length="255" jt="12" mandatory="y" />
+			<column name="`TextsortID`" type="int" length="11" jt="4" mandatory="y" />
+			<column name="`GenreID`" type="int" length="11" jt="4" mandatory="y" />
+			<column name="`Description`" type="text" jt="-1" >
+				<comment><![CDATA[Projektdescription (eg. Shortsummary)]]></comment>
+			</column>
+			<column name="`UserID`" type="int" length="11" jt="4" mandatory="y" >
+				<comment><![CDATA[ID of the owner the project]]></comment>
+			</column>
+			<index name="Primary" unique="UNIQUE" >
+				<column name="`ProjectID`" />
+			</index>
+			<index name="`SortID`" unique="NORMAL" >
+				<column name="`TextsortID`" />
+			</index>
+			<index name="`ProjektGenreID`" unique="NORMAL" >
+				<column name="`GenreID`" />
+			</index>
+			<index name="`ProjektUser`" unique="NORMAL" >
+				<column name="`UserID`" />
+			</index>
+			<fk name="`ProjektGenreID`" to_schema="Default" to_table="`belu_genre`" >
+				<fk_column name="`GenreID`" pk="`GenreID`" />
+			</fk>
+			<fk name="fk_`belu_project`_`belu_user`" to_schema="Default" to_table="`belu_user`" >
+				<fk_column name="`UserID`" pk="`UserID`" />
+				<comment><![CDATA[link project do user who is owner]]></comment>
+			</fk>
+			<fk name="fk_`belu_project`" to_schema="Default" to_table="`belu_textsort`" >
+				<fk_column name="`TextsortID`" pk="`TextsortID`" />
+			</fk>
+		</table>
+		<table name="`belu_textsort`" >
+			<comment><![CDATA[List of valid sorts of texts]]></comment>
+			<column name="`TextsortID`" type="int" length="11" jt="4" mandatory="y" autoincrement="y" />
+			<column name="`Textsort`" type="tinytext" jt="-1" mandatory="y" >
+				<defo>&#039;0&#039;</defo>
+				<comment><![CDATA[Name of Textsort]]></comment>
+			</column>
+			<column name="`SortDefinition`" type="text" jt="-1" >
+				<comment><![CDATA[Definition of Textsort]]></comment>
+			</column>
+			<index name="Primary" unique="UNIQUE" >
+				<column name="`TextsortID`" />
+			</index>
+		</table>
+		<table name="`belu_theme`" >
+			<column name="`themeID`" type="int" length="11" jt="4" mandatory="y" autoincrement="y" />
+			<column name="`theme`" type="varchar" length="20" jt="12" mandatory="y" >
+				<comment><![CDATA[Name of theme]]></comment>
+			</column>
+			<column name="`definition`" type="text" jt="-1" mandatory="y" >
+				<comment><![CDATA[Definition of theme]]></comment>
+			</column>
+			<column name="`themereference`" type="int" length="11" jt="4" >
+				<comment><![CDATA[Reference to a other theme via ID (eg. ID of ''Fantasy'' for ''Dark Fantasy'')]]></comment>
+			</column>
+			<index name="Primary" unique="UNIQUE" >
+				<column name="`themeID`" />
+			</index>
+		</table>
+		<table name="`belu_user_absence`" >
+			<comment><![CDATA[Absencetime of users.]]></comment>
+			<column name="`UserID`" type="int" length="11" jt="4" mandatory="y" />
+			<column name="`AbsenceID`" type="int" length="11" jt="4" mandatory="y" autoincrement="y" />
+			<column name="`StartDate`" type="date" jt="91" mandatory="y" />
+			<column name="`EndDate`" type="date" jt="91" mandatory="y" />
+			<index name="Primary" unique="NORMAL" >
+				<column name="`AbsenceID`" />
+			</index>
+			<index name="idx_`belu_user_absence`_`userid`" unique="NORMAL" >
+				<column name="`UserID`" />
+			</index>
+			<fk name="fk_`belu_user_absence`" to_schema="Default" to_table="`belu_user`" >
+				<fk_column name="`UserID`" pk="`UserID`" />
+				<comment><![CDATA[link absence to userinfo]]></comment>
+			</fk>
+		</table>
+		<table name="`belu_user`" >
+			<comment><![CDATA[Usertable]]></comment>
+			<column name="`UserID`" type="int" length="11" jt="4" mandatory="y" autoincrement="y" >
+				<comment><![CDATA[Unique User-ID]]></comment>
+			</column>
+			<column name="`BirthDate`" type="date" jt="91" mandatory="y" >
+				<comment><![CDATA[Users Birthdate]]></comment>
+			</column>
+			<column name="`RegisterDate`" type="date" jt="91" mandatory="y" >
+				<comment><![CDATA[Date of Registration]]></comment>
+			</column>
+			<column name="`AgeDisplay`" type="enum" jt="12" mandatory="y" >
+				<defo>&#039;N&#039;</defo>
+				<comment><![CDATA[Show Age of User in profile in Years (20 Y), Range (20-30 Y) or not]]></comment>
+			</column>
+			<column name="`Email`" type="varchar" length="50" jt="12" mandatory="y" >
+				<comment><![CDATA[Email-Adress of User]]></comment>
+			</column>
+			<column name="`EmailDisplay`" type="enum" jt="12" mandatory="y" >
+				<defo>&#039;N&#039;</defo>
+				<comment><![CDATA[Show Email (Y) or not in profile (N)]]></comment>
+			</column>
+			<column name="`Username`" type="varchar" length="25" jt="12" mandatory="y" />
+			<column name="`PGP-Public`" type="tinytext" jt="-1" >
+				<comment><![CDATA[Public PGP-Key of User]]></comment>
+			</column>
+			<column name="`Password`" type="char" length="224" jt="1" mandatory="y" >
+				<comment><![CDATA[SHA3-Hash]]></comment>
+			</column>
+			<index name="Primary" unique="UNIQUE" >
+				<column name="`UserID`" />
+			</index>
+			<index name="`Email`" unique="NORMAL" >
+				<column name="`Email`" />
+			</index>
+		</table>
+		<table name="belu_beta_dialect" >
+			<comment><![CDATA[knowlege of betareader over dialects]]></comment>
+			<column name="dialectid" type="int" jt="4" mandatory="y" />
+			<column name="betaid" type="int" jt="4" mandatory="y" />
+			<column name="levelid" type="int" jt="4" />
+			<index name="pk_belu_beta_dialect_dialectid" unique="PRIMARY_KEY" >
+				<column name="dialectid" />
+				<column name="betaid" />
+			</index>
+			<index name="idx_belu_beta_dialect_dialectid" unique="NORMAL" >
+				<column name="dialectid" />
+			</index>
+			<index name="idx_belu_beta_dialect_betaid" unique="NORMAL" >
+				<column name="betaid" />
+			</index>
+			<index name="idx_belu_beta_dialect_levelid" unique="NORMAL" >
+				<column name="levelid" />
+			</index>
+			<fk name="fk_belu_beta_dialect" to_schema="Default" to_table="belu_language_dialect" >
+				<fk_column name="dialectid" pk="dialectid" />
+			</fk>
+			<fk name="fk_belu_dialect_beta" to_schema="Default" to_table="`belu_betareader`" >
+				<fk_column name="betaid" pk="`BetaID`" />
+			</fk>
+			<fk name="fk_belu_level_dialect" to_schema="Default" to_table="belu_level" >
+				<fk_column name="levelid" pk="levelid" />
+			</fk>
+			<storage><![CDATA[engine=InnoDB]]></storage>
+		</table>
+		<table name="belu_beta_fact" />
+		<table name="belu_beta_facts" >
+			<comment><![CDATA[knwolege about topic areas from betareader]]></comment>
+			<column name="factid" type="int" jt="4" mandatory="y" />
+			<column name="betaid" type="int" jt="4" mandatory="y" />
+			<column name="levelid" type="int" jt="4" mandatory="y" />
+			<column name="comment" type="tinyblob" jt="-4" >
+				<comment><![CDATA[Usercomment for topicarea]]></comment>
+			</column>
+			<column name="verification" type="date" jt="91" />
+			<index name="pk_belu_beta_facts_factid" unique="PRIMARY_KEY" >
+				<column name="factid" />
+				<column name="betaid" />
+			</index>
+			<index name="idx_belu_beta_facts_factid" unique="NORMAL" >
+				<column name="factid" />
+			</index>
+			<index name="idx_belu_beta_facts_betaid" unique="NORMAL" >
+				<column name="betaid" />
+			</index>
+			<index name="idx_belu_beta_facts_levelid" unique="NORMAL" >
+				<column name="levelid" />
+			</index>
+			<fk name="fk_belu_beta_facts_belu_facts" to_schema="Default" to_table="belu_facts" >
+				<fk_column name="factid" pk="factid" />
+			</fk>
+			<fk name="fk_belu_facts_beta" to_schema="Default" to_table="`belu_betareader`" >
+				<fk_column name="betaid" pk="`BetaID`" />
+			</fk>
+			<fk name="fk_belu_beta_facts_belu_level" to_schema="Default" to_table="belu_level" >
+				<fk_column name="levelid" pk="levelid" />
+			</fk>
+			<storage><![CDATA[engine=InnoDB]]></storage>
+		</table>
+		<table name="belu_beta_language" >
+			<comment><![CDATA[Languages a betareader knows]]></comment>
+			<column name="languageid" type="int" jt="4" mandatory="y" />
+			<column name="betaid" type="int" jt="4" mandatory="y" />
+			<column name="levelid" type="int" jt="4" mandatory="y" >
+				<comment><![CDATA[Level of knowlege]]></comment>
+			</column>
+			<column name="colloquial?" type="bit" jt="-7" mandatory="y" >
+				<defo>1</defo>
+				<comment><![CDATA[Has the reader knowlege over colloquial language?]]></comment>
+			</column>
+			<column name="formal?" type="bit" jt="-7" mandatory="y" >
+				<defo>1</defo>
+				<comment><![CDATA[Can the reader understand and speak formal language?]]></comment>
+			</column>
+			<column name="antiquated?" type="bit" jt="-7" mandatory="y" >
+				<defo>1</defo>
+				<comment><![CDATA[Has the reader knowlege over antiquated langauge?]]></comment>
+			</column>
+			<index name="pk_belu_beta_language_languageid" unique="PRIMARY_KEY" >
+				<column name="languageid" />
+				<column name="betaid" />
+			</index>
+			<index name="idx_belu_beta_language_levelid" unique="NORMAL" >
+				<column name="levelid" />
+			</index>
+			<index name="idx_belu_beta_language_betaid" unique="NORMAL" >
+				<column name="betaid" />
+			</index>
+			<fk name="fk_belu_beta_language" to_schema="Default" to_table="belu_level" >
+				<fk_column name="levelid" pk="levelid" />
+			</fk>
+			<fk name="fk_belu_language_beta" to_schema="Default" to_table="`belu_betareader`" >
+				<fk_column name="betaid" pk="`BetaID`" />
+			</fk>
+			<storage><![CDATA[engine=InnoDB]]></storage>
+		</table>
+		<table name="belu_beta_language_focus" >
+			<comment><![CDATA[Table for knowlege per betareader, which correctionsfocus he can serve for which language]]></comment>
+			<column name="betaid" type="int" jt="4" mandatory="y" />
+			<column name="languageid" type="int" jt="4" mandatory="y" />
+			<column name="focusid" type="int" jt="4" mandatory="y" />
+			<column name="levelid" type="int" jt="4" mandatory="y" />
+			<index name="pk_belu_beta_language_focus_betaid" unique="PRIMARY_KEY" >
+				<column name="betaid" />
+				<column name="focusid" />
+				<column name="languageid" />
+			</index>
+			<index name="idx_belu_beta_language_focus_betaid" unique="NORMAL" >
+				<column name="betaid" />
+			</index>
+			<index name="idx_belu_beta_language_focus_focusid" unique="NORMAL" >
+				<column name="focusid" />
+			</index>
+			<index name="idx_belu_beta_language_focus_languageid" unique="NORMAL" >
+				<column name="languageid" />
+			</index>
+			<index name="idx_belu_beta_language_focus_levelid" unique="NORMAL" >
+				<column name="levelid" />
+			</index>
+			<fk name="fk_belu_beta_language_focus" to_schema="Default" to_table="`belu_betareader`" >
+				<fk_column name="betaid" pk="`BetaID`" />
+			</fk>
+			<fk name="fk_belu_beta_focus_language" to_schema="Default" to_table="belu_focus" >
+				<fk_column name="focusid" pk="focusid" />
+			</fk>
+			<fk name="fk_belu_focus_language_beta" to_schema="Default" to_table="belu_language" >
+				<fk_column name="languageid" pk="languageid" />
+			</fk>
+			<fk name="fk_belu_level_language_focus" to_schema="Default" to_table="belu_level" >
+				<fk_column name="levelid" pk="levelid" />
+			</fk>
+			<storage><![CDATA[engine=InnoDB]]></storage>
+		</table>
+		<table name="belu_facts" >
+			<comment><![CDATA[topicareas of knowlege for projects and betareader]]></comment>
+			<column name="factid" type="int" jt="4" mandatory="y" autoincrement="y" />
+			<column name="fact" type="varchar" length="30" jt="12" mandatory="y" >
+				<comment><![CDATA[Name of topicarea]]></comment>
+			</column>
+			<column name="factdetail" type="tinyblob" jt="-4" mandatory="y" >
+				<comment><![CDATA[Details about fact]]></comment>
+			</column>
+			<column name="parentfact" type="int" jt="4" >
+				<comment><![CDATA[if a fact depends on another fact, here stands the factid]]></comment>
+			</column>
+			<column name="statusdate" type="date" length="1" jt="91" >
+				<comment><![CDATA[Date of proposal]]></comment>
+			</column>
+			<column name="proposeduser" type="int" jt="4" />
+			<column name="statusid" type="enum" jt="12" mandatory="y" >
+				<defo>&#039;current&#039;&#039;</defo>
+				<enumeration>&#039;current&#039;,&#039;proposal&#039;,&#039;rejected&#039;</enumeration>
+			</column>
+			<index name="pk_belu_facts_factid" unique="PRIMARY_KEY" >
+				<column name="factid" />
+			</index>
+			<index name="idx_belu_facts_proposeduser" unique="NORMAL" >
+				<column name="proposeduser" />
+			</index>
+			<fk name="fk_belu_facts_`belu_user`" to_schema="Default" to_table="`belu_user`" >
+				<fk_column name="proposeduser" pk="`UserID`" />
+			</fk>
+			<storage><![CDATA[engine=InnoDB]]></storage>
+		</table>
+		<table name="belu_focus" >
+			<comment><![CDATA[Possible focus for correction]]></comment>
+			<column name="focusid" type="int" jt="4" mandatory="y" autoincrement="y" />
+			<column name="focus" type="varchar" length="25" jt="12" mandatory="y" >
+				<comment><![CDATA[Name of focus]]></comment>
+			</column>
+			<column name="focusdetail" type="tinyblob" jt="-4" mandatory="y" />
+			<column name="focusparent" type="int" jt="4" >
+				<comment><![CDATA[If the focus depends on another focus, the depending focusid stand here]]></comment>
+			</column>
+			<index name="pk_belu_focus_focusid" unique="PRIMARY_KEY" >
+				<column name="focusid" />
+			</index>
+			<storage><![CDATA[engine=InnoDB]]></storage>
+		</table>
+		<table name="belu_language" >
+			<comment><![CDATA[Languages for projects and corrections]]></comment>
+			<column name="languageid" type="int" jt="4" mandatory="y" autoincrement="y" />
+			<column name="language" type="varchar" length="15" jt="12" mandatory="y" >
+				<comment><![CDATA[Name of language]]></comment>
+			</column>
+			<column name="langshort" type="char" length="3" jt="1" >
+				<comment><![CDATA[Shortcut of language]]></comment>
+			</column>
+			<index name="pk_belu_language_languageid" unique="PRIMARY_KEY" >
+				<column name="languageid" />
+			</index>
+			<storage><![CDATA[engine=InnoDB]]></storage>
+		</table>
+		<table name="belu_language_dialect" >
+			<comment><![CDATA[Dialects of Languages]]></comment>
+			<column name="dialectid" type="int" jt="4" mandatory="y" autoincrement="y" />
+			<column name="parentlanguageid" type="int" jt="4" mandatory="y" >
+				<comment><![CDATA[ID of Language, the dialect based on]]></comment>
+			</column>
+			<column name="dialect" type="varchar" length="20" jt="12" mandatory="y" >
+				<comment><![CDATA[Name of dialect]]></comment>
+			</column>
+			<index name="pk_belu_language_dialect_dialectid" unique="PRIMARY_KEY" >
+				<column name="dialectid" />
+			</index>
+			<index name="idx_belu_language_dialect_parentlanguageid" unique="NORMAL" >
+				<column name="parentlanguageid" />
+			</index>
+			<fk name="fk_belu_language_dialect" to_schema="Default" to_table="belu_language" >
+				<fk_column name="parentlanguageid" pk="languageid" />
+			</fk>
+			<storage><![CDATA[engine=InnoDB]]></storage>
+		</table>
+		<table name="belu_level" >
+			<comment><![CDATA[Levels of knowledge]]></comment>
+			<column name="levelid" type="int" jt="4" mandatory="y" />
+			<column name="level" type="varchar" length="10" jt="12" mandatory="y" >
+				<comment><![CDATA[Name of level]]></comment>
+			</column>
+			<column name="leveldetail" type="tinyblob" jt="-4" mandatory="y" >
+				<comment><![CDATA[Details of level]]></comment>
+			</column>
+			<index name="pk_belu_level_levelid" unique="PRIMARY_KEY" >
+				<column name="levelid" />
+			</index>
+			<storage><![CDATA[engine=InnoDB]]></storage>
+		</table>
+		<table name="belu_project_betasearch" >
+			<column name="betasearchid" type="int" jt="4" mandatory="y" autoincrement="y" />
+			<column name="projectid" type="int" jt="4" mandatory="y" />
+			<column name="deadline" type="date" jt="91" />
+			<column name="betacount" type="int" jt="4" mandatory="y" >
+				<defo>1</defo>
+				<comment><![CDATA[Count of betareader]]></comment>
+			</column>
+			<column name="minlanguagelevel" type="int" jt="4" mandatory="y" >
+				<defo>0</defo>
+				<comment><![CDATA[Minimal level of language for betareader]]></comment>
+			</column>
+			<index name="pk_belu_project_betasearch_betasearchid" unique="PRIMARY_KEY" >
+				<column name="betasearchid" />
+			</index>
+			<index name="idx_belu_project_betasearch_projectid" unique="NORMAL" >
+				<column name="projectid" />
+			</index>
+			<index name="idx_belu_project_betasearch_minlanguagelevel" unique="NORMAL" >
+				<column name="minlanguagelevel" />
+			</index>
+			<fk name="fk_belu_project_betasearch" to_schema="Default" to_table="`belu_project`" >
+				<fk_column name="projectid" pk="`ProjectID`" />
+			</fk>
+			<fk name="fk_belu_project_languagelevel" to_schema="Default" to_table="belu_level" >
+				<fk_column name="minlanguagelevel" pk="levelid" />
+			</fk>
+			<storage><![CDATA[engine=InnoDB]]></storage>
+		</table>
+	</schema>
+	<connector name="" database="MySql" host="localhost" port="3306" user="root" />
+	<layout name="Parsed Script Layout" id="Layout_84e13" show_relation="columns" >
+		<entity schema="Default" name="`belu_document`" color="c8f5bf" x="225" y="45" />
+		<entity schema="Default" name="`belu_betareader`" color="bfd4f5" x="45" y="255" />
+		<entity schema="Default" name="`belu_beta_project`" color="bfd4f5" x="210" y="255" />
+		<entity schema="Default" name="`belu_beta_theme`" color="bfd4f5" x="210" y="540" />
+		<entity schema="Default" name="`belu_theme`" color="bfd4f5" x="405" y="540" />
+		<entity schema="Default" name="`belu_genre`" color="c8f5bf" x="405" y="330" />
+		<entity schema="Default" name="`belu_beta_genre`" color="bfd4f5" x="210" y="345" />
+		<entity schema="Default" name="`belu_project_theme`" color="c8f5bf" x="540" y="360" />
+		<entity schema="Default" name="`belu_user`" color="c8f5bf" x="615" y="165" />
+		<entity schema="Default" name="`belu_beta_job`" color="bfd4f5" x="45" y="45" />
+		<entity schema="Default" name="`belu_beta_textsort`" color="bfd4f5" x="210" y="435" />
+		<entity schema="Default" name="`belu_user_absence`" color="c8f5bf" x="795" y="225" />
+		<entity schema="Default" name="`belu_project`" color="c8f5bf" x="420" y="45" />
+		<entity schema="Default" name="`belu_textsort`" color="c8f5bf" x="405" y="450" />
+		<entity schema="Default" name="belu_beta_language_focus" color="c8daf5" x="75" y="645" />
+		<entity schema="Default" name="belu_beta_dialect" color="c8daf5" x="75" y="900" />
+		<entity schema="Default" name="belu_beta_language" color="c8daf5" x="75" y="1005" />
+		<entity schema="Default" name="belu_beta_facts" color="c8daf5" x="75" y="765" />
+		<entity schema="Default" name="belu_focus" color="c8daf5" x="420" y="750" />
+		<entity schema="Default" name="belu_language_dialect" color="c8daf5" x="390" y="1005" />
+		<entity schema="Default" name="belu_language" color="c8daf5" x="420" y="900" />
+		<entity schema="Default" name="belu_facts" color="c8daf5" x="690" y="795" />
+		<entity schema="Default" name="belu_project_betasearch" color="c8daf5" x="735" y="525" />
+		<entity schema="Default" name="belu_level" color="c8daf5" x="420" y="645" />
+	</layout>
+</project>

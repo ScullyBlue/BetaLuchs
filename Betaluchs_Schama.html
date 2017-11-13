@@ -1,0 +1,1321 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.0 Transitional//EN'>
+<html>
+<head>
+<title>Betaluchs&#95;Databaseshema</title>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<!--<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>-->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>-->
+<link rel="shortcut icon" href="https://www.dbschema.com/images/favicon.ico">
+<style type='text/css'>
+body {
+    font-family: 'Segoe UI', 'Lucida sans', Dialog;
+    font-size: 13px;
+    background-color:#f5f5f5;
+    margin: 10px;
+}
+</style>
+</head>
+
+<body>
+<object data='Betaluchs_Schama.svg' width='960' height='1295' type='image/svg+xml' >
+<embed src='Betaluchs_Schama.svg' width='960' height='1295' type='image/svg+xml' />
+<p>The <a href="http://www.adobe.com/svg/viewer/install/main.html">Adobe SVG Viewer</a> is required to view this image !</p></object>
+<br/><br/>
+<div class='card'><div class='card-block'><a name='`belu_beta_genre`' onclick='window.scrollTo(60, 345);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_beta_genre`</h4></a>
+<p class="text-muted">List of genres for a betareader</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='`belu_beta_genre`.`BetaID`'>&#96;BetaID&#96;</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='`belu_beta_genre`.`GenreID`'>&#96;GenreID&#96;</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='`belu_beta_genre`.`GenrePriority`'>&#96;GenrePriority&#96;</a></td>
+		<td> int   </td>
+		<td> Preference of betareader for genre </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>Primary</td>
+		<td> ON &#96;BetaID&#96;&#44; &#96;GenreID&#96;</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>&#96;GenreID&#96;</td>
+		<td> ON &#96;GenreID&#96;</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>`BetaID`</td>
+		<td > ( &#96;BetaID&#96; ) ref <a href='#&#96;belu&#95;betareader&#96;'>&#96;belu&#95;betareader&#96;</a> (&#96;BetaID&#96;) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_`belu_beta_genre`</td>
+		<td > ( &#96;GenreID&#96; ) ref <a href='#&#96;belu&#95;genre&#96;'>&#96;belu&#95;genre&#96;</a> (&#96;GenreID&#96;) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='`belu_beta_job`' onclick='window.scrollTo(60, 45);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_beta_job`</h4></a>
+<p class="text-muted">Table of betajobs on ducumentlevel with their status.</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg></td>
+		<td><a name='`belu_beta_job`.`JobID`'>&#96;JobID&#96;</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='`belu_beta_job`.`BetaID`'>&#96;BetaID&#96;</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='`belu_beta_job`.`DocumentID`'>&#96;DocumentID&#96;</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='`belu_beta_job`.`StartDate`'>&#96;StartDate&#96;</a></td>
+		<td> date   </td>
+		<td> The day the job gets &quot;In Progress&quot; </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='`belu_beta_job`.`Jobstatus`'>&#96;Jobstatus&#96;</a></td>
+		<td> enum   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='`belu_beta_job`.`EndDate`'>&#96;EndDate&#96;</a></td>
+		<td> date   </td>
+		<td> The day the betareader set the status on Ready </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='`belu_beta_job`.`deadline`'>&#96;deadline&#96;</a></td>
+		<td> date   </td>
+		<td> The day the projectowner wants the betareader to finish the job </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>Primary</td>
+		<td> ON &#96;JobID&#96;</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>&#96;BetaJobID&#96;</td>
+		<td> ON &#96;BetaID&#96;</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>&#96;DocumentID&#96;</td>
+		<td> ON &#96;DocumentID&#96;</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>`BetaJobID`</td>
+		<td > ( &#96;BetaID&#96; ) ref <a href='#&#96;belu&#95;betareader&#96;'>&#96;belu&#95;betareader&#96;</a> (&#96;BetaID&#96;) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_`belu_beta_job`</td>
+		<td > ( &#96;DocumentID&#96; ) ref <a href='#&#96;belu&#95;document&#96;'>&#96;belu&#95;document&#96;</a> (&#96;DocumentID&#96;) </td>
+		<td> link job with documentinfos </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='`belu_beta_project`' onclick='window.scrollTo(60, 255);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_beta_project`</h4></a>
+<p class="text-muted">Link betareader with projects</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg></td>
+		<td><a name='`belu_beta_project`.`ProjectID`'>&#96;ProjectID&#96;</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='`belu_beta_project`.`BetaID`'>&#96;BetaID&#96;</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg></td>
+		<td><a name='`belu_beta_project`.`KooperationID`'>&#96;KooperationID&#96;</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>Primary</td>
+		<td> ON &#96;KooperationID&#96;</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>&#96;ProjectID&#96;</td>
+		<td> ON &#96;ProjectID&#96;&#44; &#96;BetaID&#96;</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>&#96;Beta&#95;ID&#96;</td>
+		<td> ON &#96;BetaID&#96;</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>`Beta_ID`</td>
+		<td > ( &#96;BetaID&#96; ) ref <a href='#&#96;belu&#95;betareader&#96;'>&#96;belu&#95;betareader&#96;</a> (&#96;BetaID&#96;) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='`belu_beta_textsort`' onclick='window.scrollTo(60, 435);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_beta_textsort`</h4></a>
+<p class="text-muted">Table of textsortpreferences of betareader</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='`belu_beta_textsort`.`BetaID`'>&#96;BetaID&#96;</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='`belu_beta_textsort`.`TestsortID`'>&#96;TestsortID&#96;</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='`belu_beta_textsort`.`SortPriority`'>&#96;SortPriority&#96;</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>Primary</td>
+		<td> ON &#96;BetaID&#96;&#44; &#96;TestsortID&#96;</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>&#96;TestsortID&#96;</td>
+		<td> ON &#96;TestsortID&#96;</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>`BetareaderID`</td>
+		<td > ( &#96;BetaID&#96; ) ref <a href='#&#96;belu&#95;betareader&#96;'>&#96;belu&#95;betareader&#96;</a> (&#96;BetaID&#96;) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_`belu_beta_textsort`</td>
+		<td > ( &#96;TestsortID&#96; ) ref <a href='#&#96;belu&#95;textsort&#96;'>&#96;belu&#95;textsort&#96;</a> (&#96;TextsortID&#96;) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='`belu_beta_theme`' onclick='window.scrollTo(60, 540);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_beta_theme`</h4></a>
+<p class="text-muted">Table of themepreferences of betareader</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='`belu_beta_theme`.`BetaID`'>&#96;BetaID&#96;</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='`belu_beta_theme`.`ThemeID`'>&#96;ThemeID&#96;</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='`belu_beta_theme`.`Priority`'>&#96;Priority&#96;</a></td>
+		<td> int   </td>
+		<td> Preference of betareader for theme </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>Primary</td>
+		<td> ON &#96;ThemeID&#96;&#44; &#96;BetaID&#96;</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>&#96;BetaThemeID&#96;</td>
+		<td> ON &#96;BetaID&#96;</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;&#96;belu&#95;beta&#95;theme&#96;&#95;&#96;themeid&#96;</td>
+		<td> ON &#96;ThemeID&#96;</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>`BetaThemeID`</td>
+		<td > ( &#96;BetaID&#96; ) ref <a href='#&#96;belu&#95;betareader&#96;'>&#96;belu&#95;betareader&#96;</a> (&#96;BetaID&#96;) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_`belu_beta_theme`</td>
+		<td > ( &#96;ThemeID&#96; ) ref <a href='#&#96;belu&#95;theme&#96;'>&#96;belu&#95;theme&#96;</a> (&#96;themeID&#96;) </td>
+		<td> link betareader to themeinfos </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='`belu_betareader`' onclick='window.scrollTo(60, 255);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_betareader`</h4></a>
+<p class="text-muted">Table of all betareaders and their bind attributes</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='`belu_betareader`.`BetaID`'>&#96;BetaID&#96;</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='`belu_betareader`.`UserID`'>&#96;UserID&#96;</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='`belu_betareader`.`Capacity`'>&#96;Capacity&#96;</a></td>
+		<td> int   </td>
+		<td> Maximal number of projects&#44; this betareader reads for </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>Primary</td>
+		<td> ON &#96;BetaID&#96;</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>&#96;UserID&#96;</td>
+		<td> ON &#96;UserID&#96;</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_`belu_betareader`</td>
+		<td > ( &#96;UserID&#96; ) ref <a href='#&#96;belu&#95;user&#96;'>&#96;belu&#95;user&#96;</a> (&#96;UserID&#96;) </td>
+		<td> link betareader to userinfo </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='`belu_document`' onclick='window.scrollTo(60, 45);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_document`</h4></a>
+<p class="text-muted">Documents of all projects. Every Document belongs to one project, which has a owner, who is implicit the owner of the documents. The document can be approved to a betareader for korrection.</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='`belu_document`.`DocumentID`'>&#96;DocumentID&#96;</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='`belu_document`.`Title`'>&#96;Title&#96;</a></td>
+		<td> varchar&#40; 255 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='`belu_document`.`DocumentType`'>&#96;DocumentType&#96;</a></td>
+		<td> enum   DEFAULT 'Chapter' </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='`belu_document`.`ProjectID`'>&#96;ProjectID&#96;</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='`belu_document`.`UploadDate`'>&#96;UploadDate&#96;</a></td>
+		<td> date   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='`belu_document`.`Path`'>&#96;Path&#96;</a></td>
+		<td> tinytext   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>Primary</td>
+		<td> ON &#96;DocumentID&#96;</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>&#96;ProjectID&#96;</td>
+		<td> ON &#96;ProjectID&#96;</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_`belu_document`</td>
+		<td > ( &#96;ProjectID&#96; ) ref <a href='#&#96;belu&#95;project&#96;'>&#96;belu&#95;project&#96;</a> (&#96;ProjectID&#96;) </td>
+		<td> link document with projectinfos </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='`belu_genre`' onclick='window.scrollTo(205, 330);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_genre`</h4></a>
+<p class="text-muted">List of valid genres for projects</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='`belu_genre`.`GenreID`'>&#96;GenreID&#96;</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg></td>
+		<td><a name='`belu_genre`.`TextsortID`'>&#96;TextsortID&#96;</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='`belu_genre`.`Genre`'>&#96;Genre&#96;</a></td>
+		<td> varchar&#40; 50 &#41;   </td>
+		<td> Name of Genre </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='`belu_genre`.`Definition`'>&#96;Definition&#96;</a></td>
+		<td> tinytext   </td>
+		<td> Definition of Genre </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>Primary</td>
+		<td> ON &#96;GenreID&#96;</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>&#96;TextsortID&#96;</td>
+		<td> ON &#96;TextsortID&#96;</td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='`belu_project_theme`' onclick='window.scrollTo(340, 360);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_project_theme`</h4></a>
+<p class="text-muted">Link projects with one or many themes</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='`belu_project_theme`.`ThemeID`'>&#96;ThemeID&#96;</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='`belu_project_theme`.`ProjektID`'>&#96;ProjektID&#96;</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>Primary</td>
+		<td> ON &#96;ThemeID&#96;&#44; &#96;ProjektID&#96;</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>&#96;&#95;ProjektID&#96;</td>
+		<td> ON &#96;ProjektID&#96;</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;&#96;belu&#95;project&#95;theme&#96;&#95;&#96;themeid&#96;</td>
+		<td> ON &#96;ThemeID&#96;</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>`_ProjektID`</td>
+		<td > ( &#96;ProjektID&#96; ) ref <a href='#&#96;belu&#95;project&#96;'>&#96;belu&#95;project&#96;</a> (&#96;ProjectID&#96;) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_`belu_project_theme`</td>
+		<td > ( &#96;ThemeID&#96; ) ref <a href='#&#96;belu&#95;theme&#96;'>&#96;belu&#95;theme&#96;</a> (&#96;themeID&#96;) </td>
+		<td> link project to themeinfos </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='`belu_project`' onclick='window.scrollTo(220, 45);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_project`</h4></a>
+<p class="text-muted">Table of writingprojects from users</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='`belu_project`.`ProjectID`'>&#96;ProjectID&#96;</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='`belu_project`.`Title`'>&#96;Title&#96;</a></td>
+		<td> varchar&#40; 255 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='`belu_project`.`TextsortID`'>&#96;TextsortID&#96;</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='`belu_project`.`GenreID`'>&#96;GenreID&#96;</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='`belu_project`.`Description`'>&#96;Description&#96;</a></td>
+		<td> text   </td>
+		<td> Projektdescription &#40;eg&#46; Shortsummary&#41; </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='`belu_project`.`UserID`'>&#96;UserID&#96;</a></td>
+		<td> int   </td>
+		<td> ID of the owner the project </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>Primary</td>
+		<td> ON &#96;ProjectID&#96;</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>&#96;SortID&#96;</td>
+		<td> ON &#96;TextsortID&#96;</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>&#96;ProjektGenreID&#96;</td>
+		<td> ON &#96;GenreID&#96;</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>&#96;ProjektUser&#96;</td>
+		<td> ON &#96;UserID&#96;</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>`ProjektGenreID`</td>
+		<td > ( &#96;GenreID&#96; ) ref <a href='#&#96;belu&#95;genre&#96;'>&#96;belu&#95;genre&#96;</a> (&#96;GenreID&#96;) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_`belu_project`_`belu_user`</td>
+		<td > ( &#96;UserID&#96; ) ref <a href='#&#96;belu&#95;user&#96;'>&#96;belu&#95;user&#96;</a> (&#96;UserID&#96;) </td>
+		<td> link project do user who is owner </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_`belu_project`</td>
+		<td > ( &#96;TextsortID&#96; ) ref <a href='#&#96;belu&#95;textsort&#96;'>&#96;belu&#95;textsort&#96;</a> (&#96;TextsortID&#96;) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='`belu_textsort`' onclick='window.scrollTo(205, 450);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_textsort`</h4></a>
+<p class="text-muted">List of valid sorts of texts</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='`belu_textsort`.`TextsortID`'>&#96;TextsortID&#96;</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='`belu_textsort`.`Textsort`'>&#96;Textsort&#96;</a></td>
+		<td> tinytext   DEFAULT '0' </td>
+		<td> Name of Textsort </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='`belu_textsort`.`SortDefinition`'>&#96;SortDefinition&#96;</a></td>
+		<td> text   </td>
+		<td> Definition of Textsort </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>Primary</td>
+		<td> ON &#96;TextsortID&#96;</td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='`belu_theme`' onclick='window.scrollTo(205, 540);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_theme`</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='`belu_theme`.`themeID`'>&#96;themeID&#96;</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='`belu_theme`.`theme`'>&#96;theme&#96;</a></td>
+		<td> varchar&#40; 20 &#41;   </td>
+		<td> Name of theme </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='`belu_theme`.`definition`'>&#96;definition&#96;</a></td>
+		<td> text   </td>
+		<td> Definition of theme </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='`belu_theme`.`themereference`'>&#96;themereference&#96;</a></td>
+		<td> int   </td>
+		<td> Reference to a other theme via ID &#40;eg&#46; ID of &#39;&#39;Fantasy&#39;&#39; for &#39;&#39;Dark Fantasy&#39;&#39;&#41; </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>Primary</td>
+		<td> ON &#96;themeID&#96;</td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='`belu_user_absence`' onclick='window.scrollTo(595, 225);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_user_absence`</h4></a>
+<p class="text-muted">Absencetime of users.</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='`belu_user_absence`.`UserID`'>&#96;UserID&#96;</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg></td>
+		<td><a name='`belu_user_absence`.`AbsenceID`'>&#96;AbsenceID&#96;</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='`belu_user_absence`.`StartDate`'>&#96;StartDate&#96;</a></td>
+		<td> date   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='`belu_user_absence`.`EndDate`'>&#96;EndDate&#96;</a></td>
+		<td> date   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>Primary</td>
+		<td> ON &#96;AbsenceID&#96;</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;&#96;belu&#95;user&#95;absence&#96;&#95;&#96;userid&#96;</td>
+		<td> ON &#96;UserID&#96;</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_`belu_user_absence`</td>
+		<td > ( &#96;UserID&#96; ) ref <a href='#&#96;belu&#95;user&#96;'>&#96;belu&#95;user&#96;</a> (&#96;UserID&#96;) </td>
+		<td> link absence to userinfo </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='`belu_user`' onclick='window.scrollTo(415, 165);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_user`</h4></a>
+<p class="text-muted">Usertable</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='`belu_user`.`UserID`'>&#96;UserID&#96;</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td> Unique User&#45;ID </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='`belu_user`.`BirthDate`'>&#96;BirthDate&#96;</a></td>
+		<td> date   </td>
+		<td> Users Birthdate </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='`belu_user`.`RegisterDate`'>&#96;RegisterDate&#96;</a></td>
+		<td> date   </td>
+		<td> Date of Registration </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='`belu_user`.`AgeDisplay`'>&#96;AgeDisplay&#96;</a></td>
+		<td> enum   DEFAULT 'N' </td>
+		<td> Show Age of User in profile in Years &#40;20 Y&#41;&#44; Range &#40;20&#45;30 Y&#41; or not </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg></td>
+		<td><a name='`belu_user`.`Email`'>&#96;Email&#96;</a></td>
+		<td> varchar&#40; 50 &#41;   </td>
+		<td> Email&#45;Adress of User </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='`belu_user`.`EmailDisplay`'>&#96;EmailDisplay&#96;</a></td>
+		<td> enum   DEFAULT 'N' </td>
+		<td> Show Email &#40;Y&#41; or not in profile &#40;N&#41; </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='`belu_user`.`Username`'>&#96;Username&#96;</a></td>
+		<td> varchar&#40; 25 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='`belu_user`.`PGP-Public`'>&#96;PGP&#45;Public&#96;</a></td>
+		<td> tinytext   </td>
+		<td> Public PGP&#45;Key of User </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='`belu_user`.`Password`'>&#96;Password&#96;</a></td>
+		<td> char&#40; 224 &#41;   </td>
+		<td> SHA3&#45;Hash </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>Primary</td>
+		<td> ON &#96;UserID&#96;</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>&#96;Email&#96;</td>
+		<td> ON &#96;Email&#96;</td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='belu_beta_dialect' onclick='window.scrollTo(60, 900);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_beta_dialect</h4></a>
+<p class="text-muted">knowlege of betareader over dialects</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_beta_dialect.dialectid'>dialectid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_beta_dialect.betaid'>betaid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_beta_dialect.levelid'>levelid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;belu&#95;beta&#95;dialect&#95;dialectid</td>
+		<td> ON dialectid&#44; betaid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;dialect&#95;dialectid</td>
+		<td> ON dialectid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;dialect&#95;betaid</td>
+		<td> ON betaid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;dialect&#95;levelid</td>
+		<td> ON levelid</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_beta_dialect</td>
+		<td > ( dialectid ) ref <a href='#belu&#95;language&#95;dialect'>belu&#95;language&#95;dialect</a> (dialectid) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_dialect_beta</td>
+		<td > ( betaid ) ref <a href='#&#96;belu&#95;betareader&#96;'>&#96;belu&#95;betareader&#96;</a> (&#96;BetaID&#96;) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_level_dialect</td>
+		<td > ( levelid ) ref <a href='#belu&#95;level'>belu&#95;level</a> (levelid) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='belu_beta_facts' onclick='window.scrollTo(60, 765);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_beta_facts</h4></a>
+<p class="text-muted">knwolege about topic areas from betareader</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_beta_facts.factid'>factid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_beta_facts.betaid'>betaid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_beta_facts.levelid'>levelid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='belu_beta_facts.comment'>comment</a></td>
+		<td> tinyblob   </td>
+		<td> Usercomment for topicarea </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='belu_beta_facts.verification'>verification</a></td>
+		<td> date   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;belu&#95;beta&#95;facts&#95;factid</td>
+		<td> ON factid&#44; betaid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;facts&#95;factid</td>
+		<td> ON factid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;facts&#95;betaid</td>
+		<td> ON betaid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;facts&#95;levelid</td>
+		<td> ON levelid</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_beta_facts_belu_facts</td>
+		<td > ( factid ) ref <a href='#belu&#95;facts'>belu&#95;facts</a> (factid) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_facts_beta</td>
+		<td > ( betaid ) ref <a href='#&#96;belu&#95;betareader&#96;'>&#96;belu&#95;betareader&#96;</a> (&#96;BetaID&#96;) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_beta_facts_belu_level</td>
+		<td > ( levelid ) ref <a href='#belu&#95;level'>belu&#95;level</a> (levelid) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='belu_beta_language' onclick='window.scrollTo(60, 1005);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_beta_language</h4></a>
+<p class="text-muted">Languages a betareader knows</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
+		<td><a name='belu_beta_language.languageid'>languageid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_beta_language.betaid'>betaid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_beta_language.levelid'>levelid</a></td>
+		<td> int   </td>
+		<td> Level of knowlege </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='belu_beta_language.colloquial?'>colloquial&#63;</a></td>
+		<td> bit   DEFAULT 1 </td>
+		<td> Has the reader knowlege over colloquial language&#63; </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='belu_beta_language.formal?'>formal&#63;</a></td>
+		<td> bit   DEFAULT 1 </td>
+		<td> Can the reader understand and speak formal language&#63; </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='belu_beta_language.antiquated?'>antiquated&#63;</a></td>
+		<td> bit   DEFAULT 1 </td>
+		<td> Has the reader knowlege over antiquated langauge&#63; </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;belu&#95;beta&#95;language&#95;languageid</td>
+		<td> ON languageid&#44; betaid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;language&#95;levelid</td>
+		<td> ON levelid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;language&#95;betaid</td>
+		<td> ON betaid</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_beta_language</td>
+		<td > ( levelid ) ref <a href='#belu&#95;level'>belu&#95;level</a> (levelid) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_language_beta</td>
+		<td > ( betaid ) ref <a href='#&#96;belu&#95;betareader&#96;'>&#96;belu&#95;betareader&#96;</a> (&#96;BetaID&#96;) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='belu_beta_language_focus' onclick='window.scrollTo(60, 645);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_beta_language_focus</h4></a>
+<p class="text-muted">Table for knowlege per betareader, which correctionsfocus he can serve for which language</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_beta_language_focus.betaid'>betaid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_beta_language_focus.languageid'>languageid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_beta_language_focus.focusid'>focusid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_beta_language_focus.levelid'>levelid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;belu&#95;beta&#95;language&#95;focus&#95;betaid</td>
+		<td> ON betaid&#44; focusid&#44; languageid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;language&#95;focus&#95;betaid</td>
+		<td> ON betaid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;language&#95;focus&#95;focusid</td>
+		<td> ON focusid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;language&#95;focus&#95;languageid</td>
+		<td> ON languageid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;language&#95;focus&#95;levelid</td>
+		<td> ON levelid</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_beta_language_focus</td>
+		<td > ( betaid ) ref <a href='#&#96;belu&#95;betareader&#96;'>&#96;belu&#95;betareader&#96;</a> (&#96;BetaID&#96;) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_beta_focus_language</td>
+		<td > ( focusid ) ref <a href='#belu&#95;focus'>belu&#95;focus</a> (focusid) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_focus_language_beta</td>
+		<td > ( languageid ) ref <a href='#belu&#95;language'>belu&#95;language</a> (languageid) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_level_language_focus</td>
+		<td > ( levelid ) ref <a href='#belu&#95;level'>belu&#95;level</a> (levelid) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='belu_facts' onclick='window.scrollTo(490, 795);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_facts</h4></a>
+<p class="text-muted">topicareas of knowlege for projects and betareader</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='belu_facts.factid'>factid</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='belu_facts.fact'>fact</a></td>
+		<td> varchar&#40; 30 &#41;   </td>
+		<td> Name of topicarea </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='belu_facts.factdetail'>factdetail</a></td>
+		<td> tinyblob   </td>
+		<td> Details about fact </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='belu_facts.parentfact'>parentfact</a></td>
+		<td> int   </td>
+		<td> if a fact depends on another fact&#44; here stands the factid </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='belu_facts.statusdate'>statusdate</a></td>
+		<td> date   </td>
+		<td> Date of proposal </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_facts.proposeduser'>proposeduser</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='belu_facts.statusid'>statusid</a></td>
+		<td> enum   DEFAULT 'current'' </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;belu&#95;facts&#95;factid</td>
+		<td> ON factid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;facts&#95;proposeduser</td>
+		<td> ON proposeduser</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_facts_`belu_user`</td>
+		<td > ( proposeduser ) ref <a href='#&#96;belu&#95;user&#96;'>&#96;belu&#95;user&#96;</a> (&#96;UserID&#96;) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='belu_focus' onclick='window.scrollTo(220, 750);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_focus</h4></a>
+<p class="text-muted">Possible focus for correction</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='belu_focus.focusid'>focusid</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='belu_focus.focus'>focus</a></td>
+		<td> varchar&#40; 25 &#41;   </td>
+		<td> Name of focus </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='belu_focus.focusdetail'>focusdetail</a></td>
+		<td> tinyblob   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='belu_focus.focusparent'>focusparent</a></td>
+		<td> int   </td>
+		<td> If the focus depends on another focus&#44; the depending focusid stand here </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;belu&#95;focus&#95;focusid</td>
+		<td> ON focusid</td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='belu_language' onclick='window.scrollTo(220, 900);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_language</h4></a>
+<p class="text-muted">Languages for projects and corrections</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='belu_language.languageid'>languageid</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='belu_language.language'>language</a></td>
+		<td> varchar&#40; 15 &#41;   </td>
+		<td> Name of language </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='belu_language.langshort'>langshort</a></td>
+		<td> char&#40; 3 &#41;   </td>
+		<td> Shortcut of language </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;belu&#95;language&#95;languageid</td>
+		<td> ON languageid</td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='belu_language_dialect' onclick='window.scrollTo(190, 1005);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_language_dialect</h4></a>
+<p class="text-muted">Dialects of Languages</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='belu_language_dialect.dialectid'>dialectid</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_language_dialect.parentlanguageid'>parentlanguageid</a></td>
+		<td> int   </td>
+		<td> ID of Language&#44; the dialect based on </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='belu_language_dialect.dialect'>dialect</a></td>
+		<td> varchar&#40; 20 &#41;   </td>
+		<td> Name of dialect </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;belu&#95;language&#95;dialect&#95;dialectid</td>
+		<td> ON dialectid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;language&#95;dialect&#95;parentlanguageid</td>
+		<td> ON parentlanguageid</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_language_dialect</td>
+		<td > ( parentlanguageid ) ref <a href='#belu&#95;language'>belu&#95;language</a> (languageid) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='belu_level' onclick='window.scrollTo(220, 645);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_level</h4></a>
+<p class="text-muted">Levels of knowledge</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='belu_level.levelid'>levelid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='belu_level.level'>level</a></td>
+		<td> varchar&#40; 10 &#41;   </td>
+		<td> Name of level </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='belu_level.leveldetail'>leveldetail</a></td>
+		<td> tinyblob   </td>
+		<td> Details of level </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;belu&#95;level&#95;levelid</td>
+		<td> ON levelid</td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='belu_project_betasearch' onclick='window.scrollTo(535, 525);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_project_betasearch</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
+		<td><a name='belu_project_betasearch.betasearchid'>betasearchid</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_project_betasearch.projectid'>projectid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='belu_project_betasearch.deadline'>deadline</a></td>
+		<td> date   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='belu_project_betasearch.betacount'>betacount</a></td>
+		<td> int   DEFAULT 1 </td>
+		<td> Count of betareader </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_project_betasearch.minlanguagelevel'>minlanguagelevel</a></td>
+		<td> int   DEFAULT 0 </td>
+		<td> Minimal level of language for betareader </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;belu&#95;project&#95;betasearch&#95;betasearchid</td>
+		<td> ON betasearchid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;project&#95;betasearch&#95;projectid</td>
+		<td> ON projectid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;project&#95;betasearch&#95;minlanguagelevel</td>
+		<td> ON minlanguagelevel</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_project_betasearch</td>
+		<td > ( projectid ) ref <a href='#&#96;belu&#95;project&#96;'>&#96;belu&#95;project&#96;</a> (&#96;ProjectID&#96;) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_project_languagelevel</td>
+		<td > ( minlanguagelevel ) ref <a href='#belu&#95;level'>belu&#95;level</a> (levelid) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<p align='right'><a href='https://www.dbschema.com' style='color:#aaa'>Powered by DbSchema</a></p></body></html>
