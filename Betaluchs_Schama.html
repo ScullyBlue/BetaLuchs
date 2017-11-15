@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
-<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.0 Transitional//EN'>
-<html>
+<!DOCTYPE html>
+<html lang='en' xmlns='http://www.w3.org/1999/xhtml' >
 <head>
 <title>Betaluchs&#95;Databaseshema</title>
 <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
@@ -21,11 +21,1078 @@ body {
 </head>
 
 <body>
-<object data='Betaluchs_Schama.svg' width='960' height='1295' type='image/svg+xml' >
-<embed src='Betaluchs_Schama.svg' width='960' height='1295' type='image/svg+xml' />
-<p>The <a href="http://www.adobe.com/svg/viewer/install/main.html">Adobe SVG Viewer</a> is required to view this image !</p></object>
+<div class='svg-container'>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' text-rendering='optimizeLegibility'   width='1275' height='1295' viewbox='0 0 1275 1295' >
+  <script type='text/ecmascript'>
+  <![CDATA[
+  function hghl(el) { for ( var i in el ){ var elem = document.getElementById(el[i]); if ( elem != null ) elem.setAttribute('class','highlight');  }  }
+  function uhghl(el) { for ( var i in el ){ var elem = document.getElementById(el[i]); if ( elem != null ) elem.setAttribute('class','scene'); }  } 
+  ]]>
+  </script> 
+
+<style type='text/css'>
+  text                { fill:#000000; font-family: Tahoma, 'Trebuchet MS', Dialog; font-size:11px; }
+  a text:hover        { fill:#94025f; text-shadow: 0px 0px 6px #d0ce00; font-size:13px; }
+  text.highlight      { fill:#94025f; text-shadow: 0px 0px 4px #eac533; font-size:13px; }
+  text.colType        { fill:#b3b3b3; }
+  text.relName        { fill:#b09c7c; }
+  path                { stroke:#5c554f; stroke-width:1.15; fill:none; }
+  path                { stroke:#5c554f; stroke-width:1.15; fill:none;}
+  path.virtual        { stroke:#b7642d; }
+  path.logo           { fill:#fbeac0;fill-opacity:1;stroke-width:0.3;stroke:#222222; }
+  path.dotted         { stroke-dasharray:4,2; }
+  path.scene          { stroke-width:10; opacity:0;}
+  path.highlight      { stroke-width:5; stroke:#c1a662; opacity:0.6;}
+  rect.entity         { fill:#ffffff; stroke:#aaa; stroke-width:1;shape-rendering:crispEdges;filter:url(#shadow); }
+  line.delim          { stroke-width:1; shape-rendering:crispEdges; }
+  text.callout        { fill:#000000; font-family: Tahoma, 'Trebuchet MS', Dialog; font-size:12px; }
+  rect.callout        { fill:url(#calloutGradient); stroke:#bebdbd; stroke-width:0.5; filter: url(#shadow);}
+  rect.grp            { stroke:#b1b1b1; stroke-width:1.7; opacity:0.8; }
+  path.st0            { fill:#ececec;fill-opacity:1;stroke-width:0.6;stroke:#aaaaaa; }
+</style>
+<defs>
+  <pattern id='layoutBgA' patternUnits='userSpaceOnUse'  width='10' height='20' x='0' y='0' viewBox='0 0 5 10'>  
+     <line x1='-2' y1='1' x2='7' y2='10' stroke='#f3f3f3' stroke-width='.5'/>  
+     <line x1='-2' y1='6' x2='7' y2='15' stroke='#f3f3f3' stroke-width='.5'/>  
+     <line x1='-2' y1='-4' x2='7' y2='5' stroke='#f3f3f3' stroke-width='.5'/>  
+  </pattern>  
+  <radialGradient id='layoutBgB' gradientUnits='userSpaceOnUse' cx='50%' cy='50%' r='75%' fx='46%' fy='22%'>
+     <stop offset='0%' stop-opacity='.2' stop-color='#f5f5f5' />  
+     <stop offset='100%' stop-color='#efefef' />  
+  </radialGradient>
+  <pattern id='layoutBgTr' patternUnits='userSpaceOnUse'  width='300' height='300' x='0' y='0' viewBox='0 0 300 300'>  
+  <path class='st0' d='m 62.011835,91.267143 c 3.536475,3.175214 2.262669,8.705999 -1.637711,11.015197 -3.594697,5.8423 -6.34682,-2.892623 -9.715478,-4.653898 -5.609222,-2.838926 2.050802,-6.680123 4.77004,-8.319046 2.334696,-0.724067 4.935143,0.312302 6.583149,1.957747 z m -2.720492,2.538595 c -2.698397,-3.517732 -9.282815,1.269287 -3.69635,3.568637 2.765331,5.605665 7.052809,-0.56184 3.69635,-3.568637 z' />
+  <path class='st0' d='m 72.25864,84.624638 c 4.108046,3.143003 -0.737059,6.895259 -1.994918,8.323564 -3.586718,5.561143 -6.495079,-4.197379 -10.07759,-5.582178 -4.443422,-1.088878 1.349298,-7.249213 2.503526,-2.503449 2.464639,4.517161 2.304019,-3.70697 6.291113,-1.995914 1.280083,0.137865 2.410691,0.864819 3.277869,1.757977 z m -2.646109,2.323242 c -4.797162,-3.078383 -2.810517,6.305507 0.515161,1.990646 0.296432,-0.688582 0.01209,-1.493412 -0.515161,-1.990646 z' />
+  <path class='st0' d='m 78.230641,79.436735 c 4.142121,3.027466 -2.020102,10.435276 -3.450543,5.477315 3.306312,-5.248112 -9.186019,-2.220094 -5.805994,-8.77679 -0.544141,-3.93011 6.797826,-2.102227 3.386015,0.245477 -0.181085,2.915838 4.637371,1.019311 5.870522,3.053982 z' />
+  <path class='st0' d='m 82.744502,72.597397 c -4.901605,1.926521 1.146497,6.285555 2.559694,2.225783 6.21817,3.539297 -6.640186,8.416664 -7.590325,1.997457 -2.24365,-2.914883 4.026676,-10.148618 5.030631,-4.22324 z' />
+  <path class='st0' d='m 90.727458,64.259158 c 1.583987,1.690029 3.321317,3.2696 4.81267,5.026353 -2.535706,6.849794 -6.445583,-5.918773 -8.388458,-0.167017 0.782768,2.03426 5.877405,3.752079 2.670979,5.711199 -3.315119,1.519161 -5.782422,-5.157931 -8.858893,-6.780537 -4.229842,-1.139816 1.510134,-7.074128 2.586227,-2.385939 3.141198,5.495193 1.840537,-5.598295 7.177489,-1.404062 z' />
+  <path class='st0' d='m 99.622027,58.374253 c 1.493293,1.9548 -6.281936,7.024659 -0.885258,4.740447 0.386238,-4.434477 6.131941,-1.133173 2.175851,1.618005 -4.421491,6.12739 -13.666659,-3.151506 -7.058299,-7.136537 1.785129,-1.119329 4.348209,-0.743179 5.767706,0.778085 z m -2.900824,1.89746 c -3.608188,-2.208543 -2.280489,5.00803 -0.12563,0.329531 z' />
+  <path class='st0' d='m 115.18023,50.570441 c -1.61703,5.201678 -4.6204,-0.364502 -7.01598,-1.749619 -4.40977,2.122562 4.89641,4.913939 1.89606,7.018157 -2.48061,3.877635 -4.11404,-4.060614 -7.01192,-2.6391 -1.76318,3.107252 7.28394,6.252304 0.87346,7.876177 -1.74515,-2.956649 -9.055498,-5.610518 -3.950378,-8.66062 1.696478,1.897023 1.770418,-5.43503 5.347308,-3.072411 -0.44014,-5.474701 6.11995,-4.950882 7.7846,-0.815355 0.69076,0.682329 1.39587,1.351469 2.07685,2.042771 z' />
+  <path class='st0' d='m 120.54891,39.417125 c 2.50681,1.334124 4.80466,4.941837 0.75044,5.297362 -0.46414,1.89865 -5.25369,5.602652 -8.01742,1.815475 -3.87345,-2.809139 -0.0676,-7.603869 2.3036,-8.133924 1.6795,-3.853018 3.16703,-1.199465 4.96338,1.021087 z m -2.2464,2.175828 c -4.8049,-2.992167 -3.08987,6.380358 0.42374,2.036159 0.33052,-0.677508 0.12099,-1.525836 -0.42374,-2.036159 z' />
+  <path class='st0' d='m 128.50836,24.06821 c -5.10403,3.035506 3.20535,6.383175 5.05938,9.450276 -0.91853,2.95886 -4.06493,3.650723 -5.34691,0.265618 -2.25715,-2.089033 -4.65672,-6.948595 -7.07024,-2.584686 -4.71758,-3.764394 3.81217,-5.812054 5.12382,-9.226328 0.75738,0.677487 1.38637,1.498638 2.23389,2.095175 z' />
+  <path class='st0' d='m 137.14366,22.299812 c -3.09615,2.259885 0.71537,4.412454 1.99042,6.435866 -3.08975,5.080354 -5.91384,-2.98648 -8.92144,-4.094939 1.44369,-3.219573 3.3497,-1.335928 4.27156,-4.41058 0.97822,-0.894325 1.75044,1.871047 2.65946,2.069653 z' />
+  <path class='st0' d='m 136.85093,14.890174 c 2.31562,5.283511 -7.17975,1.771993 -1.29675,-0.475107 l 0.7108,0.08973 z m 4.867,5.317354 c 2.56912,1.439678 4.26517,4.725219 0.30678,5.233637 -1.56592,-3.098864 -9.51683,-5.749448 -3.64502,-8.633714 1.17746,0.325095 2.15375,2.591149 3.33824,3.400077 z' />
+  <path class='st0' d='m 149.95578,11.976423 c 2.50679,1.334142 4.80455,4.94192 0.75041,5.297394 -0.4641,1.898604 -5.25368,5.602645 -8.0174,1.81545 -3.87347,-2.80918 -0.0676,-7.603844 2.30366,-8.133968 1.67949,-3.8530525 3.16695,-1.1993573 4.96333,1.021124 z m -2.24641,2.175828 c -4.80489,-2.992177 -3.08986,6.380343 0.42374,2.036167 0.33055,-0.677518 0.121,-1.52585 -0.42374,-2.036167 z' />
+  <path class='st0' d='m 153.26135,7.538431 c 2.60497,1.5799548 6.03999,5.944272 1.08117,6.050232 -2.53319,-3.231828 -7.20316,-6.4304525 -8.84748,-9.4582682 1.89121,-2.8664883 3.78452,-2.247699 5.38514,0.8929426 0.78017,0.8503859 1.57195,1.6911437 2.38118,2.5150667 z' />
+  </pattern>  
+  <linearGradient id='groupUnderTitleLine' x1='0%' y1='0%' x2='100%' y2='0%' >
+          <stop offset='0%' stop-color='#999999' stop-opacity='0.7'/> 
+          <stop offset='100%' stop-color='#999999' stop-opacity='0' /> 
+   </linearGradient>
+  <radialGradient id='calloutGradient' cx='25%' cy='20%' r='80%' fx='10%' fy='10%'>
+	   <stop offset='0%' stop-color='#ffffff' />
+    <stop offset='100%' stop-color='#f8f6d1' />
+  </radialGradient>
+  <filter id='shadow' width='120%' height='120%'> 
+      <feOffset result='offOut' in='SourceGraphic' dx='1' dy='1' /> 
+      <feColorMatrix result='matrixOut' in='offOut' type='matrix' 
+      values='0.1 0 0 0 0 0 0.4 0 0 0 0 0 0.6 0 0 0 0 0 0.3 0' /> 
+      <feGaussianBlur result='blurOut' in='matrixOut' stdDeviation='3' /> 
+      <feBlend in='SourceGraphic' in2='blurOut' mode='normal' /> 
+    </filter> 
+  <filter id='fkShadow' height='130%'> 
+    <feGaussianBlur in='SourceAlpha' stdDeviation='1.5'/> <!-- stdDeviation is how much to blur -->
+    <feOffset dx='1.2' dy='1.2' result='offsetblur'/> <!-- how much to offset -->
+    <feMerge>
+    <feMergeNode/> <!-- this contains the offset blurred image -->
+    <feMergeNode in='SourceGraphic'/> <!-- this contains the element that the filter is applied to -->
+    </feMerge>
+  </filter>
+  <radialGradient id='legendGradient' fx='5%' fy='5%' r='75%' spreadMethod='pad'>
+          <stop offset='0%' stop-color='#eefbf2' stop-opacity='1'/> 
+          <stop offset='100%' stop-color='#cff9cb' stop-opacity='1' /> 
+   </radialGradient>
+  <symbol id='calloutArrowDown' overflow='visible' >
+      <path d='M 0,0 L 7,11 L 15,0 z' style='fill:#f8f6d1;stroke:none; filter: url(#shadow);' />
+      <path d='M 0,0 L 7,11 L 15,0' style='stroke:#bebdbd; stroke-width:0.5;' />
+  </symbol>
+  <symbol id='calloutArrowUp' overflow='visible' >
+      <path d='M 0,15 L 7,3 L 15,15 z' style='fill:#ffffff; stroke:none; filter: url(#shadow);' />
+      <path d='M 0,15 L 7,3 L 15,15' style='stroke:#bebdbd; stroke-width:0.5;' />
+  </symbol>
+  <symbol id='pk' overflow='visible' >
+    <g transform='scale(0.99)'>
+     <path style='fill:#fffa7d;stroke:#765f03;stroke-width:0.6;stroke-linecap:round;stroke-linejoin:round;'
+        d='M 9.3678877,3.5695485 C 9.1030218,3.2729386 9.0796382,2.7628519 9.3396185,2.4517097 9.5449651,2.1956495 9.9040386,2.0980533 10.199638,2.2169415 10.533525,2.3415459 10.775153,2.706942 10.750675,3.0842709 10.737029,3.3980003 10.541153,3.699122 10.258248,3.8066067 9.966649,3.9250429 9.6169668,3.8418805 9.4008073,3.6062324 9.3894892,3.5943518 9.3785264,3.582104 9.3678886,3.5695487 z M 11.226617,6.9916004 C 11.888137,6.3548946 12.293488,5.4172188 12.311087,4.442353 12.378144,2.7379364 11.248678,1.0541269 9.7322318,0.44767357 8.3887112,-0.1280313 6.7865012,0.26822889 5.8918395,1.4007929 5.080823,2.3839145 4.9336815,3.8452096 5.3635544,5.101615 L 4.3670905,5.315913 C 4.0664984,5.3682645 4.0967703,5.6316724 4.2574957,5.8208829 L 4.9124,6.5655244 4.1543436,7.2512357 3.2136002,7.2163506 3.1674775,8.5586827 2.0406832,8.5086512 1.5965306,8.9299953 1.5471661,10.179833 0.75616674,10.195223 0.2112857,10.758575 0.15354288,11.735988 0.07199052,12.765553 c 0.36440953,0.238225 0.79006967,0.195492 1.44938278,-0.02675 L 6.3033562,8.1282037 6.8217102,8.6765688 C 6.9985465,8.8799427 7.3003699,8.7497574 7.358381,8.5016252 L 7.4938877,7.5084164 c 0.8537488,0.3985387 1.8303125,0.4711541 2.6851793,0.1427713 0.393927,-0.1407258 0.746858,-0.3701772 1.04755,-0.6595873 z'/>
+     <path d='M 6.8014948,6.3102123 0.15369063,13.024481 0.21560535,12.141962 6.0062342,6.2683782 z'
+        style='fill:#ffe5a5;fill-opacity:1;stroke:#854e31;stroke-width:0.06912433;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:3.00300009'/>
+    </g>
+  </symbol>
+  <symbol id='dist' overflow='visible' >
+    <g transform='scale(0.99)'>
+      <path style='fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;' d='M 0.177,11.431 12.28,11.449'/>
+      <path style='fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;' d='m 6.124,3.954 0.066,7.154 v 0'/>
+      <rect width='11.78' height='3.40' x='0.40' y='0.44' style='fill:#fffa7d;stroke:#765f03;stroke-width:0.6;' ry='0.83'/>
+      <rect width='11.78' height='3.40' x='0.40' y='5.609' style='fill:#fffa7d;stroke:#765f03;stroke-width:0.6;' ry='0.832'/>
+    </g>
+  </symbol>
+  <symbol id='unq' overflow='visible' >
+    <g transform='scale(0.99)'>
+      <rect style='fill:#fbea8e;stroke:#7e4d31;stroke-width:0.71934468;stroke-linecap:round;stroke-linejoin:round;'
+         width='2.29' height='8.43' x='7.48' y='-0.76' ry='1.14' transform='matrix(0.701,0.713,-0.727,0.685,0,0)' />
+      <path style='fill:white;stroke:#858585;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;'
+         d='m 26.04,8.64 a 4.13,4.13 0 1 1 -8.26,0 4.13,4.13 0 1 1 8.26,0 z'
+         transform='matrix(1.025,0,0,0.987,-14.690,-3.862)' />
+      <text x='5.8' y='7.4' style='font-size:7px;fill:#8a8a8a;'>1</text>
+    </g>
+  </symbol>
+  <symbol id='idx' overflow='visible' >
+    <g transform='scale(0.99)'>
+      <rect style='fill:#fbea8e;stroke:#7e4d31;stroke-width:0.71934468;stroke-linecap:round;stroke-linejoin:round;'
+         width='2.29' height='8.43' x='7.48' y='-0.76' ry='1.14' transform='matrix(0.701,0.713,-0.727,0.685,0,0)' />
+      <path style='fill:white;stroke:#858585;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;'
+         d='m 26.04,8.64 a 4.13,4.13 0 1 1 -8.26,0 4.13,4.13 0 1 1 8.26,0 z'
+         transform='matrix(1.025,0,0,0.987,-14.690,-3.862)' />
+    </g>
+  </symbol>
+  <symbol id='fk' overflow='visible' >
+    <g transform='scale(0.87)'>
+      <path style='fill:#f3e1b7;stroke:#7e471f;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+      d='M 12.48,0.33 7.07,0.89 9.067,2.974 0.329,11.731 1.073,12.597 9.811,3.841 11.77,5.78 z' />
+    </g>
+  </symbol>
+  <symbol id='ref' overflow='visible' >
+    <g transform='scale(0.87)'>
+      <path style='fill:#f3e1b7;stroke:#7e471f;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0.10,12.70 5.31,12.15 3.40,10.06 11.82,1.32 11.11,0.45 2.68,9.19 0.80,7.24 z'/>
+    </g>
+  </symbol>
+  <symbol id='flag0' overflow='visible' >
+    <g transform='scale(0.92)'>
+      <path style='fill:#b7d0f6;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0.12,12.67 0.16,7.22 C 2.59,7.22 4.13,8.78 9.22,4.22 5.68,4.98 2.53,4.50 0.09,1.80 z'/>
+    </g>
+  </symbol>
+  <symbol id='flag1' overflow='visible' >
+    <g transform='scale(0.92)'>
+      <path style='fill:#f4a393;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0.12,12.67 0.16,7.22 C 2.59,7.22 4.13,8.78 9.22,4.22 5.68,4.98 2.53,4.50 0.09,1.80 z'/>
+    </g>
+  </symbol>
+  <symbol id='flag2' overflow='visible' >
+    <g transform='scale(0.92)'>
+      <path style='fill:#77ec8b;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0.12,12.67 0.16,7.22 C 2.59,7.22 4.13,8.78 9.22,4.22 5.68,4.98 2.53,4.50 0.09,1.80 z'/>
+    </g>
+  </symbol>
+  <symbol id='nn' overflow='visible' >
+  <path style='stroke:#9b3e50;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0,0 3,3 M 0,3 3,0 z'/>
+  </symbol>
+  <symbol id='view' overflow='visible' >
+    <g transform='scale(0.99)'>
+     <line x1='12' y1='6' x2='19' y2='0' stroke='black' stroke-width='0.5' />
+     <line x1='0' y1='6' x2='7' y2='0' stroke='black' stroke-width='0.5' />
+     <circle cx='3' cy='6' r='3' fill='#f9ebbc' stroke='black' stroke-width='0.5'/>
+     <circle cx='10' cy='6' r='3' fill='#f9ebbc' stroke='black' stroke-width='0.5'/>
+    </g>
+  </symbol>
+  <marker id='arrow01' viewBox='0 0 15.00 7.50' refX='7.50' refY='3.75' markerUnits='strokeWidth' markerWidth='15.00' markerHeight='7.50' orient='auto'>
+    <path d='M 7.500,3.750 L 15.000,3.750 L 7.500,0.000 L 15.000,3.750 L 7.500,7.500' />
+  </marker>
+  <marker id='arrow1' viewBox='0 0 15.00 7.50' refX='7.50' refY='3.75' markerUnits='strokeWidth' markerWidth='15.00' markerHeight='7.50' orient='auto'>
+    <path d='M 7.500,3.750 L 15.000,3.750 L 7.500,0.000 L 15.000,3.750 L 7.500,7.500' />
+  </marker>
+  <marker id='foot01' viewBox='0 0 15.00 7.50' refX='7.50' refY='3.75' markerUnits='strokeWidth' markerWidth='15.00' markerHeight='7.50' orient='auto'>
+    <path d='M 0.00,3.75 L 15.00,3.75 z' />
+    <circle cx='11.25' cy='3.75' r='2.50' style='fill:white;stroke:#5e554d;' />
+    <path d='M 3.75,0.00 L 3.75, 7.50 z' />
+  </marker>
+  <marker id='foot0p' viewBox='0 0 15.00 7.50' refX='7.50' refY='3.75' markerUnits='strokeWidth' markerWidth='15.00' markerHeight='7.50' orient='auto'>
+    <path d='M 0.00,3.75 L 15.00,3.75 z' />
+    <circle cx='11.25' cy='3.75' r='2.50' style='fill:white;stroke:#5e554d;' />
+    <path d='M 0.00,0.00 L 7.50,3.75 L 0.00,7.50' />
+  </marker>
+  <marker id='foot1' viewBox='0 0 15.00 7.50' refX='7.50' refY='3.75' markerUnits='strokeWidth' markerWidth='15.00' markerHeight='7.50' orient='auto'>
+    <path d='M 0.00,3.75 L 15.00,3.75 z' />
+    <path d='M 7.50,0.00 L 7.50, 7.50 z' />
+    <path d='M 3.75,0.00 L 3.75, 7.50 z' />
+  </marker>
+  <marker id='foot1p' viewBox='0 0 15.00 7.50' refX='7.50' refY='3.75' markerUnits='strokeWidth' markerWidth='15.00' markerHeight='7.50' orient='auto'>
+    <path d='M 0.00,3.75 L 15.00,3.75 z' />
+    <path d='M 7.50,0.00 L 7.50, 7.50 z' />
+    <path d='M 0.00,0.00 L 7.50,3.75 L 0.00,7.50' />
+  </marker>
+  <linearGradient id='tbg_c8f5bf' x1='0%' y1='0%' x2='0%' y2='100%' >
+     <stop offset='0%' stop-color='#fafcf9' /> 
+     <stop offset='100%' stop-color='#d0f5c8' /> 
+  </linearGradient>
+  <linearGradient id='tbg_ccffcc' x1='0%' y1='0%' x2='0%' y2='100%' >
+     <stop offset='0%' stop-color='#f9fcf9' /> 
+     <stop offset='100%' stop-color='#c8f5c8' /> 
+  </linearGradient>
+</defs>
+
+<!-- ============= Desktop ============= -->
+<rect x='1' y='1' width='1273' height='1293' rx='7' ry='7' style='fill:url(#layoutBgB); stroke:#777777; stroke-width:0.5;' />
+<rect x='1' y='1' width='1273' height='1293' rx='7' ry='7' style='fill:url(#layoutBgA); stroke:#777777; stroke-width:0.5;' />
+<rect x='1' y='1' width='1273' height='1293' rx='7' ry='7' style='fill:url(#layoutBgTr);' />
+
+<!-- ============= Legend ============= -->
+<g transform='translate(10,10)'>
+  <rect x='10' y='10' width='330' height='56' rx='6' ry='6' style='fill:url(#legendGradient);filter:url(#shadow);'/> 
+  <text x='20' y='43'>Betaluchs_Databaseshema</text> 
+  <text x='20' y='57' style='fill:#aaaaaa; font-size:11px;'><tspan>Read table &amp; column comments as mouse-over tooltips.</tspan></text> 
+<a xlink:href='https://www.dbschema.com'> <path class='logo' d='m 32.309685,20.963194 c 0.411708,4.732616 -4.298055,7.925636 -8.723583,6.970196 -6.616967,1.8448 -2.656457,-6.434594 -3.911969,-10.01566 -2.15469,-5.89407 6.06247,-3.508505 9.167655,-2.863689 2.199228,1.054873 3.389343,3.582089 3.467897,5.909153 z m -3.720955,0.01451 c 0.434195,-4.414565 -7.644142,-5.37533 -5.137307,0.107342 -1.812268,5.992146 5.532698,4.379388 5.137307,-0.107342 z' /> <path class='logo' d='m 44.329732,23.050637 c 0.850982,5.097305 -5.250434,4.558924 -7.144836,4.752415 -6.418993,1.64391 -1.872992,-7.49274 -3.541914,-10.942842 -2.499646,-3.817859 5.939283,-4.402698 3.538545,-0.13612 -1.287874,4.989123 4.215411,-1.154796 5.956717,2.809584 0.840273,0.970849 1.168829,2.272413 1.191488,3.516963 z m -3.519477,-0.09299 c -1.398216,-5.518069 -6.361061,2.717467 -0.984368,1.810718 0.686994,-0.30388 1.029454,-1.087638 0.984368,-1.810718 z' /> <path class='logo' d='m 52.234961,23.301163 c 0.954818,5.035675 -8.606408,6.284861 -6.262292,1.674914 6.000358,-1.604717 -5.188764,-7.870044 1.75972,-10.384908 2.288682,-3.253567 6.399287,3.075831 2.304111,2.48058 -2.124941,2.016587 2.688777,3.89858 2.198472,6.229403 z' /> <path class='logo' d='m 60.204336,21.349224 c -4.894917,-1.916474 -3.458707,5.391212 0.347494,3.37231 2.120589,6.821713 -10.599623,1.664746 -6.906229,-3.691132 0.354172,-3.663246 9.875349,-4.711252 6.558735,0.318822 z' /> <path class='logo' d='m 71.730617,20.654299 c 0.0013,2.316285 0.190131,4.655698 0.07825,6.958009 -6.532419,3.303565 -0.660423,-8.722256 -6.009639,-5.821653 -0.818815,2.024533 1.726403,6.746337 -1.95327,6.005484 -3.458346,-1.137537 -0.696275,-7.713407 -1.833252,-10.994208 -2.308916,-3.710131 5.93704,-4.164951 3.518609,0.0063 -1.462376,6.166445 5.169629,-2.857523 6.19931,3.846079 z' /> <path class='logo' d='m 82.245738,22.378957 c -0.24581,2.448954 -9.386766,0.8867 -3.885979,2.877055 3.312576,-2.99157 5.250902,3.334514 0.482647,2.665545 -7.415384,1.492275 -7.823196,-11.597641 -0.275476,-10.032117 2.068161,0.391458 3.682204,2.408824 3.678808,4.489517 z m -3.414436,-0.578473 c -1.124703,-4.072004 -5.087405,2.125488 -0.316922,0.156453 z' /> <path class='logo' d='m 98.936899,27.222794 c -4.73541,2.718339 -3.1239,-3.406557 -3.92611,-6.050494 -4.66985,-1.438471 0.21621,6.932413 -3.41219,6.438039 -4.46096,1.160054 -0.22824,-5.774711 -3.31526,-6.700429 -3.410722,1.082173 1.04451,9.536575 -4.745091,6.372895 0.746632,-3.355214 -2.776394,-10.269232 3.034971,-9.038963 -0.058,2.544602 5.00686,-2.785359 6.00342,1.37844 3.42021,-4.316316 7.851251,0.524966 6.24018,4.690538 0.0379,0.969988 0.0954,1.940046 0.12008,2.909974 z' /> <path class='logo' d='m 110.47859,22.686058 c 0.91826,2.682088 0.13016,6.890551 -3.0725,4.397004 -1.63641,1.077877 -7.664291,0.541832 -7.09365,-4.114836 -0.907891,-4.692933 5.14729,-5.625578 7.24058,-4.40354 3.85932,-1.686263 3.13176,1.271515 2.92557,4.121372 z m -3.12695,0.0704 c -1.46278,-5.460062 -6.61615,2.5826 -1.08221,1.782003 0.70431,-0.272594 1.13111,-1.037444 1.08221,-1.782003 z' /> </a>
+</g>
+
+<g transform='translate(0,110)'>
+<!-- ============= Fk '`belu_betareader`_fk_`belu_betareader`' ============= -->
+<path id='`belu_betareader`_fk_`belu_betareader`'  onmouseover="hghl(['`belu_betareader`_fk_`belu_betareader`','Default.`belu_betareader`.`UserID`','Default.`belu_user`.`UserID`'])" onmouseout="uhghl(['`belu_betareader`_fk_`belu_betareader`','Default.`belu_betareader`.`UserID`','Default.`belu_user`.`UserID`'])" transform='translate(7,0)' class='scene' d='M 150 510 L 157,510 Q 165,510 165,502 L 165,487 Q 165,480 172,480 L 885,480' >
+	<title>Fk fk_`belu_betareader`
+`belu_betareader` ref `belu_user` ( `UserID` )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 150 510 L 157,510 Q 165,510 165,502 L 165,487 Q 165,480 172,480 L 885,480' ></path>
+<text x='157' y='505' transform='rotate(0 157,505)' title='Fk fk_`belu_betareader`
+`belu_betareader` ref `belu_user` ( `UserID` )' class='relName' style='fill:#77a877'>`UserID`</text>
+<!-- ============= Fk '`belu_beta_textsort`_`BetareaderID`' ============= -->
+<path id='`belu_beta_textsort`_`BetareaderID`'  onmouseover="hghl(['`belu_beta_textsort`_`BetareaderID`','Default.`belu_beta_textsort`.`BetaID`','Default.`belu_betareader`.`BetaID`'])" onmouseout="uhghl(['`belu_beta_textsort`_`BetareaderID`','Default.`belu_beta_textsort`.`BetaID`','Default.`belu_betareader`.`BetaID`'])" transform='translate(7,0)' class='scene' d='M 195 435 L 142,435 Q 135,435 135,442 L 135,480' >
+	<title>Fk `BetareaderID`
+`belu_beta_textsort` ref `belu_betareader` ( `BetaID` )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 195 435 L 142,435 Q 135,435 135,442 L 135,480' ></path>
+<text x='157' y='430' transform='rotate(0 157,430)' title='Fk `BetareaderID`
+`belu_beta_textsort` ref `belu_betareader` ( `BetaID` )' class='relName' style='fill:#77a877'>`BetaID`</text>
+<!-- ============= Fk '`belu_beta_textsort`_fk_`belu_beta_textsort`' ============= -->
+<path id='`belu_beta_textsort`_fk_`belu_beta_textsort`'  onmouseover="hghl(['`belu_beta_textsort`_fk_`belu_beta_textsort`','Default.`belu_beta_textsort`.`TestsortID`','Default.`belu_textsort`.`TextsortID`'])" onmouseout="uhghl(['`belu_beta_textsort`_fk_`belu_beta_textsort`','Default.`belu_beta_textsort`.`TestsortID`','Default.`belu_textsort`.`TextsortID`'])" transform='translate(7,0)' class='scene' d='M 330 390 L 435,390' >
+	<title>Fk fk_`belu_beta_textsort`
+`belu_beta_textsort` ref `belu_textsort` ( `TestsortID` -&gt; `TextsortID` )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 330 390 L 435,390' ></path>
+<text x='337' y='385' transform='rotate(0 337,385)' title='Fk fk_`belu_beta_textsort`
+`belu_beta_textsort` ref `belu_textsort` ( `TestsortID` -&gt; `TextsortID` )' class='relName' style='fill:#77a877'>`TestsortID`</text>
+<!-- ============= Fk 'belu_user_dialect_fk_belu_beta_dialect' ============= -->
+<path id='belu_user_dialect_fk_belu_beta_dialect'  onmouseover="hghl(['belu_user_dialect_fk_belu_beta_dialect','Default.belu_user_dialect.dialectid','Default.belu_language_dialect.dialectid'])" onmouseout="uhghl(['belu_user_dialect_fk_belu_beta_dialect','Default.belu_user_dialect.dialectid','Default.belu_language_dialect.dialectid'])" transform='translate(7,0)' class='scene' d='M 780 720 L 780,892 Q 780,900 772,900 L 555,900' >
+	<title>Fk fk_belu_beta_dialect
+belu_user_dialect ref belu_language_dialect ( dialectid )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 780 720 L 780,892 Q 780,900 772,900 L 555,900' ></path>
+<text x='793' y='720' transform='rotate(90 793,720)' title='Fk fk_belu_beta_dialect
+belu_user_dialect ref belu_language_dialect ( dialectid )' class='relName' style='fill:#77a877'>dialectid</text>
+<!-- ============= Fk 'belu_user_dialect_fk_belu_level_dialect' ============= -->
+<path id='belu_user_dialect_fk_belu_level_dialect'  onmouseover="hghl(['belu_user_dialect_fk_belu_level_dialect','Default.belu_user_dialect.levelid','Default.belu_level.levelid'])" onmouseout="uhghl(['belu_user_dialect_fk_belu_level_dialect','Default.belu_user_dialect.levelid','Default.belu_level.levelid'])" transform='translate(7,0)' class='scene' d='M 795 720 L 795,1072 Q 795,1080 787,1080 L 525,1080' >
+	<title>Fk fk_belu_level_dialect
+belu_user_dialect ref belu_level ( levelid )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'    d='M 795 720 L 795,1072 Q 795,1080 787,1080 L 525,1080' ></path>
+<text x='808' y='720' transform='rotate(90 808,720)' title='Fk fk_belu_level_dialect
+belu_user_dialect ref belu_level ( levelid )' class='relName' style='fill:#77a877'>levelid</text>
+<!-- ============= Fk 'belu_user_dialect_fk_belu_dialect_beta' ============= -->
+<path id='belu_user_dialect_fk_belu_dialect_beta'  onmouseover="hghl(['belu_user_dialect_fk_belu_dialect_beta','Default.belu_user_dialect.userid','Default.`belu_user`.`UserID`'])" onmouseout="uhghl(['belu_user_dialect_fk_belu_dialect_beta','Default.belu_user_dialect.userid','Default.`belu_user`.`UserID`'])" transform='translate(7,0)' class='scene' d='M 855 615 L 855,577 Q 855,570 862,570 L 885,570' >
+	<title>Fk fk_belu_dialect_beta
+belu_user_dialect ref `belu_user` ( userid -&gt; `UserID` )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 855 615 L 855,577 Q 855,570 862,570 L 885,570' ></path>
+<text x='857' y='610' transform='rotate(270 857,610)' title='Fk fk_belu_dialect_beta
+belu_user_dialect ref `belu_user` ( userid -&gt; `UserID` )' class='relName' style='fill:#77a877'>userid</text>
+<!-- ============= Fk '`belu_project_theme`_`_ProjektID`' ============= -->
+<path id='`belu_project_theme`_`_ProjektID`'  onmouseover="hghl(['`belu_project_theme`_`_ProjektID`','Default.`belu_project_theme`.`ProjektID`','Default.`belu_project`.`ProjectID`'])" onmouseout="uhghl(['`belu_project_theme`_`_ProjektID`','Default.`belu_project_theme`.`ProjektID`','Default.`belu_project`.`ProjectID`'])" transform='translate(7,0)' class='scene' d='M 615 360 L 615,187 Q 615,180 607,180 L 585,180' >
+	<title>Fk `_ProjektID`
+`belu_project_theme` ref `belu_project` ( `ProjektID` -&gt; `ProjectID` )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 615 360 L 615,187 Q 615,180 607,180 L 585,180' ></path>
+<text x='617' y='355' transform='rotate(270 617,355)' title='Fk `_ProjektID`
+`belu_project_theme` ref `belu_project` ( `ProjektID` -&gt; `ProjectID` )' class='relName' style='fill:#80a877'>`ProjektID`</text>
+<!-- ============= Fk '`belu_project_theme`_fk_`belu_project_theme`' ============= -->
+<path id='`belu_project_theme`_fk_`belu_project_theme`'  onmouseover="hghl(['`belu_project_theme`_fk_`belu_project_theme`','Default.`belu_project_theme`.`ThemeID`','Default.`belu_theme`.`themeID`'])" onmouseout="uhghl(['`belu_project_theme`_fk_`belu_project_theme`','Default.`belu_project_theme`.`ThemeID`','Default.`belu_theme`.`themeID`'])" transform='translate(7,0)' class='scene' d='M 615 450 L 615,487 Q 615,495 607,495 L 562,495 Q 555,495 555,502 L 555,510' >
+	<title>Fk fk_`belu_project_theme`
+`belu_project_theme` ref `belu_theme` ( `ThemeID` -&gt; `themeID` )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 615 450 L 615,487 Q 615,495 607,495 L 562,495 Q 555,495 555,502 L 555,510' ></path>
+<text x='628' y='450' transform='rotate(90 628,450)' title='Fk fk_`belu_project_theme`
+`belu_project_theme` ref `belu_theme` ( `ThemeID` -&gt; `themeID` )' class='relName' style='fill:#80a877'>`ThemeID`</text>
+<!-- ============= Fk 'belu_user_language_topic_fk_belu_beta_focus_language' ============= -->
+<path id='belu_user_language_topic_fk_belu_beta_focus_language'  onmouseover="hghl(['belu_user_language_topic_fk_belu_beta_focus_language','Default.belu_user_language_topic.focusid','Default.belu_focus.focusid'])" onmouseout="uhghl(['belu_user_language_topic_fk_belu_beta_focus_language','Default.belu_user_language_topic.focusid','Default.belu_focus.focusid'])" transform='translate(7,0)' class='scene' d='M 600 960 L 525,960' >
+	<title>Fk fk_belu_beta_focus_language
+belu_user_language_topic ref belu_focus ( focusid )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 600 960 L 525,960' ></path>
+<text x='573' y='955' transform='rotate(0 573,955)' title='Fk fk_belu_beta_focus_language
+belu_user_language_topic ref belu_focus ( focusid )' class='relName' style='fill:#77a877'>focusid</text>
+<!-- ============= Fk 'belu_user_language_topic_fk_belu_focus_language_beta' ============= -->
+<path id='belu_user_language_topic_fk_belu_focus_language_beta'  onmouseover="hghl(['belu_user_language_topic_fk_belu_focus_language_beta','Default.belu_user_language_topic.languageid','Default.belu_language.languageid'])" onmouseout="uhghl(['belu_user_language_topic_fk_belu_focus_language_beta','Default.belu_user_language_topic.languageid','Default.belu_language.languageid'])" transform='translate(7,0)' class='scene' d='M 630 945 L 630,885' >
+	<title>Fk fk_belu_focus_language_beta
+belu_user_language_topic ref belu_language ( languageid )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 630 945 L 630,885' ></path>
+<text x='632' y='940' transform='rotate(270 632,940)' title='Fk fk_belu_focus_language_beta
+belu_user_language_topic ref belu_language ( languageid )' class='relName' style='fill:#77a877'>languageid</text>
+<!-- ============= Fk 'belu_user_language_topic_fk_belu_level_language_focus' ============= -->
+<path id='belu_user_language_topic_fk_belu_level_language_focus'  onmouseover="hghl(['belu_user_language_topic_fk_belu_level_language_focus','Default.belu_user_language_topic.levelid','Default.belu_level.levelid'])" onmouseout="uhghl(['belu_user_language_topic_fk_belu_level_language_focus','Default.belu_user_language_topic.levelid','Default.belu_level.levelid'])" transform='translate(7,0)' class='scene' d='M 600 1035 L 547,1035 Q 540,1035 540,1042 L 540,1057 Q 540,1065 532,1065 L 525,1065' >
+	<title>Fk fk_belu_level_language_focus
+belu_user_language_topic ref belu_level ( levelid )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 600 1035 L 547,1035 Q 540,1035 540,1042 L 540,1057 Q 540,1065 532,1065 L 525,1065' ></path>
+<text x='577' y='1030' transform='rotate(0 577,1030)' title='Fk fk_belu_level_language_focus
+belu_user_language_topic ref belu_level ( levelid )' class='relName' style='fill:#77a877'>levelid</text>
+<!-- ============= Fk 'belu_user_language_topic_fk_belu_beta_language_focus' ============= -->
+<path id='belu_user_language_topic_fk_belu_beta_language_focus'  onmouseover="hghl(['belu_user_language_topic_fk_belu_beta_language_focus','Default.belu_user_language_topic.userid','Default.`belu_user`.`UserID`'])" onmouseout="uhghl(['belu_user_language_topic_fk_belu_beta_language_focus','Default.belu_user_language_topic.userid','Default.`belu_user`.`UserID`'])" transform='translate(7,0)' class='scene' d='M 735 945 L 735,562 Q 735,555 742,555 L 885,555' >
+	<title>Fk fk_belu_beta_language_focus
+belu_user_language_topic ref `belu_user` ( userid -&gt; `UserID` )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 735 945 L 735,562 Q 735,555 742,555 L 885,555' ></path>
+<text x='737' y='940' transform='rotate(270 737,940)' title='Fk fk_belu_beta_language_focus
+belu_user_language_topic ref `belu_user` ( userid -&gt; `UserID` )' class='relName' style='fill:#77a877'>userid</text>
+<!-- ============= Fk 'belu_language_dialect_fk_belu_language_dialect' ============= -->
+<path id='belu_language_dialect_fk_belu_language_dialect'  onmouseover="hghl(['belu_language_dialect_fk_belu_language_dialect','Default.belu_language_dialect.parentlanguageid','Default.belu_language.languageid'])" onmouseout="uhghl(['belu_language_dialect_fk_belu_language_dialect','Default.belu_language_dialect.parentlanguageid','Default.belu_language.languageid'])" transform='translate(7,0)' class='scene' d='M 555 855 L 600,855' >
+	<title>Fk fk_belu_language_dialect
+belu_language_dialect ref belu_language ( parentlanguageid -&gt; languageid )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 555 855 L 600,855' ></path>
+<text x='562' y='850' transform='rotate(0 562,850)' title='Fk fk_belu_language_dialect
+belu_language_dialect ref belu_language ( parentlanguageid -&gt; languageid )' class='relName' style='fill:#77a877'>parentlanguageid</text>
+<!-- ============= Fk '`belu_beta_genre`_`BetaID`' ============= -->
+<path id='`belu_beta_genre`_`BetaID`'  onmouseover="hghl(['`belu_beta_genre`_`BetaID`','Default.`belu_beta_genre`.`BetaID`','Default.`belu_betareader`.`BetaID`'])" onmouseout="uhghl(['`belu_beta_genre`_`BetaID`','Default.`belu_beta_genre`.`BetaID`','Default.`belu_betareader`.`BetaID`'])" transform='translate(7,0)' class='scene' d='M 195 645 L 142,645 Q 135,645 135,637 L 135,585' >
+	<title>Fk `BetaID`
+`belu_beta_genre` ref `belu_betareader` ( `BetaID` )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 195 645 L 142,645 Q 135,645 135,637 L 135,585' ></path>
+<text x='157' y='640' transform='rotate(0 157,640)' title='Fk `BetaID`
+`belu_beta_genre` ref `belu_betareader` ( `BetaID` )' class='relName' style='fill:#77a877'>`BetaID`</text>
+<!-- ============= Fk '`belu_beta_genre`_fk_`belu_beta_genre`' ============= -->
+<path id='`belu_beta_genre`_fk_`belu_beta_genre`'  onmouseover="hghl(['`belu_beta_genre`_fk_`belu_beta_genre`','Default.`belu_beta_genre`.`GenreID`','Default.`belu_genre`.`GenreID`'])" onmouseout="uhghl(['`belu_beta_genre`_fk_`belu_beta_genre`','Default.`belu_beta_genre`.`GenreID`','Default.`belu_genre`.`GenreID`'])" transform='translate(7,0)' class='scene' d='M 330 660 L 435,660' >
+	<title>Fk fk_`belu_beta_genre`
+`belu_beta_genre` ref `belu_genre` ( `GenreID` )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 330 660 L 435,660' ></path>
+<text x='337' y='655' transform='rotate(0 337,655)' title='Fk fk_`belu_beta_genre`
+`belu_beta_genre` ref `belu_genre` ( `GenreID` )' class='relName' style='fill:#77a877'>`GenreID`</text>
+<!-- ============= Fk '`belu_beta_theme`_`BetaThemeID`' ============= -->
+<path id='`belu_beta_theme`_`BetaThemeID`'  onmouseover="hghl(['`belu_beta_theme`_`BetaThemeID`','Default.`belu_beta_theme`.`BetaID`','Default.`belu_betareader`.`BetaID`'])" onmouseout="uhghl(['`belu_beta_theme`_`BetaThemeID`','Default.`belu_beta_theme`.`BetaID`','Default.`belu_betareader`.`BetaID`'])" transform='translate(7,0)' class='scene' d='M 195 525 L 150,525' >
+	<title>Fk `BetaThemeID`
+`belu_beta_theme` ref `belu_betareader` ( `BetaID` )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 195 525 L 150,525' ></path>
+<text x='157' y='520' transform='rotate(0 157,520)' title='Fk `BetaThemeID`
+`belu_beta_theme` ref `belu_betareader` ( `BetaID` )' class='relName' style='fill:#77a877'>`BetaID`</text>
+<!-- ============= Fk '`belu_beta_theme`_fk_`belu_beta_theme`' ============= -->
+<path id='`belu_beta_theme`_fk_`belu_beta_theme`'  onmouseover="hghl(['`belu_beta_theme`_fk_`belu_beta_theme`','Default.`belu_beta_theme`.`ThemeID`','Default.`belu_theme`.`themeID`'])" onmouseout="uhghl(['`belu_beta_theme`_fk_`belu_beta_theme`','Default.`belu_beta_theme`.`ThemeID`','Default.`belu_theme`.`themeID`'])" transform='translate(7,0)' class='scene' d='M 330 540 L 435,540' >
+	<title>Fk fk_`belu_beta_theme`
+`belu_beta_theme` ref `belu_theme` ( `ThemeID` -&gt; `themeID` )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 330 540 L 435,540' ></path>
+<text x='337' y='535' transform='rotate(0 337,535)' title='Fk fk_`belu_beta_theme`
+`belu_beta_theme` ref `belu_theme` ( `ThemeID` -&gt; `themeID` )' class='relName' style='fill:#77a877'>`ThemeID`</text>
+<!-- ============= Fk '`belu_user_absence`_fk_`belu_user_absence`' ============= -->
+<path id='`belu_user_absence`_fk_`belu_user_absence`'  onmouseover="hghl(['`belu_user_absence`_fk_`belu_user_absence`','Default.`belu_user_absence`.`UserID`','Default.`belu_user`.`UserID`'])" onmouseout="uhghl(['`belu_user_absence`_fk_`belu_user_absence`','Default.`belu_user_absence`.`UserID`','Default.`belu_user`.`UserID`'])" transform='translate(7,0)' class='scene' d='M 1095 435 L 1020,435' >
+	<title>Fk fk_`belu_user_absence`
+`belu_user_absence` ref `belu_user` ( `UserID` )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 1095 435 L 1020,435' ></path>
+<text x='1057' y='430' transform='rotate(0 1057,430)' title='Fk fk_`belu_user_absence`
+`belu_user_absence` ref `belu_user` ( `UserID` )' class='relName' style='fill:#80a877'>`UserID`</text>
+<!-- ============= Fk 'belu_user_facts_fk_belu_beta_facts_belu_facts' ============= -->
+<path id='belu_user_facts_fk_belu_beta_facts_belu_facts'  onmouseover="hghl(['belu_user_facts_fk_belu_beta_facts_belu_facts','Default.belu_user_facts.factid','Default.belu_facts.factid'])" onmouseout="uhghl(['belu_user_facts_fk_belu_beta_facts_belu_facts','Default.belu_user_facts.factid','Default.belu_facts.factid'])" transform='translate(7,0)' class='scene' d='M 885 915 L 817,915 Q 810,915 810,907 L 810,742 Q 810,735 802,735 L 697,735 Q 690,735 690,727 L 690,705' >
+	<title>Fk fk_belu_beta_facts_belu_facts
+belu_user_facts ref belu_facts ( factid )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 885 915 L 817,915 Q 810,915 810,907 L 810,742 Q 810,735 802,735 L 697,735 Q 690,735 690,727 L 690,705' ></path>
+<text x='865' y='910' transform='rotate(0 865,910)' title='Fk fk_belu_beta_facts_belu_facts
+belu_user_facts ref belu_facts ( factid )' class='relName' style='fill:#77a877'>factid</text>
+<!-- ============= Fk 'belu_user_facts_fk_belu_beta_facts_belu_level' ============= -->
+<path id='belu_user_facts_fk_belu_beta_facts_belu_level'  onmouseover="hghl(['belu_user_facts_fk_belu_beta_facts_belu_level','Default.belu_user_facts.levelid','Default.belu_level.levelid'])" onmouseout="uhghl(['belu_user_facts_fk_belu_beta_facts_belu_level','Default.belu_user_facts.levelid','Default.belu_level.levelid'])" transform='translate(7,0)' class='scene' d='M 915 1035 L 915,1087 Q 915,1095 907,1095 L 525,1095' >
+	<title>Fk fk_belu_beta_facts_belu_level
+belu_user_facts ref belu_level ( levelid )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 915 1035 L 915,1087 Q 915,1095 907,1095 L 525,1095' ></path>
+<text x='928' y='1035' transform='rotate(90 928,1035)' title='Fk fk_belu_beta_facts_belu_level
+belu_user_facts ref belu_level ( levelid )' class='relName' style='fill:#77a877'>levelid</text>
+<!-- ============= Fk 'belu_user_facts_fk_belu_facts_beta' ============= -->
+<path id='belu_user_facts_fk_belu_facts_beta'  onmouseover="hghl(['belu_user_facts_fk_belu_facts_beta','Default.belu_user_facts.userid','Default.`belu_user`.`UserID`'])" onmouseout="uhghl(['belu_user_facts_fk_belu_facts_beta','Default.belu_user_facts.userid','Default.`belu_user`.`UserID`'])" transform='translate(7,0)' class='scene' d='M 915 900 L 915,600' >
+	<title>Fk fk_belu_facts_beta
+belu_user_facts ref `belu_user` ( userid -&gt; `UserID` )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 915 900 L 915,600' ></path>
+<text x='917' y='895' transform='rotate(270 917,895)' title='Fk fk_belu_facts_beta
+belu_user_facts ref `belu_user` ( userid -&gt; `UserID` )' class='relName' style='fill:#77a877'>userid</text>
+<!-- ============= Fk 'belu_user_language_fk_belu_beta_language' ============= -->
+<path id='belu_user_language_fk_belu_beta_language'  onmouseover="hghl(['belu_user_language_fk_belu_beta_language','Default.belu_user_language.levelid','Default.belu_level.levelid'])" onmouseout="uhghl(['belu_user_language_fk_belu_beta_language','Default.belu_user_language.levelid','Default.belu_level.levelid'])" transform='translate(7,0)' class='scene' d='M 930 765 L 412,765 Q 405,765 405,772 L 405,1057 Q 405,1065 412,1065 L 420,1065' >
+	<title>Fk fk_belu_beta_language
+belu_user_language ref belu_level ( levelid )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 930 765 L 412,765 Q 405,765 405,772 L 405,1057 Q 405,1065 412,1065 L 420,1065' ></path>
+<text x='907' y='760' transform='rotate(0 907,760)' title='Fk fk_belu_beta_language
+belu_user_language ref belu_level ( levelid )' class='relName' style='fill:#77a877'>levelid</text>
+<!-- ============= Fk 'belu_user_language_fk_belu_user_language' ============= -->
+<path id='belu_user_language_fk_belu_user_language'  onmouseover="hghl(['belu_user_language_fk_belu_user_language','Default.belu_user_language.userid','Default.`belu_user`.`UserID`'])" onmouseout="uhghl(['belu_user_language_fk_belu_user_language','Default.belu_user_language.userid','Default.`belu_user`.`UserID`'])" transform='translate(7,0)' class='scene' d='M 960 750 L 960,600' >
+	<title>Fk fk_belu_user_language
+belu_user_language ref `belu_user` ( userid -&gt; `UserID` )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 960 750 L 960,600' ></path>
+<text x='962' y='745' transform='rotate(270 962,745)' title='Fk fk_belu_user_language
+belu_user_language ref `belu_user` ( userid -&gt; `UserID` )' class='relName' style='fill:#77a877'>userid</text>
+<!-- ============= Fk 'belu_user_language_fk_belu_user_language_level' ============= -->
+<path id='belu_user_language_fk_belu_user_language_level'  onmouseover="hghl(['belu_user_language_fk_belu_user_language_level','Default.belu_user_language.languageid','Default.belu_language.languageid'])" onmouseout="uhghl(['belu_user_language_fk_belu_user_language_level','Default.belu_user_language.languageid','Default.belu_language.languageid'])" transform='translate(7,0)' class='scene' d='M 930 810 L 705,810' >
+	<title>Fk fk_belu_user_language_level
+belu_user_language ref belu_language ( languageid )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 930 810 L 705,810' ></path>
+<text x='885' y='805' transform='rotate(0 885,805)' title='Fk fk_belu_user_language_level
+belu_user_language ref belu_language ( languageid )' class='relName' style='fill:#77a877'>languageid</text>
+<!-- ============= Fk '`belu_document`_fk_`belu_document`' ============= -->
+<path id='`belu_document`_fk_`belu_document`'  onmouseover="hghl(['`belu_document`_fk_`belu_document`','Default.`belu_document`.`ProjectID`','Default.`belu_project`.`ProjectID`'])" onmouseout="uhghl(['`belu_document`_fk_`belu_document`','Default.`belu_document`.`ProjectID`','Default.`belu_project`.`ProjectID`'])" transform='translate(7,0)' class='scene' d='M 420 105 L 465,105' >
+	<title>Fk fk_`belu_document`
+`belu_document` ref `belu_project` ( `ProjectID` )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 420 105 L 465,105' ></path>
+<text x='427' y='100' transform='rotate(0 427,100)' title='Fk fk_`belu_document`
+`belu_document` ref `belu_project` ( `ProjectID` )' class='relName' style='fill:#80a877'>`ProjectID`</text>
+<!-- ============= Fk 'belu_facts_fk_belu_facts_`belu_user`' ============= -->
+<path id='belu_facts_fk_belu_facts_`belu_user`'  onmouseover="hghl(['belu_facts_fk_belu_facts_`belu_user`','Default.belu_facts.proposeduser','Default.`belu_user`.`UserID`'])" onmouseout="uhghl(['belu_facts_fk_belu_facts_`belu_user`','Default.belu_facts.proposeduser','Default.`belu_user`.`UserID`'])" transform='translate(7,0)' class='scene' d='M 690 540 L 690,532 Q 690,525 697,525 L 885,525' >
+	<title>Fk fk_belu_facts_`belu_user`
+belu_facts ref `belu_user` ( proposeduser -&gt; `UserID` )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'    d='M 690 540 L 690,532 Q 690,525 697,525 L 885,525' ></path>
+<text x='692' y='535' transform='rotate(270 692,535)' title='Fk fk_belu_facts_`belu_user`
+belu_facts ref `belu_user` ( proposeduser -&gt; `UserID` )' class='relName' style='fill:#77a877'>proposeduser</text>
+<!-- ============= Fk '`belu_beta_project`_`Beta_ID`' ============= -->
+<path id='`belu_beta_project`_`Beta_ID`'  onmouseover="hghl(['`belu_beta_project`_`Beta_ID`','Default.`belu_beta_project`.`BetaID`','Default.`belu_betareader`.`BetaID`'])" onmouseout="uhghl(['`belu_beta_project`_`Beta_ID`','Default.`belu_beta_project`.`BetaID`','Default.`belu_betareader`.`BetaID`'])" transform='translate(7,0)' class='scene' d='M 30 135 L 22,135 Q 15,135 15,142 L 15,487 Q 15,495 22,495 L 30,495' >
+	<title>Fk `Beta_ID`
+`belu_beta_project` ref `belu_betareader` ( `BetaID` )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 30 135 L 22,135 Q 15,135 15,142 L 15,487 Q 15,495 22,495 L 30,495' ></path>
+<text x='-8' y='130' transform='rotate(0 -8,130)' title='Fk `Beta_ID`
+`belu_beta_project` ref `belu_betareader` ( `BetaID` )' class='relName' style='fill:#77a877'>`BetaID`</text>
+<!-- ============= Fk '`belu_beta_project`_fk_`belu_beta_project`' ============= -->
+<path id='`belu_beta_project`_fk_`belu_beta_project`'  onmouseover="hghl(['`belu_beta_project`_fk_`belu_beta_project`','Default.`belu_beta_project`.`ProjectID`','Default.`belu_project`.`ProjectID`'])" onmouseout="uhghl(['`belu_beta_project`_fk_`belu_beta_project`','Default.`belu_beta_project`.`ProjectID`','Default.`belu_project`.`ProjectID`'])" transform='translate(7,0)' class='scene' d='M 165 60 L 465,60' >
+	<title>Fk fk_`belu_beta_project`
+`belu_beta_project` ref `belu_project` ( `ProjectID` )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 165 60 L 465,60' ></path>
+<text x='172' y='55' transform='rotate(0 172,55)' title='Fk fk_`belu_beta_project`
+`belu_beta_project` ref `belu_project` ( `ProjectID` )' class='relName' style='fill:#77a877'>`ProjectID`</text>
+<!-- ============= Fk '`belu_beta_project`_fk_`belu_beta_plevel`' ============= -->
+<path id='`belu_beta_project`_fk_`belu_beta_plevel`'  onmouseover="hghl(['`belu_beta_project`_fk_`belu_beta_plevel`','Default.`belu_beta_project`.mindlanguagelevel','Default.belu_level.levelid'])" onmouseout="uhghl(['`belu_beta_project`_fk_`belu_beta_plevel`','Default.`belu_beta_project`.mindlanguagelevel','Default.belu_level.levelid'])" transform='translate(7,0)' class='scene' d='M 165 150 L 172,150 Q 180,150 180,157 L 180,1042 Q 180,1050 187,1050 L 420,1050' >
+	<title>Fk fk_`belu_beta_plevel`
+`belu_beta_project` ref belu_level ( mindlanguagelevel -&gt; levelid )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'    d='M 165 150 L 172,150 Q 180,150 180,157 L 180,1042 Q 180,1050 187,1050 L 420,1050' ></path>
+<text x='172' y='145' transform='rotate(0 172,145)' title='Fk fk_`belu_beta_plevel`
+`belu_beta_project` ref belu_level ( mindlanguagelevel -&gt; levelid )' class='relName' style='fill:#77a877'>mindlanguagelevel</text>
+<!-- ============= Fk '`belu_beta_job`_`BetaJobID`' ============= -->
+<path id='`belu_beta_job`_`BetaJobID`'  onmouseover="hghl(['`belu_beta_job`_`BetaJobID`','Default.`belu_beta_job`.`BetaID`','Default.`belu_betareader`.`BetaID`'])" onmouseout="uhghl(['`belu_beta_job`_`BetaJobID`','Default.`belu_beta_job`.`BetaID`','Default.`belu_betareader`.`BetaID`'])" transform='translate(7,0)' class='scene' d='M 75 345 L 75,480' >
+	<title>Fk `BetaJobID`
+`belu_beta_job` ref `belu_betareader` ( `BetaID` )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 75 345 L 75,480' ></path>
+<text x='88' y='345' transform='rotate(90 88,345)' title='Fk `BetaJobID`
+`belu_beta_job` ref `belu_betareader` ( `BetaID` )' class='relName' style='fill:#77a877'>`BetaID`</text>
+<!-- ============= Fk '`belu_beta_job`_fk_`belu_beta_job`' ============= -->
+<path id='`belu_beta_job`_fk_`belu_beta_job`'  onmouseover="hghl(['`belu_beta_job`_fk_`belu_beta_job`','Default.`belu_beta_job`.`DocumentID`','Default.`belu_document`.`DocumentID`'])" onmouseout="uhghl(['`belu_beta_job`_fk_`belu_beta_job`','Default.`belu_beta_job`.`DocumentID`','Default.`belu_document`.`DocumentID`'])" transform='translate(7,0)' class='scene' d='M 165 195 L 285,195' >
+	<title>Fk fk_`belu_beta_job`
+`belu_beta_job` ref `belu_document` ( `DocumentID` )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 165 195 L 285,195' ></path>
+<text x='172' y='190' transform='rotate(0 172,190)' title='Fk fk_`belu_beta_job`
+`belu_beta_job` ref `belu_document` ( `DocumentID` )' class='relName' style='fill:#77a877'>`DocumentID`</text>
+<!-- ============= Fk '`belu_project`_`ProjektGenreID`' ============= -->
+<path id='`belu_project`_`ProjektGenreID`'  onmouseover="hghl(['`belu_project`_`ProjektGenreID`','Default.`belu_project`.`GenreID`','Default.`belu_genre`.`GenreID`'])" onmouseout="uhghl(['`belu_project`_`ProjektGenreID`','Default.`belu_project`.`GenreID`','Default.`belu_genre`.`GenreID`'])" transform='translate(7,0)' class='scene' d='M 495 195 L 495,337 Q 495,345 487,345 L 427,345 Q 420,345 420,352 L 420,622 Q 420,630 427,630 L 435,630' >
+	<title>Fk `ProjektGenreID`
+`belu_project` ref `belu_genre` ( `GenreID` )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 495 195 L 495,337 Q 495,345 487,345 L 427,345 Q 420,345 420,352 L 420,622 Q 420,630 427,630 L 435,630' ></path>
+<text x='508' y='195' transform='rotate(90 508,195)' title='Fk `ProjektGenreID`
+`belu_project` ref `belu_genre` ( `GenreID` )' class='relName' style='fill:#80a877'>`GenreID`</text>
+<!-- ============= Fk '`belu_project`_fk_`belu_project`_`belu_user`' ============= -->
+<path id='`belu_project`_fk_`belu_project`_`belu_user`'  onmouseover="hghl(['`belu_project`_fk_`belu_project`_`belu_user`','Default.`belu_project`.`UserID`','Default.`belu_user`.`UserID`'])" onmouseout="uhghl(['`belu_project`_fk_`belu_project`_`belu_user`','Default.`belu_project`.`UserID`','Default.`belu_user`.`UserID`'])" transform='translate(7,0)' class='scene' d='M 570 195 L 570,337 Q 570,345 577,345 L 907,345 Q 915,345 915,352 L 915,405' >
+	<title>Fk fk_`belu_project`_`belu_user`
+`belu_project` ref `belu_user` ( `UserID` )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 570 195 L 570,337 Q 570,345 577,345 L 907,345 Q 915,345 915,352 L 915,405' ></path>
+<text x='583' y='195' transform='rotate(90 583,195)' title='Fk fk_`belu_project`_`belu_user`
+`belu_project` ref `belu_user` ( `UserID` )' class='relName' style='fill:#80a877'>`UserID`</text>
+<!-- ============= Fk '`belu_project`_fk_`belu_project`' ============= -->
+<path id='`belu_project`_fk_`belu_project`'  onmouseover="hghl(['`belu_project`_fk_`belu_project`','Default.`belu_project`.`TextsortID`','Default.`belu_textsort`.`TextsortID`'])" onmouseout="uhghl(['`belu_project`_fk_`belu_project`','Default.`belu_project`.`TextsortID`','Default.`belu_textsort`.`TextsortID`'])" transform='translate(7,0)' class='scene' d='M 510 195 L 510,360' >
+	<title>Fk fk_`belu_project`
+`belu_project` ref `belu_textsort` ( `TextsortID` )</title>
+</path>
+<path transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 510 195 L 510,360' ></path>
+<text x='523' y='195' transform='rotate(90 523,195)' title='Fk fk_`belu_project`
+`belu_project` ref `belu_textsort` ( `TextsortID` )' class='relName' style='fill:#80a877'>`TextsortID`</text>
+<!-- ============= Table '`belu_user`' ============= -->
+<rect class='entity' x='900' y='413' width='120' height='180' rx='7' ry='7' style='fill:url(#tbg_c8f5bf);stroke:#bcd8b6;'/>
+<line class='delim' style='stroke:#b6c4d8;' x1='900.00' y1='439.00' x2='1020.00' y2='439.00'/>
+<line class='delim' x1='900.000000' y1='439.000000' x2='1020.000000' y2='439.000000' style='stroke:#bcd8b6'/>
+<line class='delim' x1='915.000000' y1='439.000000' x2='915.000000' y2='593.000000' style='stroke:#bcd8b6'/>
+<line class='delim' x1='1009.000000' y1='439.000000' x2='1009.000000' y2='593.000000' style='stroke:#bcd8b6'/>
+<a xlink:href='#`belu_user`'><text x='927' y='431'>`belu_user`</text><title>Table Default.`belu_user`
+Usertable</title></a>
+  <use id='nn' x='902' y='447' xlink:href='#nn'/><a xlink:href='#`belu_user`.`UserID`'><use id='unq' x='902' y='446' xlink:href='#unq'/><title>Unq Primary ( `UserID` ) </title></a>
+<a xlink:href='#`belu_user`.`UserID`'><text id='Default.`belu_user`.`UserID`' x='918' y='456' onmouseover="hghl(['`belu_betareader`_fk_`belu_betareader`','Default.`belu_betareader`.`UserID`','`belu_project`_fk_`belu_project`_`belu_user`','Default.`belu_project`.`UserID`','`belu_user_absence`_fk_`belu_user_absence`','Default.`belu_user_absence`.`UserID`','belu_facts_fk_belu_facts_`belu_user`','Default.belu_facts.proposeduser','belu_user_language_fk_belu_user_language','Default.belu_user_language.userid','belu_user_language_fk_belu_user_language','Default.belu_user_language.userid','belu_user_dialect_fk_belu_dialect_beta','Default.belu_user_dialect.userid','belu_user_dialect_fk_belu_dialect_beta','Default.belu_user_dialect.userid','belu_user_language_topic_fk_belu_beta_language_focus','Default.belu_user_language_topic.userid','belu_user_language_topic_fk_belu_beta_language_focus','Default.belu_user_language_topic.userid','belu_user_facts_fk_belu_facts_beta','Default.belu_user_facts.userid','belu_user_facts_fk_belu_facts_beta','Default.belu_user_facts.userid'])" onmouseout="uhghl(['`belu_betareader`_fk_`belu_betareader`','Default.`belu_betareader`.`UserID`','`belu_project`_fk_`belu_project`_`belu_user`','Default.`belu_project`.`UserID`','`belu_user_absence`_fk_`belu_user_absence`','Default.`belu_user_absence`.`UserID`','belu_facts_fk_belu_facts_`belu_user`','Default.belu_facts.proposeduser','belu_user_language_fk_belu_user_language','Default.belu_user_language.userid','belu_user_language_fk_belu_user_language','Default.belu_user_language.userid','belu_user_dialect_fk_belu_dialect_beta','Default.belu_user_dialect.userid','belu_user_dialect_fk_belu_dialect_beta','Default.belu_user_dialect.userid','belu_user_language_topic_fk_belu_beta_language_focus','Default.belu_user_language_topic.userid','belu_user_language_topic_fk_belu_beta_language_focus','Default.belu_user_language_topic.userid','belu_user_facts_fk_belu_facts_beta','Default.belu_user_facts.userid','belu_user_facts_fk_belu_facts_beta','Default.belu_user_facts.userid'])">`UserID`</text><title>`UserID`
+* int
+Unique User-ID</title></a>
+<a xlink:href='#`belu_user`.`UserID`'><use id='ref' x='1009' y='446' xlink:href='#ref'/><title>Referred by `belu_betareader` ( `UserID` ) 
+Referred by `belu_project` ( `UserID` ) 
+Referred by `belu_user_absence` ( `UserID` ) 
+Referred by belu_facts ( proposeduser -&gt; `UserID` ) 
+Referred by belu_user_language ( userid -&gt; `UserID` ) 
+Referred by belu_user_language ( userid -&gt; `UserID` ) 
+Referred by belu_user_dialect ( userid -&gt; `UserID` ) 
+Referred by belu_user_dialect ( userid -&gt; `UserID` ) 
+Referred by belu_user_language_topic ( userid -&gt; `UserID` ) 
+Referred by belu_user_language_topic ( userid -&gt; `UserID` ) 
+Referred by belu_user_facts ( userid -&gt; `UserID` ) 
+Referred by belu_user_facts ( userid -&gt; `UserID` ) </title></a>
+  <use id='nn' x='902' y='462' xlink:href='#nn'/><a xlink:href='#`belu_user`.`BirthDate`'><text id='Default.`belu_user`.`BirthDate`' x='918' y='471'>`BirthDate`</text><title>`BirthDate`
+* date
+Users Birthdate</title></a>
+<text x='1017' y='468' text-anchor='end' class='colType'>d</text>  <use id='nn' x='902' y='477' xlink:href='#nn'/><a xlink:href='#`belu_user`.`RegisterDate`'><text id='Default.`belu_user`.`RegisterDate`' x='918' y='486'>`RegisterDate`</text><title>`RegisterDate`
+* date
+Date of Registration</title></a>
+<text x='1017' y='483' text-anchor='end' class='colType'>d</text>  <use id='nn' x='902' y='492' xlink:href='#nn'/><a xlink:href='#`belu_user`.`AgeDisplay`'><text id='Default.`belu_user`.`AgeDisplay`' x='918' y='501'>`AgeDisplay`</text><title>`AgeDisplay`
+* enum default 'N'
+Show Age of User in profile in Years (20 Y), Range (20-30 Y) or not</title></a>
+<text x='1017' y='498' text-anchor='end' class='colType'>t</text>  <use id='nn' x='902' y='507' xlink:href='#nn'/><a xlink:href='#`belu_user`.`Email`'><use id='idx' x='902' y='506' xlink:href='#idx'/><title>`Email` ( `Email` ) </title></a>
+<a xlink:href='#`belu_user`.`Email`'><text id='Default.`belu_user`.`Email`' x='918' y='516'>`Email`</text><title>`Email`
+* varchar(50)
+Email-Adress of User</title></a>
+<text x='1017' y='513' text-anchor='end' class='colType'>t</text>  <use id='nn' x='902' y='522' xlink:href='#nn'/><a xlink:href='#`belu_user`.`EmailDisplay`'><text id='Default.`belu_user`.`EmailDisplay`' x='918' y='531'>`EmailDisplay`</text><title>`EmailDisplay`
+* enum default 'N'
+Show Email (Y) or not in profile (N)</title></a>
+<text x='1017' y='528' text-anchor='end' class='colType'>t</text>  <use id='nn' x='902' y='537' xlink:href='#nn'/><a xlink:href='#`belu_user`.`Username`'><text id='Default.`belu_user`.`Username`' x='918' y='546'>`Username`</text><title>`Username`
+* varchar(25)</title></a>
+<text x='1017' y='543' text-anchor='end' class='colType'>t</text>  <a xlink:href='#`belu_user`.`PGP-Public`'><text id='Default.`belu_user`.`PGP-Public`' x='918' y='561'>`PGP-Public`</text><title>`PGP-Public`
+tinytext
+Public PGP-Key of User</title></a>
+<text x='1017' y='558' text-anchor='end' class='colType'>t</text>  <use id='nn' x='902' y='567' xlink:href='#nn'/><a xlink:href='#`belu_user`.`Password`'><text id='Default.`belu_user`.`Password`' x='918' y='576'>`Password`</text><title>`Password`
+* char(224)
+SHA3-Hash</title></a>
+<text x='1017' y='573' text-anchor='end' class='colType'>c</text>
+<!-- ============= Table '`belu_betareader`' ============= -->
+<rect class='entity' x='45' y='488' width='105' height='90' rx='7' ry='7' style='fill:url(#tbg_ccffcc);stroke:#b6d8b6;'/>
+<line class='delim' style='stroke:#b6c4d8;' x1='45.00' y1='514.00' x2='150.00' y2='514.00'/>
+<line class='delim' x1='45.000000' y1='514.000000' x2='150.000000' y2='514.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='60.000000' y1='514.000000' x2='60.000000' y2='578.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='139.000000' y1='514.000000' x2='139.000000' y2='578.000000' style='stroke:#b6d8b6'/>
+<a xlink:href='#`belu_betareader`'><text x='48' y='506'>`belu_betareader`</text><title>Table Default.`belu_betareader`
+Table of all betareaders and their bind attributes</title></a>
+  <use id='nn' x='47' y='522' xlink:href='#nn'/><a xlink:href='#`belu_betareader`.`BetaID`'><use id='unq' x='47' y='521' xlink:href='#unq'/><title>Unq Primary ( `BetaID` ) </title></a>
+<a xlink:href='#`belu_betareader`.`BetaID`'><text id='Default.`belu_betareader`.`BetaID`' x='63' y='531' onmouseover="hghl(['`belu_beta_genre`_`BetaID`','Default.`belu_beta_genre`.`BetaID`','`belu_beta_job`_`BetaJobID`','Default.`belu_beta_job`.`BetaID`','`belu_beta_project`_`Beta_ID`','Default.`belu_beta_project`.`BetaID`','`belu_beta_textsort`_`BetareaderID`','Default.`belu_beta_textsort`.`BetaID`','`belu_beta_theme`_`BetaThemeID`','Default.`belu_beta_theme`.`BetaID`'])" onmouseout="uhghl(['`belu_beta_genre`_`BetaID`','Default.`belu_beta_genre`.`BetaID`','`belu_beta_job`_`BetaJobID`','Default.`belu_beta_job`.`BetaID`','`belu_beta_project`_`Beta_ID`','Default.`belu_beta_project`.`BetaID`','`belu_beta_textsort`_`BetareaderID`','Default.`belu_beta_textsort`.`BetaID`','`belu_beta_theme`_`BetaThemeID`','Default.`belu_beta_theme`.`BetaID`'])">`BetaID`</text><title>`BetaID`
+* int</title></a>
+<a xlink:href='#`belu_betareader`.`BetaID`'><use id='ref' x='139' y='521' xlink:href='#ref'/><title>Referred by `belu_beta_genre` ( `BetaID` ) 
+Referred by `belu_beta_job` ( `BetaID` ) 
+Referred by `belu_beta_project` ( `BetaID` ) 
+Referred by `belu_beta_textsort` ( `BetaID` ) 
+Referred by `belu_beta_theme` ( `BetaID` ) </title></a>
+  <use id='nn' x='47' y='537' xlink:href='#nn'/><a xlink:href='#`belu_betareader`.`UserID`'><use id='idx' x='47' y='536' xlink:href='#idx'/><title>`UserID` ( `UserID` ) </title></a>
+<a xlink:href='#`belu_betareader`.`UserID`'><text id='Default.`belu_betareader`.`UserID`' x='63' y='546' onmouseover="hghl(['`belu_betareader`_fk_`belu_betareader`','Default.`belu_user`.`UserID`'])" onmouseout="uhghl(['`belu_betareader`_fk_`belu_betareader`','Default.`belu_user`.`UserID`'])">`UserID`</text><title>`UserID`
+* int</title></a>
+<a xlink:href='#`belu_betareader`.`UserID`'><use id='fk' x='139' y='536' xlink:href='#fk'/><title>References `belu_user` ( `UserID` ) </title></a>
+  <a xlink:href='#`belu_betareader`.`Capacity`'><text id='Default.`belu_betareader`.`Capacity`' x='63' y='561'>`Capacity`</text><title>`Capacity`
+int
+Maximal number of projects, this betareader reads for</title></a>
+<text x='147' y='558' text-anchor='end' class='colType'>#</text>
+<!-- ============= Table '`belu_beta_textsort`' ============= -->
+<rect class='entity' x='210' y='368' width='120' height='90' rx='7' ry='7' style='fill:url(#tbg_ccffcc);stroke:#b6d8b6;'/>
+<line class='delim' style='stroke:#b6c4d8;' x1='210.00' y1='394.00' x2='330.00' y2='394.00'/>
+<line class='delim' x1='210.000000' y1='394.000000' x2='330.000000' y2='394.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='225.000000' y1='394.000000' x2='225.000000' y2='458.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='319.000000' y1='394.000000' x2='319.000000' y2='458.000000' style='stroke:#b6d8b6'/>
+<a xlink:href='#`belu_beta_textsort`'><text x='214' y='386'>`belu_beta_textsort`</text><title>Table Default.`belu_beta_textsort`
+Table of textsortpreferences of betareader</title></a>
+  <use id='nn' x='212' y='402' xlink:href='#nn'/><a xlink:href='#`belu_beta_textsort`.`BetaID`'><use id='idx' x='212' y='401' xlink:href='#idx'/><title>Primary ( `BetaID`, `TestsortID` ) </title></a>
+<a xlink:href='#`belu_beta_textsort`.`BetaID`'><text id='Default.`belu_beta_textsort`.`BetaID`' x='228' y='411' onmouseover="hghl(['`belu_beta_textsort`_`BetareaderID`','Default.`belu_betareader`.`BetaID`'])" onmouseout="uhghl(['`belu_beta_textsort`_`BetareaderID`','Default.`belu_betareader`.`BetaID`'])">`BetaID`</text><title>`BetaID`
+* int</title></a>
+<a xlink:href='#`belu_beta_textsort`.`BetaID`'><use id='fk' x='319' y='401' xlink:href='#fk'/><title>References `belu_betareader` ( `BetaID` ) </title></a>
+  <use id='nn' x='212' y='417' xlink:href='#nn'/><a xlink:href='#`belu_beta_textsort`.`TestsortID`'><use id='idx' x='212' y='416' xlink:href='#idx'/><title>Primary ( `BetaID`, `TestsortID` ) `TestsortID` ( `TestsortID` ) </title></a>
+<a xlink:href='#`belu_beta_textsort`.`TestsortID`'><text id='Default.`belu_beta_textsort`.`TestsortID`' x='228' y='426' onmouseover="hghl(['`belu_beta_textsort`_fk_`belu_beta_textsort`','Default.`belu_textsort`.`TextsortID`'])" onmouseout="uhghl(['`belu_beta_textsort`_fk_`belu_beta_textsort`','Default.`belu_textsort`.`TextsortID`'])">`TestsortID`</text><title>`TestsortID`
+* int</title></a>
+<a xlink:href='#`belu_beta_textsort`.`TestsortID`'><use id='fk' x='319' y='416' xlink:href='#fk'/><title>References `belu_textsort` ( `TestsortID` -&gt; `TextsortID` ) </title></a>
+  <a xlink:href='#`belu_beta_textsort`.`SortPriority`'><text id='Default.`belu_beta_textsort`.`SortPriority`' x='228' y='441'>`SortPriority`</text><title>`SortPriority`
+int</title></a>
+<text x='327' y='438' text-anchor='end' class='colType'>#</text>
+<!-- ============= Table 'belu_user_dialect' ============= -->
+<rect class='entity' x='765' y='623' width='105' height='90' rx='7' ry='7' style='fill:url(#tbg_ccffcc);stroke:#b6d8b6;'/>
+<line class='delim' style='stroke:#b6c4d8;' x1='765.00' y1='649.00' x2='870.00' y2='649.00'/>
+<line class='delim' x1='765.000000' y1='649.000000' x2='870.000000' y2='649.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='780.000000' y1='649.000000' x2='780.000000' y2='713.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='859.000000' y1='649.000000' x2='859.000000' y2='713.000000' style='stroke:#b6d8b6'/>
+<a xlink:href='#belu_user_dialect'><text x='772' y='641'>belu_user_dialect</text><title>Table Default.belu_user_dialect
+knowlege of user over dialects</title></a>
+  <use id='nn' x='767' y='657' xlink:href='#nn'/><a xlink:href='#belu_user_dialect.dialectid'><use id='pk' x='767' y='656' xlink:href='#pk'/><title>Pk pk_belu_beta_dialect_dialectid ( dialectid, userid ) idx_belu_beta_dialect_dialectid ( dialectid ) </title></a>
+<a xlink:href='#belu_user_dialect.dialectid'><text id='Default.belu_user_dialect.dialectid' x='783' y='666' onmouseover="hghl(['belu_user_dialect_fk_belu_beta_dialect','Default.belu_language_dialect.dialectid'])" onmouseout="uhghl(['belu_user_dialect_fk_belu_beta_dialect','Default.belu_language_dialect.dialectid'])">dialectid</text><title>dialectid
+* int</title></a>
+<a xlink:href='#belu_user_dialect.dialectid'><use id='fk' x='859' y='656' xlink:href='#fk'/><title>References belu_language_dialect ( dialectid ) </title></a>
+  <use id='nn' x='767' y='672' xlink:href='#nn'/><a xlink:href='#belu_user_dialect.userid'><use id='pk' x='767' y='671' xlink:href='#pk'/><title>Pk pk_belu_beta_dialect_dialectid ( dialectid, userid ) idx_belu_beta_dialect_betaid ( userid ) </title></a>
+<a xlink:href='#belu_user_dialect.userid'><text id='Default.belu_user_dialect.userid' x='783' y='681' onmouseover="hghl(['belu_user_dialect_fk_belu_dialect_beta','Default.`belu_user`.`UserID`'])" onmouseout="uhghl(['belu_user_dialect_fk_belu_dialect_beta','Default.`belu_user`.`UserID`'])">userid</text><title>userid
+* int</title></a>
+<a xlink:href='#belu_user_dialect.userid'><use id='fk' x='859' y='671' xlink:href='#fk'/><title>References `belu_user` ( userid -&gt; `UserID` ) </title></a>
+  <a xlink:href='#belu_user_dialect.levelid'><use id='idx' x='767' y='686' xlink:href='#idx'/><title>idx_belu_beta_dialect_levelid ( levelid ) </title></a>
+<a xlink:href='#belu_user_dialect.levelid'><text id='Default.belu_user_dialect.levelid' x='783' y='696' onmouseover="hghl(['belu_user_dialect_fk_belu_level_dialect','Default.belu_level.levelid'])" onmouseout="uhghl(['belu_user_dialect_fk_belu_level_dialect','Default.belu_level.levelid'])">levelid</text><title>levelid
+int</title></a>
+<a xlink:href='#belu_user_dialect.levelid'><use id='fk' x='859' y='686' xlink:href='#fk'/><title>References belu_level ( levelid ) </title></a>
+
+<!-- ============= Table '`belu_textsort`' ============= -->
+<rect class='entity' x='450' y='368' width='120' height='90' rx='7' ry='7' style='fill:url(#tbg_c8f5bf);stroke:#bcd8b6;'/>
+<line class='delim' style='stroke:#b6c4d8;' x1='450.00' y1='394.00' x2='570.00' y2='394.00'/>
+<line class='delim' x1='450.000000' y1='394.000000' x2='570.000000' y2='394.000000' style='stroke:#bcd8b6'/>
+<line class='delim' x1='465.000000' y1='394.000000' x2='465.000000' y2='458.000000' style='stroke:#bcd8b6'/>
+<line class='delim' x1='559.000000' y1='394.000000' x2='559.000000' y2='458.000000' style='stroke:#bcd8b6'/>
+<a xlink:href='#`belu_textsort`'><text x='468' y='386'>`belu_textsort`</text><title>Table Default.`belu_textsort`
+List of valid sorts of texts</title></a>
+  <use id='nn' x='452' y='402' xlink:href='#nn'/><a xlink:href='#`belu_textsort`.`TextsortID`'><use id='unq' x='452' y='401' xlink:href='#unq'/><title>Unq Primary ( `TextsortID` ) </title></a>
+<a xlink:href='#`belu_textsort`.`TextsortID`'><text id='Default.`belu_textsort`.`TextsortID`' x='468' y='411' onmouseover="hghl(['`belu_beta_textsort`_fk_`belu_beta_textsort`','Default.`belu_beta_textsort`.`TestsortID`','`belu_project`_fk_`belu_project`','Default.`belu_project`.`TextsortID`'])" onmouseout="uhghl(['`belu_beta_textsort`_fk_`belu_beta_textsort`','Default.`belu_beta_textsort`.`TestsortID`','`belu_project`_fk_`belu_project`','Default.`belu_project`.`TextsortID`'])">`TextsortID`</text><title>`TextsortID`
+* int</title></a>
+<a xlink:href='#`belu_textsort`.`TextsortID`'><use id='ref' x='559' y='401' xlink:href='#ref'/><title>Referred by `belu_beta_textsort` ( `TestsortID` -&gt; `TextsortID` ) 
+Referred by `belu_project` ( `TextsortID` ) </title></a>
+  <use id='nn' x='452' y='417' xlink:href='#nn'/><a xlink:href='#`belu_textsort`.`Textsort`'><text id='Default.`belu_textsort`.`Textsort`' x='468' y='426'>`Textsort`</text><title>`Textsort`
+* tinytext default '0'
+Name of Textsort</title></a>
+<text x='567' y='423' text-anchor='end' class='colType'>t</text>  <a xlink:href='#`belu_textsort`.`SortDefinition`'><text id='Default.`belu_textsort`.`SortDefinition`' x='468' y='441'>`SortDefinition`</text><title>`SortDefinition`
+text
+Definition of Textsort</title></a>
+<text x='567' y='438' text-anchor='end' class='colType'>t</text>
+<!-- ============= Table '`belu_project_theme`' ============= -->
+<rect class='entity' x='600' y='368' width='120' height='75' rx='7' ry='7' style='fill:url(#tbg_c8f5bf);stroke:#bcd8b6;'/>
+<line class='delim' style='stroke:#b6c4d8;' x1='600.00' y1='394.00' x2='720.00' y2='394.00'/>
+<line class='delim' x1='600.000000' y1='394.000000' x2='720.000000' y2='394.000000' style='stroke:#bcd8b6'/>
+<line class='delim' x1='615.000000' y1='394.000000' x2='615.000000' y2='443.000000' style='stroke:#bcd8b6'/>
+<line class='delim' x1='709.000000' y1='394.000000' x2='709.000000' y2='443.000000' style='stroke:#bcd8b6'/>
+<a xlink:href='#`belu_project_theme`'><text x='603' y='386'>`belu_project_theme`</text><title>Table Default.`belu_project_theme`
+Link projects with one or many themes</title></a>
+  <use id='nn' x='602' y='402' xlink:href='#nn'/><a xlink:href='#`belu_project_theme`.`ThemeID`'><use id='idx' x='602' y='401' xlink:href='#idx'/><title>Primary ( `ThemeID`, `ProjektID` ) idx_`belu_project_theme`_`themeid` ( `ThemeID` ) </title></a>
+<a xlink:href='#`belu_project_theme`.`ThemeID`'><text id='Default.`belu_project_theme`.`ThemeID`' x='618' y='411' onmouseover="hghl(['`belu_project_theme`_fk_`belu_project_theme`','Default.`belu_theme`.`themeID`'])" onmouseout="uhghl(['`belu_project_theme`_fk_`belu_project_theme`','Default.`belu_theme`.`themeID`'])">`ThemeID`</text><title>`ThemeID`
+* int</title></a>
+<a xlink:href='#`belu_project_theme`.`ThemeID`'><use id='fk' x='709' y='401' xlink:href='#fk'/><title>References `belu_theme` ( `ThemeID` -&gt; `themeID` ) </title></a>
+  <use id='nn' x='602' y='417' xlink:href='#nn'/><a xlink:href='#`belu_project_theme`.`ProjektID`'><use id='idx' x='602' y='416' xlink:href='#idx'/><title>Primary ( `ThemeID`, `ProjektID` ) `_ProjektID` ( `ProjektID` ) </title></a>
+<a xlink:href='#`belu_project_theme`.`ProjektID`'><text id='Default.`belu_project_theme`.`ProjektID`' x='618' y='426' onmouseover="hghl(['`belu_project_theme`_`_ProjektID`','Default.`belu_project`.`ProjectID`'])" onmouseout="uhghl(['`belu_project_theme`_`_ProjektID`','Default.`belu_project`.`ProjectID`'])">`ProjektID`</text><title>`ProjektID`
+* int</title></a>
+<a xlink:href='#`belu_project_theme`.`ProjektID`'><use id='fk' x='709' y='416' xlink:href='#fk'/><title>References `belu_project` ( `ProjektID` -&gt; `ProjectID` ) </title></a>
+
+<!-- ============= Table 'belu_level' ============= -->
+<rect class='entity' x='435' y='1043' width='90' height='90' rx='7' ry='7' style='fill:url(#tbg_ccffcc);stroke:#b6d8b6;'/>
+<line class='delim' style='stroke:#b6c4d8;' x1='435.00' y1='1069.00' x2='525.00' y2='1069.00'/>
+<line class='delim' x1='435.000000' y1='1069.000000' x2='525.000000' y2='1069.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='450.000000' y1='1069.000000' x2='450.000000' y2='1133.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='514.000000' y1='1069.000000' x2='514.000000' y2='1133.000000' style='stroke:#b6d8b6'/>
+<a xlink:href='#belu_level'><text x='453' y='1061'>belu_level</text><title>Table Default.belu_level
+Levels of knowledge</title></a>
+  <use id='nn' x='437' y='1077' xlink:href='#nn'/><a xlink:href='#belu_level.levelid'><use id='pk' x='437' y='1076' xlink:href='#pk'/><title>Pk pk_belu_level_levelid ( levelid ) </title></a>
+<a xlink:href='#belu_level.levelid'><text id='Default.belu_level.levelid' x='453' y='1086' onmouseover="hghl(['belu_user_dialect_fk_belu_level_dialect','Default.belu_user_dialect.levelid','belu_user_facts_fk_belu_beta_facts_belu_level','Default.belu_user_facts.levelid','belu_user_language_fk_belu_beta_language','Default.belu_user_language.levelid','belu_user_language_topic_fk_belu_level_language_focus','Default.belu_user_language_topic.levelid','belu_project_betasearch_fk_belu_project_languagelevel','Default.belu_project_betasearch.minlanguagelevel','`belu_beta_project`_fk_`belu_beta_plevel`','Default.`belu_beta_project`.mindlanguagelevel','`belu_beta_project`_fk_`belu_beta_plevel`','Default.`belu_beta_project`.mindlanguagelevel'])" onmouseout="uhghl(['belu_user_dialect_fk_belu_level_dialect','Default.belu_user_dialect.levelid','belu_user_facts_fk_belu_beta_facts_belu_level','Default.belu_user_facts.levelid','belu_user_language_fk_belu_beta_language','Default.belu_user_language.levelid','belu_user_language_topic_fk_belu_level_language_focus','Default.belu_user_language_topic.levelid','belu_project_betasearch_fk_belu_project_languagelevel','Default.belu_project_betasearch.minlanguagelevel','`belu_beta_project`_fk_`belu_beta_plevel`','Default.`belu_beta_project`.mindlanguagelevel','`belu_beta_project`_fk_`belu_beta_plevel`','Default.`belu_beta_project`.mindlanguagelevel'])">levelid</text><title>levelid
+* int</title></a>
+<a xlink:href='#belu_level.levelid'><use id='ref' x='514' y='1076' xlink:href='#ref'/><title>Referred by belu_user_dialect ( levelid ) 
+Referred by belu_user_facts ( levelid ) 
+Referred by belu_user_language ( levelid ) 
+Referred by belu_user_language_topic ( levelid ) 
+Referred by belu_project_betasearch ( minlanguagelevel -&gt; levelid ) 
+Referred by `belu_beta_project` ( mindlanguagelevel -&gt; levelid ) 
+Referred by `belu_beta_project` ( mindlanguagelevel -&gt; levelid ) </title></a>
+  <use id='nn' x='437' y='1092' xlink:href='#nn'/><a xlink:href='#belu_level.level'><text id='Default.belu_level.level' x='453' y='1101'>level</text><title>level
+* varchar(10)
+Name of level</title></a>
+<text x='522' y='1098' text-anchor='end' class='colType'>t</text>  <use id='nn' x='437' y='1107' xlink:href='#nn'/><a xlink:href='#belu_level.leveldetail'><text id='Default.belu_level.leveldetail' x='453' y='1116'>leveldetail</text><title>leveldetail
+* tinyblob
+Details of level</title></a>
+<text x='522' y='1113' text-anchor='end' class='colType'>~</text>
+<!-- ============= Table 'belu_user_language_topic' ============= -->
+<rect class='entity' x='615' y='953' width='150' height='105' rx='7' ry='7' style='fill:url(#tbg_ccffcc);stroke:#b6d8b6;'/>
+<line class='delim' style='stroke:#b6c4d8;' x1='615.00' y1='979.00' x2='765.00' y2='979.00'/>
+<line class='delim' x1='615.000000' y1='979.000000' x2='765.000000' y2='979.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='630.000000' y1='979.000000' x2='630.000000' y2='1058.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='754.000000' y1='979.000000' x2='754.000000' y2='1058.000000' style='stroke:#b6d8b6'/>
+<a xlink:href='#belu_user_language_topic'><text x='624' y='971'>belu_user_language_topic</text><title>Table Default.belu_user_language_topic
+Table for knowlege per user about languages gramma</title></a>
+  <use id='nn' x='617' y='987' xlink:href='#nn'/><a xlink:href='#belu_user_language_topic.userid'><use id='pk' x='617' y='986' xlink:href='#pk'/><title>Pk pk_belu_beta_language_focus_betaid ( userid, focusid, languageid ) idx_belu_beta_language_focus_betaid ( userid ) </title></a>
+<a xlink:href='#belu_user_language_topic.userid'><text id='Default.belu_user_language_topic.userid' x='633' y='996' onmouseover="hghl(['belu_user_language_topic_fk_belu_beta_language_focus','Default.`belu_user`.`UserID`'])" onmouseout="uhghl(['belu_user_language_topic_fk_belu_beta_language_focus','Default.`belu_user`.`UserID`'])">userid</text><title>userid
+* int</title></a>
+<a xlink:href='#belu_user_language_topic.userid'><use id='fk' x='754' y='986' xlink:href='#fk'/><title>References `belu_user` ( userid -&gt; `UserID` ) </title></a>
+  <use id='nn' x='617' y='1002' xlink:href='#nn'/><a xlink:href='#belu_user_language_topic.languageid'><use id='pk' x='617' y='1001' xlink:href='#pk'/><title>Pk pk_belu_beta_language_focus_betaid ( userid, focusid, languageid ) idx_belu_beta_language_focus_languageid ( languageid ) </title></a>
+<a xlink:href='#belu_user_language_topic.languageid'><text id='Default.belu_user_language_topic.languageid' x='633' y='1011' onmouseover="hghl(['belu_user_language_topic_fk_belu_focus_language_beta','Default.belu_language.languageid'])" onmouseout="uhghl(['belu_user_language_topic_fk_belu_focus_language_beta','Default.belu_language.languageid'])">languageid</text><title>languageid
+* int</title></a>
+<a xlink:href='#belu_user_language_topic.languageid'><use id='fk' x='754' y='1001' xlink:href='#fk'/><title>References belu_language ( languageid ) </title></a>
+  <use id='nn' x='617' y='1017' xlink:href='#nn'/><a xlink:href='#belu_user_language_topic.focusid'><use id='pk' x='617' y='1016' xlink:href='#pk'/><title>Pk pk_belu_beta_language_focus_betaid ( userid, focusid, languageid ) idx_belu_beta_language_focus_focusid ( focusid ) </title></a>
+<a xlink:href='#belu_user_language_topic.focusid'><text id='Default.belu_user_language_topic.focusid' x='633' y='1026' onmouseover="hghl(['belu_user_language_topic_fk_belu_beta_focus_language','Default.belu_focus.focusid'])" onmouseout="uhghl(['belu_user_language_topic_fk_belu_beta_focus_language','Default.belu_focus.focusid'])">focusid</text><title>focusid
+* int</title></a>
+<a xlink:href='#belu_user_language_topic.focusid'><use id='fk' x='754' y='1016' xlink:href='#fk'/><title>References belu_focus ( focusid ) </title></a>
+  <use id='nn' x='617' y='1032' xlink:href='#nn'/><a xlink:href='#belu_user_language_topic.levelid'><use id='idx' x='617' y='1031' xlink:href='#idx'/><title>idx_belu_beta_language_focus_levelid ( levelid ) </title></a>
+<a xlink:href='#belu_user_language_topic.levelid'><text id='Default.belu_user_language_topic.levelid' x='633' y='1041' onmouseover="hghl(['belu_user_language_topic_fk_belu_level_language_focus','Default.belu_level.levelid'])" onmouseout="uhghl(['belu_user_language_topic_fk_belu_level_language_focus','Default.belu_level.levelid'])">levelid</text><title>levelid
+* int</title></a>
+<a xlink:href='#belu_user_language_topic.levelid'><use id='fk' x='754' y='1031' xlink:href='#fk'/><title>References belu_level ( levelid ) </title></a>
+
+<!-- ============= Table 'belu_focus' ============= -->
+<rect class='entity' x='435' y='938' width='90' height='105' rx='7' ry='7' style='fill:url(#tbg_ccffcc);stroke:#b6d8b6;'/>
+<line class='delim' style='stroke:#b6c4d8;' x1='435.00' y1='964.00' x2='525.00' y2='964.00'/>
+<line class='delim' x1='435.000000' y1='964.000000' x2='525.000000' y2='964.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='450.000000' y1='964.000000' x2='450.000000' y2='1043.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='514.000000' y1='964.000000' x2='514.000000' y2='1043.000000' style='stroke:#b6d8b6'/>
+<a xlink:href='#belu_focus'><text x='451' y='956'>belu_focus</text><title>Table Default.belu_focus
+Possible focus for correction</title></a>
+  <use id='nn' x='437' y='972' xlink:href='#nn'/><a xlink:href='#belu_focus.focusid'><use id='pk' x='437' y='971' xlink:href='#pk'/><title>Pk pk_belu_focus_focusid ( focusid ) </title></a>
+<a xlink:href='#belu_focus.focusid'><text id='Default.belu_focus.focusid' x='453' y='981' onmouseover="hghl(['belu_user_language_topic_fk_belu_beta_focus_language','Default.belu_user_language_topic.focusid'])" onmouseout="uhghl(['belu_user_language_topic_fk_belu_beta_focus_language','Default.belu_user_language_topic.focusid'])">focusid</text><title>focusid
+* int</title></a>
+<a xlink:href='#belu_focus.focusid'><use id='ref' x='514' y='971' xlink:href='#ref'/><title>Referred by belu_user_language_topic ( focusid ) </title></a>
+  <use id='nn' x='437' y='987' xlink:href='#nn'/><a xlink:href='#belu_focus.focus'><text id='Default.belu_focus.focus' x='453' y='996'>focus</text><title>focus
+* varchar(25)
+Name of focus</title></a>
+<text x='522' y='993' text-anchor='end' class='colType'>t</text>  <use id='nn' x='437' y='1002' xlink:href='#nn'/><a xlink:href='#belu_focus.focusdetail'><text id='Default.belu_focus.focusdetail' x='453' y='1011'>focusdetail</text><title>focusdetail
+* tinyblob</title></a>
+<text x='522' y='1008' text-anchor='end' class='colType'>~</text>  <a xlink:href='#belu_focus.focusparent'><text id='Default.belu_focus.focusparent' x='453' y='1026'>focusparent</text><title>focusparent
+int
+If the focus depends on another focus, the depending focusid stand here</title></a>
+<text x='522' y='1023' text-anchor='end' class='colType'>#</text>
+<!-- ============= Table 'belu_language_dialect' ============= -->
+<rect class='entity' x='435' y='833' width='120' height='90' rx='7' ry='7' style='fill:url(#tbg_ccffcc);stroke:#b6d8b6;'/>
+<line class='delim' style='stroke:#b6c4d8;' x1='435.00' y1='859.00' x2='555.00' y2='859.00'/>
+<line class='delim' x1='435.000000' y1='859.000000' x2='555.000000' y2='859.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='450.000000' y1='859.000000' x2='450.000000' y2='923.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='544.000000' y1='859.000000' x2='544.000000' y2='923.000000' style='stroke:#b6d8b6'/>
+<a xlink:href='#belu_language_dialect'><text x='438' y='851'>belu_language_dialect</text><title>Table Default.belu_language_dialect
+Dialects of Languages</title></a>
+  <use id='nn' x='437' y='867' xlink:href='#nn'/><a xlink:href='#belu_language_dialect.dialectid'><use id='pk' x='437' y='866' xlink:href='#pk'/><title>Pk pk_belu_language_dialect_dialectid ( dialectid ) </title></a>
+<a xlink:href='#belu_language_dialect.dialectid'><text id='Default.belu_language_dialect.dialectid' x='453' y='876' onmouseover="hghl(['belu_user_dialect_fk_belu_beta_dialect','Default.belu_user_dialect.dialectid'])" onmouseout="uhghl(['belu_user_dialect_fk_belu_beta_dialect','Default.belu_user_dialect.dialectid'])">dialectid</text><title>dialectid
+* int</title></a>
+<a xlink:href='#belu_language_dialect.dialectid'><use id='ref' x='544' y='866' xlink:href='#ref'/><title>Referred by belu_user_dialect ( dialectid ) </title></a>
+  <use id='nn' x='437' y='882' xlink:href='#nn'/><a xlink:href='#belu_language_dialect.parentlanguageid'><use id='idx' x='437' y='881' xlink:href='#idx'/><title>idx_belu_language_dialect_parentlanguageid ( parentlanguageid ) </title></a>
+<a xlink:href='#belu_language_dialect.parentlanguageid'><text id='Default.belu_language_dialect.parentlanguageid' x='453' y='891' onmouseover="hghl(['belu_language_dialect_fk_belu_language_dialect','Default.belu_language.languageid'])" onmouseout="uhghl(['belu_language_dialect_fk_belu_language_dialect','Default.belu_language.languageid'])">parentlanguageid</text><title>parentlanguageid
+* int
+ID of Language, the dialect based on</title></a>
+<a xlink:href='#belu_language_dialect.parentlanguageid'><use id='fk' x='544' y='881' xlink:href='#fk'/><title>References belu_language ( parentlanguageid -&gt; languageid ) </title></a>
+  <use id='nn' x='437' y='897' xlink:href='#nn'/><a xlink:href='#belu_language_dialect.dialect'><text id='Default.belu_language_dialect.dialect' x='453' y='906'>dialect</text><title>dialect
+* varchar(20)
+Name of dialect</title></a>
+<text x='552' y='903' text-anchor='end' class='colType'>t</text>
+<!-- ============= Table '`belu_genre`' ============= -->
+<rect class='entity' x='450' y='623' width='105' height='105' rx='7' ry='7' style='fill:url(#tbg_c8f5bf);stroke:#bcd8b6;'/>
+<line class='delim' style='stroke:#b6c4d8;' x1='450.00' y1='649.00' x2='555.00' y2='649.00'/>
+<line class='delim' x1='450.000000' y1='649.000000' x2='555.000000' y2='649.000000' style='stroke:#bcd8b6'/>
+<line class='delim' x1='465.000000' y1='649.000000' x2='465.000000' y2='728.000000' style='stroke:#bcd8b6'/>
+<line class='delim' x1='544.000000' y1='649.000000' x2='544.000000' y2='728.000000' style='stroke:#bcd8b6'/>
+<a xlink:href='#`belu_genre`'><text x='466' y='641'>`belu_genre`</text><title>Table Default.`belu_genre`
+List of valid genres for projects</title></a>
+  <use id='nn' x='452' y='657' xlink:href='#nn'/><a xlink:href='#`belu_genre`.`GenreID`'><use id='unq' x='452' y='656' xlink:href='#unq'/><title>Unq Primary ( `GenreID` ) </title></a>
+<a xlink:href='#`belu_genre`.`GenreID`'><text id='Default.`belu_genre`.`GenreID`' x='468' y='666' onmouseover="hghl(['`belu_beta_genre`_fk_`belu_beta_genre`','Default.`belu_beta_genre`.`GenreID`','`belu_project`_`ProjektGenreID`','Default.`belu_project`.`GenreID`'])" onmouseout="uhghl(['`belu_beta_genre`_fk_`belu_beta_genre`','Default.`belu_beta_genre`.`GenreID`','`belu_project`_`ProjektGenreID`','Default.`belu_project`.`GenreID`'])">`GenreID`</text><title>`GenreID`
+* int</title></a>
+<a xlink:href='#`belu_genre`.`GenreID`'><use id='ref' x='544' y='656' xlink:href='#ref'/><title>Referred by `belu_beta_genre` ( `GenreID` ) 
+Referred by `belu_project` ( `GenreID` ) </title></a>
+  <use id='nn' x='452' y='672' xlink:href='#nn'/><a xlink:href='#`belu_genre`.`TextsortID`'><use id='idx' x='452' y='671' xlink:href='#idx'/><title>`TextsortID` ( `TextsortID` ) </title></a>
+<a xlink:href='#`belu_genre`.`TextsortID`'><text id='Default.`belu_genre`.`TextsortID`' x='468' y='681'>`TextsortID`</text><title>`TextsortID`
+* int</title></a>
+<text x='552' y='678' text-anchor='end' class='colType'>#</text>  <use id='nn' x='452' y='687' xlink:href='#nn'/><a xlink:href='#`belu_genre`.`Genre`'><text id='Default.`belu_genre`.`Genre`' x='468' y='696'>`Genre`</text><title>`Genre`
+* varchar(50)
+Name of Genre</title></a>
+<text x='552' y='693' text-anchor='end' class='colType'>t</text>  <a xlink:href='#`belu_genre`.`Definition`'><text id='Default.`belu_genre`.`Definition`' x='468' y='711'>`Definition`</text><title>`Definition`
+tinytext
+Definition of Genre</title></a>
+<text x='552' y='708' text-anchor='end' class='colType'>t</text>
+<!-- ============= Table '`belu_theme`' ============= -->
+<rect class='entity' x='450' y='518' width='120' height='105' rx='7' ry='7' style='fill:url(#tbg_ccffcc);stroke:#b6d8b6;'/>
+<line class='delim' style='stroke:#b6c4d8;' x1='450.00' y1='544.00' x2='570.00' y2='544.00'/>
+<line class='delim' x1='450.000000' y1='544.000000' x2='570.000000' y2='544.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='465.000000' y1='544.000000' x2='465.000000' y2='623.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='559.000000' y1='544.000000' x2='559.000000' y2='623.000000' style='stroke:#b6d8b6'/>
+<a xlink:href='#`belu_theme`'><text x='473' y='536'>`belu_theme`</text><title>Table Default.`belu_theme`</title></a>
+  <use id='nn' x='452' y='552' xlink:href='#nn'/><a xlink:href='#`belu_theme`.`themeID`'><use id='unq' x='452' y='551' xlink:href='#unq'/><title>Unq Primary ( `themeID` ) </title></a>
+<a xlink:href='#`belu_theme`.`themeID`'><text id='Default.`belu_theme`.`themeID`' x='468' y='561' onmouseover="hghl(['`belu_beta_theme`_fk_`belu_beta_theme`','Default.`belu_beta_theme`.`ThemeID`','`belu_project_theme`_fk_`belu_project_theme`','Default.`belu_project_theme`.`ThemeID`'])" onmouseout="uhghl(['`belu_beta_theme`_fk_`belu_beta_theme`','Default.`belu_beta_theme`.`ThemeID`','`belu_project_theme`_fk_`belu_project_theme`','Default.`belu_project_theme`.`ThemeID`'])">`themeID`</text><title>`themeID`
+* int</title></a>
+<a xlink:href='#`belu_theme`.`themeID`'><use id='ref' x='559' y='551' xlink:href='#ref'/><title>Referred by `belu_beta_theme` ( `ThemeID` -&gt; `themeID` ) 
+Referred by `belu_project_theme` ( `ThemeID` -&gt; `themeID` ) </title></a>
+  <use id='nn' x='452' y='567' xlink:href='#nn'/><a xlink:href='#`belu_theme`.`theme`'><text id='Default.`belu_theme`.`theme`' x='468' y='576'>`theme`</text><title>`theme`
+* varchar(20)
+Name of theme</title></a>
+<text x='567' y='573' text-anchor='end' class='colType'>t</text>  <use id='nn' x='452' y='582' xlink:href='#nn'/><a xlink:href='#`belu_theme`.`definition`'><text id='Default.`belu_theme`.`definition`' x='468' y='591'>`definition`</text><title>`definition`
+* text
+Definition of theme</title></a>
+<text x='567' y='588' text-anchor='end' class='colType'>t</text>  <a xlink:href='#`belu_theme`.`themereference`'><text id='Default.`belu_theme`.`themereference`' x='468' y='606'>`themereference`</text><title>`themereference`
+int
+Reference to a other theme via ID (eg. ID of ''Fantasy'' for ''Dark Fantasy'')</title></a>
+<text x='567' y='603' text-anchor='end' class='colType'>#</text>
+<!-- ============= Table '`belu_beta_genre`' ============= -->
+<rect class='entity' x='210' y='638' width='120' height='90' rx='7' ry='7' style='fill:url(#tbg_ccffcc);stroke:#b6d8b6;'/>
+<line class='delim' style='stroke:#b6c4d8;' x1='210.00' y1='664.00' x2='330.00' y2='664.00'/>
+<line class='delim' x1='210.000000' y1='664.000000' x2='330.000000' y2='664.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='225.000000' y1='664.000000' x2='225.000000' y2='728.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='319.000000' y1='664.000000' x2='319.000000' y2='728.000000' style='stroke:#b6d8b6'/>
+<a xlink:href='#`belu_beta_genre`'><text x='220' y='656'>`belu_beta_genre`</text><title>Table Default.`belu_beta_genre`
+List of genres for a betareader</title></a>
+  <use id='nn' x='212' y='672' xlink:href='#nn'/><a xlink:href='#`belu_beta_genre`.`BetaID`'><use id='idx' x='212' y='671' xlink:href='#idx'/><title>Primary ( `BetaID`, `GenreID` ) </title></a>
+<a xlink:href='#`belu_beta_genre`.`BetaID`'><text id='Default.`belu_beta_genre`.`BetaID`' x='228' y='681' onmouseover="hghl(['`belu_beta_genre`_`BetaID`','Default.`belu_betareader`.`BetaID`'])" onmouseout="uhghl(['`belu_beta_genre`_`BetaID`','Default.`belu_betareader`.`BetaID`'])">`BetaID`</text><title>`BetaID`
+* int</title></a>
+<a xlink:href='#`belu_beta_genre`.`BetaID`'><use id='fk' x='319' y='671' xlink:href='#fk'/><title>References `belu_betareader` ( `BetaID` ) </title></a>
+  <use id='nn' x='212' y='687' xlink:href='#nn'/><a xlink:href='#`belu_beta_genre`.`GenreID`'><use id='idx' x='212' y='686' xlink:href='#idx'/><title>Primary ( `BetaID`, `GenreID` ) `GenreID` ( `GenreID` ) </title></a>
+<a xlink:href='#`belu_beta_genre`.`GenreID`'><text id='Default.`belu_beta_genre`.`GenreID`' x='228' y='696' onmouseover="hghl(['`belu_beta_genre`_fk_`belu_beta_genre`','Default.`belu_genre`.`GenreID`'])" onmouseout="uhghl(['`belu_beta_genre`_fk_`belu_beta_genre`','Default.`belu_genre`.`GenreID`'])">`GenreID`</text><title>`GenreID`
+* int</title></a>
+<a xlink:href='#`belu_beta_genre`.`GenreID`'><use id='fk' x='319' y='686' xlink:href='#fk'/><title>References `belu_genre` ( `GenreID` ) </title></a>
+  <a xlink:href='#`belu_beta_genre`.`GenrePriority`'><text id='Default.`belu_beta_genre`.`GenrePriority`' x='228' y='711'>`GenrePriority`</text><title>`GenrePriority`
+int
+Preference of betareader for genre</title></a>
+<text x='327' y='708' text-anchor='end' class='colType'>#</text>
+<!-- ============= Table '`belu_beta_theme`' ============= -->
+<rect class='entity' x='210' y='518' width='120' height='90' rx='7' ry='7' style='fill:url(#tbg_ccffcc);stroke:#b6d8b6;'/>
+<line class='delim' style='stroke:#b6c4d8;' x1='210.00' y1='544.00' x2='330.00' y2='544.00'/>
+<line class='delim' x1='210.000000' y1='544.000000' x2='330.000000' y2='544.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='225.000000' y1='544.000000' x2='225.000000' y2='608.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='319.000000' y1='544.000000' x2='319.000000' y2='608.000000' style='stroke:#b6d8b6'/>
+<a xlink:href='#`belu_beta_theme`'><text x='219' y='536'>`belu_beta_theme`</text><title>Table Default.`belu_beta_theme`
+Table of themepreferences of betareader</title></a>
+  <use id='nn' x='212' y='552' xlink:href='#nn'/><a xlink:href='#`belu_beta_theme`.`BetaID`'><use id='idx' x='212' y='551' xlink:href='#idx'/><title>Primary ( `ThemeID`, `BetaID` ) `BetaThemeID` ( `BetaID` ) </title></a>
+<a xlink:href='#`belu_beta_theme`.`BetaID`'><text id='Default.`belu_beta_theme`.`BetaID`' x='228' y='561' onmouseover="hghl(['`belu_beta_theme`_`BetaThemeID`','Default.`belu_betareader`.`BetaID`'])" onmouseout="uhghl(['`belu_beta_theme`_`BetaThemeID`','Default.`belu_betareader`.`BetaID`'])">`BetaID`</text><title>`BetaID`
+* int</title></a>
+<a xlink:href='#`belu_beta_theme`.`BetaID`'><use id='fk' x='319' y='551' xlink:href='#fk'/><title>References `belu_betareader` ( `BetaID` ) </title></a>
+  <use id='nn' x='212' y='567' xlink:href='#nn'/><a xlink:href='#`belu_beta_theme`.`ThemeID`'><use id='idx' x='212' y='566' xlink:href='#idx'/><title>Primary ( `ThemeID`, `BetaID` ) idx_`belu_beta_theme`_`themeid` ( `ThemeID` ) </title></a>
+<a xlink:href='#`belu_beta_theme`.`ThemeID`'><text id='Default.`belu_beta_theme`.`ThemeID`' x='228' y='576' onmouseover="hghl(['`belu_beta_theme`_fk_`belu_beta_theme`','Default.`belu_theme`.`themeID`'])" onmouseout="uhghl(['`belu_beta_theme`_fk_`belu_beta_theme`','Default.`belu_theme`.`themeID`'])">`ThemeID`</text><title>`ThemeID`
+* int</title></a>
+<a xlink:href='#`belu_beta_theme`.`ThemeID`'><use id='fk' x='319' y='566' xlink:href='#fk'/><title>References `belu_theme` ( `ThemeID` -&gt; `themeID` ) </title></a>
+  <a xlink:href='#`belu_beta_theme`.`Priority`'><text id='Default.`belu_beta_theme`.`Priority`' x='228' y='591'>`Priority`</text><title>`Priority`
+int
+Preference of betareader for theme</title></a>
+<text x='327' y='588' text-anchor='end' class='colType'>#</text>
+<!-- ============= Table '`belu_user_absence`' ============= -->
+<rect class='entity' x='1110' y='413' width='120' height='105' rx='7' ry='7' style='fill:url(#tbg_c8f5bf);stroke:#bcd8b6;'/>
+<line class='delim' style='stroke:#b6c4d8;' x1='1110.00' y1='439.00' x2='1230.00' y2='439.00'/>
+<line class='delim' x1='1110.000000' y1='439.000000' x2='1230.000000' y2='439.000000' style='stroke:#bcd8b6'/>
+<line class='delim' x1='1125.000000' y1='439.000000' x2='1125.000000' y2='518.000000' style='stroke:#bcd8b6'/>
+<line class='delim' x1='1219.000000' y1='439.000000' x2='1219.000000' y2='518.000000' style='stroke:#bcd8b6'/>
+<a xlink:href='#`belu_user_absence`'><text x='1114' y='431'>`belu_user_absence`</text><title>Table Default.`belu_user_absence`
+Absencetime of users.</title></a>
+  <use id='nn' x='1112' y='447' xlink:href='#nn'/><a xlink:href='#`belu_user_absence`.`UserID`'><use id='idx' x='1112' y='446' xlink:href='#idx'/><title>idx_`belu_user_absence`_`userid` ( `UserID` ) </title></a>
+<a xlink:href='#`belu_user_absence`.`UserID`'><text id='Default.`belu_user_absence`.`UserID`' x='1128' y='456' onmouseover="hghl(['`belu_user_absence`_fk_`belu_user_absence`','Default.`belu_user`.`UserID`'])" onmouseout="uhghl(['`belu_user_absence`_fk_`belu_user_absence`','Default.`belu_user`.`UserID`'])">`UserID`</text><title>`UserID`
+* int</title></a>
+<a xlink:href='#`belu_user_absence`.`UserID`'><use id='fk' x='1219' y='446' xlink:href='#fk'/><title>References `belu_user` ( `UserID` ) </title></a>
+  <use id='nn' x='1112' y='462' xlink:href='#nn'/><a xlink:href='#`belu_user_absence`.`AbsenceID`'><use id='idx' x='1112' y='461' xlink:href='#idx'/><title>Primary ( `AbsenceID` ) </title></a>
+<a xlink:href='#`belu_user_absence`.`AbsenceID`'><text id='Default.`belu_user_absence`.`AbsenceID`' x='1128' y='471'>`AbsenceID`</text><title>`AbsenceID`
+* int</title></a>
+<text x='1227' y='468' text-anchor='end' class='colType'>#</text>  <use id='nn' x='1112' y='477' xlink:href='#nn'/><a xlink:href='#`belu_user_absence`.`StartDate`'><text id='Default.`belu_user_absence`.`StartDate`' x='1128' y='486'>`StartDate`</text><title>`StartDate`
+* date</title></a>
+<text x='1227' y='483' text-anchor='end' class='colType'>d</text>  <use id='nn' x='1112' y='492' xlink:href='#nn'/><a xlink:href='#`belu_user_absence`.`EndDate`'><text id='Default.`belu_user_absence`.`EndDate`' x='1128' y='501'>`EndDate`</text><title>`EndDate`
+* date</title></a>
+<text x='1227' y='498' text-anchor='end' class='colType'>d</text>
+<!-- ============= Table 'belu_language' ============= -->
+<rect class='entity' x='615' y='788' width='90' height='90' rx='7' ry='7' style='fill:url(#tbg_ccffcc);stroke:#b6d8b6;'/>
+<line class='delim' style='stroke:#b6c4d8;' x1='615.00' y1='814.00' x2='705.00' y2='814.00'/>
+<line class='delim' x1='615.000000' y1='814.000000' x2='705.000000' y2='814.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='630.000000' y1='814.000000' x2='630.000000' y2='878.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='694.000000' y1='814.000000' x2='694.000000' y2='878.000000' style='stroke:#b6d8b6'/>
+<a xlink:href='#belu_language'><text x='622' y='806'>belu_language</text><title>Table Default.belu_language
+Languages for projects and corrections</title></a>
+  <use id='nn' x='617' y='822' xlink:href='#nn'/><a xlink:href='#belu_language.languageid'><use id='pk' x='617' y='821' xlink:href='#pk'/><title>Pk pk_belu_language_languageid ( languageid ) </title></a>
+<a xlink:href='#belu_language.languageid'><text id='Default.belu_language.languageid' x='633' y='831' onmouseover="hghl(['belu_user_language_topic_fk_belu_focus_language_beta','Default.belu_user_language_topic.languageid','belu_language_dialect_fk_belu_language_dialect','Default.belu_language_dialect.parentlanguageid','belu_user_language_fk_belu_user_language_level','Default.belu_user_language.languageid','belu_user_language_fk_belu_user_language_level','Default.belu_user_language.languageid'])" onmouseout="uhghl(['belu_user_language_topic_fk_belu_focus_language_beta','Default.belu_user_language_topic.languageid','belu_language_dialect_fk_belu_language_dialect','Default.belu_language_dialect.parentlanguageid','belu_user_language_fk_belu_user_language_level','Default.belu_user_language.languageid','belu_user_language_fk_belu_user_language_level','Default.belu_user_language.languageid'])">languageid</text><title>languageid
+* int</title></a>
+<a xlink:href='#belu_language.languageid'><use id='ref' x='694' y='821' xlink:href='#ref'/><title>Referred by belu_user_language_topic ( languageid ) 
+Referred by belu_language_dialect ( parentlanguageid -&gt; languageid ) 
+Referred by belu_user_language ( languageid ) 
+Referred by belu_user_language ( languageid ) </title></a>
+  <use id='nn' x='617' y='837' xlink:href='#nn'/><a xlink:href='#belu_language.language'><text id='Default.belu_language.language' x='633' y='846'>language</text><title>language
+* varchar(15)
+Name of language</title></a>
+<text x='702' y='843' text-anchor='end' class='colType'>t</text>  <a xlink:href='#belu_language.langshort'><text id='Default.belu_language.langshort' x='633' y='861'>langshort</text><title>langshort
+char(3)
+Shortcut of language</title></a>
+<text x='702' y='858' text-anchor='end' class='colType'>c</text>
+<!-- ============= Table 'belu_user_facts' ============= -->
+<rect class='entity' x='900' y='908' width='90' height='120' rx='7' ry='7' style='fill:url(#tbg_ccffcc);stroke:#b6d8b6;'/>
+<line class='delim' style='stroke:#b6c4d8;' x1='900.00' y1='934.00' x2='990.00' y2='934.00'/>
+<line class='delim' x1='900.000000' y1='934.000000' x2='990.000000' y2='934.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='915.000000' y1='934.000000' x2='915.000000' y2='1028.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='979.000000' y1='934.000000' x2='979.000000' y2='1028.000000' style='stroke:#b6d8b6'/>
+<a xlink:href='#belu_user_facts'><text x='903' y='926'>belu_user_facts</text><title>Table Default.belu_user_facts
+knwolege about topic areas from betareader</title></a>
+  <use id='nn' x='902' y='942' xlink:href='#nn'/><a xlink:href='#belu_user_facts.factid'><use id='pk' x='902' y='941' xlink:href='#pk'/><title>Pk pk_belu_beta_facts_factid ( factid, userid ) idx_belu_beta_facts_factid ( factid ) </title></a>
+<a xlink:href='#belu_user_facts.factid'><text id='Default.belu_user_facts.factid' x='918' y='951' onmouseover="hghl(['belu_user_facts_fk_belu_beta_facts_belu_facts','Default.belu_facts.factid'])" onmouseout="uhghl(['belu_user_facts_fk_belu_beta_facts_belu_facts','Default.belu_facts.factid'])">factid</text><title>factid
+* int</title></a>
+<a xlink:href='#belu_user_facts.factid'><use id='fk' x='979' y='941' xlink:href='#fk'/><title>References belu_facts ( factid ) </title></a>
+  <use id='nn' x='902' y='957' xlink:href='#nn'/><a xlink:href='#belu_user_facts.userid'><use id='pk' x='902' y='956' xlink:href='#pk'/><title>Pk pk_belu_beta_facts_factid ( factid, userid ) idx_belu_beta_facts_betaid ( userid ) </title></a>
+<a xlink:href='#belu_user_facts.userid'><text id='Default.belu_user_facts.userid' x='918' y='966' onmouseover="hghl(['belu_user_facts_fk_belu_facts_beta','Default.`belu_user`.`UserID`'])" onmouseout="uhghl(['belu_user_facts_fk_belu_facts_beta','Default.`belu_user`.`UserID`'])">userid</text><title>userid
+* int</title></a>
+<a xlink:href='#belu_user_facts.userid'><use id='fk' x='979' y='956' xlink:href='#fk'/><title>References `belu_user` ( userid -&gt; `UserID` ) </title></a>
+  <use id='nn' x='902' y='972' xlink:href='#nn'/><a xlink:href='#belu_user_facts.levelid'><use id='idx' x='902' y='971' xlink:href='#idx'/><title>idx_belu_beta_facts_levelid ( levelid ) </title></a>
+<a xlink:href='#belu_user_facts.levelid'><text id='Default.belu_user_facts.levelid' x='918' y='981' onmouseover="hghl(['belu_user_facts_fk_belu_beta_facts_belu_level','Default.belu_level.levelid'])" onmouseout="uhghl(['belu_user_facts_fk_belu_beta_facts_belu_level','Default.belu_level.levelid'])">levelid</text><title>levelid
+* int</title></a>
+<a xlink:href='#belu_user_facts.levelid'><use id='fk' x='979' y='971' xlink:href='#fk'/><title>References belu_level ( levelid ) </title></a>
+  <a xlink:href='#belu_user_facts.comment'><text id='Default.belu_user_facts.comment' x='918' y='996'>comment</text><title>comment
+tinyblob
+Usercomment for topicarea</title></a>
+<text x='987' y='993' text-anchor='end' class='colType'>~</text>  <a xlink:href='#belu_user_facts.verification'><text id='Default.belu_user_facts.verification' x='918' y='1011'>verification</text><title>verification
+date</title></a>
+<text x='987' y='1008' text-anchor='end' class='colType'>d</text>
+<!-- ============= Table 'belu_user_language' ============= -->
+<rect class='entity' x='945' y='758' width='120' height='135' rx='7' ry='7' style='fill:url(#tbg_ccffcc);stroke:#b6d8b6;'/>
+<line class='delim' style='stroke:#b6c4d8;' x1='945.00' y1='784.00' x2='1065.00' y2='784.00'/>
+<line class='delim' x1='945.000000' y1='784.000000' x2='1065.000000' y2='784.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='960.000000' y1='784.000000' x2='960.000000' y2='893.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='1054.000000' y1='784.000000' x2='1054.000000' y2='893.000000' style='stroke:#b6d8b6'/>
+<a xlink:href='#belu_user_language'><text x='953' y='776'>belu_user_language</text><title>Table Default.belu_user_language
+Languages a betareader knows</title></a>
+  <use id='nn' x='947' y='792' xlink:href='#nn'/><a xlink:href='#belu_user_language.languageid'><use id='pk' x='947' y='791' xlink:href='#pk'/><title>Pk pk_belu_beta_language_languageid ( languageid, userid ) idx_belu_user_language_languageid ( languageid ) </title></a>
+<a xlink:href='#belu_user_language.languageid'><text id='Default.belu_user_language.languageid' x='963' y='801' onmouseover="hghl(['belu_user_language_fk_belu_user_language_level','Default.belu_language.languageid'])" onmouseout="uhghl(['belu_user_language_fk_belu_user_language_level','Default.belu_language.languageid'])">languageid</text><title>languageid
+* int</title></a>
+<a xlink:href='#belu_user_language.languageid'><use id='fk' x='1054' y='791' xlink:href='#fk'/><title>References belu_language ( languageid ) </title></a>
+  <use id='nn' x='947' y='807' xlink:href='#nn'/><a xlink:href='#belu_user_language.userid'><use id='pk' x='947' y='806' xlink:href='#pk'/><title>Pk pk_belu_beta_language_languageid ( languageid, userid ) idx_belu_beta_language_betaid ( userid ) </title></a>
+<a xlink:href='#belu_user_language.userid'><text id='Default.belu_user_language.userid' x='963' y='816' onmouseover="hghl(['belu_user_language_fk_belu_user_language','Default.`belu_user`.`UserID`'])" onmouseout="uhghl(['belu_user_language_fk_belu_user_language','Default.`belu_user`.`UserID`'])">userid</text><title>userid
+* int</title></a>
+<a xlink:href='#belu_user_language.userid'><use id='fk' x='1054' y='806' xlink:href='#fk'/><title>References `belu_user` ( userid -&gt; `UserID` ) </title></a>
+  <use id='nn' x='947' y='822' xlink:href='#nn'/><a xlink:href='#belu_user_language.levelid'><use id='idx' x='947' y='821' xlink:href='#idx'/><title>idx_belu_beta_language_levelid ( levelid ) </title></a>
+<a xlink:href='#belu_user_language.levelid'><text id='Default.belu_user_language.levelid' x='963' y='831' onmouseover="hghl(['belu_user_language_fk_belu_beta_language','Default.belu_level.levelid'])" onmouseout="uhghl(['belu_user_language_fk_belu_beta_language','Default.belu_level.levelid'])">levelid</text><title>levelid
+* int
+Level of knowlege</title></a>
+<a xlink:href='#belu_user_language.levelid'><use id='fk' x='1054' y='821' xlink:href='#fk'/><title>References belu_level ( levelid ) </title></a>
+  <use id='nn' x='947' y='837' xlink:href='#nn'/><a xlink:href='#belu_user_language.colloquial?'><text id='Default.belu_user_language.colloquial?' x='963' y='846'>colloquial?</text><title>colloquial?
+* bit default 1
+Has the reader knowlege over colloquial language?</title></a>
+<text x='1062' y='843' text-anchor='end' class='colType'>b</text>  <use id='nn' x='947' y='852' xlink:href='#nn'/><a xlink:href='#belu_user_language.formal?'><text id='Default.belu_user_language.formal?' x='963' y='861'>formal?</text><title>formal?
+* bit default 1
+Can the reader understand and speak formal language?</title></a>
+<text x='1062' y='858' text-anchor='end' class='colType'>b</text>  <use id='nn' x='947' y='867' xlink:href='#nn'/><a xlink:href='#belu_user_language.antiquated?'><text id='Default.belu_user_language.antiquated?' x='963' y='876'>antiquated?</text><title>antiquated?
+* bit default 1
+Has the reader knowlege over antiquated langauge?</title></a>
+<text x='1062' y='873' text-anchor='end' class='colType'>b</text>
+<!-- ============= Table '`belu_document`' ============= -->
+<rect class='entity' x='300' y='83' width='120' height='135' rx='7' ry='7' style='fill:url(#tbg_c8f5bf);stroke:#bcd8b6;'/>
+<line class='delim' style='stroke:#b6c4d8;' x1='300.00' y1='109.00' x2='420.00' y2='109.00'/>
+<line class='delim' x1='300.000000' y1='109.000000' x2='420.000000' y2='109.000000' style='stroke:#bcd8b6'/>
+<line class='delim' x1='315.000000' y1='109.000000' x2='315.000000' y2='218.000000' style='stroke:#bcd8b6'/>
+<line class='delim' x1='409.000000' y1='109.000000' x2='409.000000' y2='218.000000' style='stroke:#bcd8b6'/>
+<a xlink:href='#`belu_document`'><text x='314' y='101'>`belu_document`</text><title>Table Default.`belu_document`
+Documents of all projects. Every Document belongs to one project, which has a owner, who is implicit the owner of the documents. The document can be approved to a betareader for korrection.</title></a>
+  <use id='nn' x='302' y='117' xlink:href='#nn'/><a xlink:href='#`belu_document`.`DocumentID`'><use id='unq' x='302' y='116' xlink:href='#unq'/><title>Unq Primary ( `DocumentID` ) </title></a>
+<a xlink:href='#`belu_document`.`DocumentID`'><text id='Default.`belu_document`.`DocumentID`' x='318' y='126' onmouseover="hghl(['`belu_beta_job`_fk_`belu_beta_job`','Default.`belu_beta_job`.`DocumentID`'])" onmouseout="uhghl(['`belu_beta_job`_fk_`belu_beta_job`','Default.`belu_beta_job`.`DocumentID`'])">`DocumentID`</text><title>`DocumentID`
+* int</title></a>
+<a xlink:href='#`belu_document`.`DocumentID`'><use id='ref' x='409' y='116' xlink:href='#ref'/><title>Referred by `belu_beta_job` ( `DocumentID` ) </title></a>
+  <use id='nn' x='302' y='132' xlink:href='#nn'/><a xlink:href='#`belu_document`.`Title`'><text id='Default.`belu_document`.`Title`' x='318' y='141'>`Title`</text><title>`Title`
+* varchar(255)</title></a>
+<text x='417' y='138' text-anchor='end' class='colType'>t</text>  <use id='nn' x='302' y='147' xlink:href='#nn'/><a xlink:href='#`belu_document`.`DocumentType`'><text id='Default.`belu_document`.`DocumentType`' x='318' y='156'>`DocumentType`</text><title>`DocumentType`
+* enum default 'Chapter'</title></a>
+<text x='417' y='153' text-anchor='end' class='colType'>t</text>  <use id='nn' x='302' y='162' xlink:href='#nn'/><a xlink:href='#`belu_document`.`ProjectID`'><use id='idx' x='302' y='161' xlink:href='#idx'/><title>`ProjectID` ( `ProjectID` ) </title></a>
+<a xlink:href='#`belu_document`.`ProjectID`'><text id='Default.`belu_document`.`ProjectID`' x='318' y='171' onmouseover="hghl(['`belu_document`_fk_`belu_document`','Default.`belu_project`.`ProjectID`'])" onmouseout="uhghl(['`belu_document`_fk_`belu_document`','Default.`belu_project`.`ProjectID`'])">`ProjectID`</text><title>`ProjectID`
+* int</title></a>
+<a xlink:href='#`belu_document`.`ProjectID`'><use id='fk' x='409' y='161' xlink:href='#fk'/><title>References `belu_project` ( `ProjectID` ) </title></a>
+  <use id='nn' x='302' y='177' xlink:href='#nn'/><a xlink:href='#`belu_document`.`UploadDate`'><text id='Default.`belu_document`.`UploadDate`' x='318' y='186'>`UploadDate`</text><title>`UploadDate`
+* date</title></a>
+<text x='417' y='183' text-anchor='end' class='colType'>d</text>  <use id='nn' x='302' y='192' xlink:href='#nn'/><a xlink:href='#`belu_document`.`Path`'><text id='Default.`belu_document`.`Path`' x='318' y='201'>`Path`</text><title>`Path`
+* tinytext</title></a>
+<text x='417' y='198' text-anchor='end' class='colType'>t</text>
+<!-- ============= Table 'belu_facts' ============= -->
+<rect class='entity' x='600' y='548' width='105' height='150' rx='7' ry='7' style='fill:url(#tbg_ccffcc);stroke:#b6d8b6;'/>
+<line class='delim' style='stroke:#b6c4d8;' x1='600.00' y1='574.00' x2='705.00' y2='574.00'/>
+<line class='delim' x1='600.000000' y1='574.000000' x2='705.000000' y2='574.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='615.000000' y1='574.000000' x2='615.000000' y2='698.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='694.000000' y1='574.000000' x2='694.000000' y2='698.000000' style='stroke:#b6d8b6'/>
+<a xlink:href='#belu_facts'><text x='624' y='566'>belu_facts</text><title>Table Default.belu_facts
+topicareas of knowlege for projects and betareader</title></a>
+  <use id='nn' x='602' y='582' xlink:href='#nn'/><a xlink:href='#belu_facts.factid'><use id='pk' x='602' y='581' xlink:href='#pk'/><title>Pk pk_belu_facts_factid ( factid ) </title></a>
+<a xlink:href='#belu_facts.factid'><text id='Default.belu_facts.factid' x='618' y='591' onmouseover="hghl(['belu_user_facts_fk_belu_beta_facts_belu_facts','Default.belu_user_facts.factid'])" onmouseout="uhghl(['belu_user_facts_fk_belu_beta_facts_belu_facts','Default.belu_user_facts.factid'])">factid</text><title>factid
+* int</title></a>
+<a xlink:href='#belu_facts.factid'><use id='ref' x='694' y='581' xlink:href='#ref'/><title>Referred by belu_user_facts ( factid ) </title></a>
+  <use id='nn' x='602' y='597' xlink:href='#nn'/><a xlink:href='#belu_facts.fact'><text id='Default.belu_facts.fact' x='618' y='606'>fact</text><title>fact
+* varchar(30)
+Name of topicarea</title></a>
+<text x='702' y='603' text-anchor='end' class='colType'>t</text>  <use id='nn' x='602' y='612' xlink:href='#nn'/><a xlink:href='#belu_facts.factdetail'><text id='Default.belu_facts.factdetail' x='618' y='621'>factdetail</text><title>factdetail
+* tinyblob
+Details about fact</title></a>
+<text x='702' y='618' text-anchor='end' class='colType'>~</text>  <a xlink:href='#belu_facts.parentfact'><text id='Default.belu_facts.parentfact' x='618' y='636'>parentfact</text><title>parentfact
+int
+if a fact depends on another fact, here stands the factid</title></a>
+<text x='702' y='633' text-anchor='end' class='colType'>#</text>  <a xlink:href='#belu_facts.statusdate'><text id='Default.belu_facts.statusdate' x='618' y='651'>statusdate</text><title>statusdate
+date
+Date of proposal</title></a>
+<text x='702' y='648' text-anchor='end' class='colType'>d</text>  <a xlink:href='#belu_facts.proposeduser'><use id='idx' x='602' y='656' xlink:href='#idx'/><title>idx_belu_facts_proposeduser ( proposeduser ) </title></a>
+<a xlink:href='#belu_facts.proposeduser'><text id='Default.belu_facts.proposeduser' x='618' y='666' onmouseover="hghl(['belu_facts_fk_belu_facts_`belu_user`','Default.`belu_user`.`UserID`'])" onmouseout="uhghl(['belu_facts_fk_belu_facts_`belu_user`','Default.`belu_user`.`UserID`'])">proposeduser</text><title>proposeduser
+int</title></a>
+<a xlink:href='#belu_facts.proposeduser'><use id='fk' x='694' y='656' xlink:href='#fk'/><title>References `belu_user` ( proposeduser -&gt; `UserID` ) </title></a>
+  <use id='nn' x='602' y='672' xlink:href='#nn'/><a xlink:href='#belu_facts.statusid'><text id='Default.belu_facts.statusid' x='618' y='681'>statusid</text><title>statusid
+* enum('current','proposal','rejected')  default 'current''</title></a>
+<text x='702' y='678' text-anchor='end' class='colType'>t</text>
+<!-- ============= Table '`belu_beta_project`' ============= -->
+<rect class='entity' x='45' y='38' width='120' height='120' rx='7' ry='7' style='fill:url(#tbg_ccffcc);stroke:#b6d8b6;'/>
+<line class='delim' style='stroke:#b6c4d8;' x1='45.00' y1='64.00' x2='165.00' y2='64.00'/>
+<line class='delim' x1='45.000000' y1='64.000000' x2='165.000000' y2='64.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='60.000000' y1='64.000000' x2='60.000000' y2='158.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='154.000000' y1='64.000000' x2='154.000000' y2='158.000000' style='stroke:#b6d8b6'/>
+<a xlink:href='#`belu_beta_project`'><text x='52' y='56'>`belu_beta_project`</text><title>Table Default.`belu_beta_project`
+Link betareader with projects</title></a>
+  <use id='nn' x='47' y='72' xlink:href='#nn'/><a xlink:href='#`belu_beta_project`.`ProjectID`'><use id='idx' x='47' y='71' xlink:href='#idx'/><title>`ProjectID` ( `ProjectID`, `BetaID` ) idx_`belu_beta_project`_`projectid` ( `ProjectID` ) </title></a>
+<a xlink:href='#`belu_beta_project`.`ProjectID`'><text id='Default.`belu_beta_project`.`ProjectID`' x='63' y='81' onmouseover="hghl(['`belu_beta_project`_fk_`belu_beta_project`','Default.`belu_project`.`ProjectID`'])" onmouseout="uhghl(['`belu_beta_project`_fk_`belu_beta_project`','Default.`belu_project`.`ProjectID`'])">`ProjectID`</text><title>`ProjectID`
+* int</title></a>
+<a xlink:href='#`belu_beta_project`.`ProjectID`'><use id='fk' x='154' y='71' xlink:href='#fk'/><title>References `belu_project` ( `ProjectID` ) </title></a>
+  <use id='nn' x='47' y='87' xlink:href='#nn'/><a xlink:href='#`belu_beta_project`.`BetaID`'><use id='idx' x='47' y='86' xlink:href='#idx'/><title>`ProjectID` ( `ProjectID`, `BetaID` ) `Beta_ID` ( `BetaID` ) </title></a>
+<a xlink:href='#`belu_beta_project`.`BetaID`'><text id='Default.`belu_beta_project`.`BetaID`' x='63' y='96' onmouseover="hghl(['`belu_beta_project`_`Beta_ID`','Default.`belu_betareader`.`BetaID`'])" onmouseout="uhghl(['`belu_beta_project`_`Beta_ID`','Default.`belu_betareader`.`BetaID`'])">`BetaID`</text><title>`BetaID`
+* int</title></a>
+<a xlink:href='#`belu_beta_project`.`BetaID`'><use id='fk' x='154' y='86' xlink:href='#fk'/><title>References `belu_betareader` ( `BetaID` ) </title></a>
+  <use id='nn' x='47' y='102' xlink:href='#nn'/><a xlink:href='#`belu_beta_project`.`KooperationID`'><use id='unq' x='47' y='101' xlink:href='#unq'/><title>Unq Primary ( `KooperationID` ) </title></a>
+<a xlink:href='#`belu_beta_project`.`KooperationID`'><text id='Default.`belu_beta_project`.`KooperationID`' x='63' y='111'>`KooperationID`</text><title>`KooperationID`
+* int</title></a>
+<text x='162' y='108' text-anchor='end' class='colType'>#</text>  <a xlink:href='#`belu_beta_project`.searchdeadline'><text id='Default.`belu_beta_project`.searchdeadline' x='63' y='126'>searchdeadline</text><title>searchdeadline
+date
+Deadline for searching for betareader (if no betareader is linked)</title></a>
+<text x='162' y='123' text-anchor='end' class='colType'>d</text>  <a xlink:href='#`belu_beta_project`.mindlanguagelevel'><use id='idx' x='47' y='131' xlink:href='#idx'/><title>idx_`belu_beta_project`_mindlanguagelevel ( mindlanguagelevel ) </title></a>
+<a xlink:href='#`belu_beta_project`.mindlanguagelevel'><text id='Default.`belu_beta_project`.mindlanguagelevel' x='63' y='141' onmouseover="hghl(['`belu_beta_project`_fk_`belu_beta_plevel`','Default.belu_level.levelid'])" onmouseout="uhghl(['`belu_beta_project`_fk_`belu_beta_plevel`','Default.belu_level.levelid'])">mindlanguagelevel</text><title>mindlanguagelevel
+int
+Minimal knowlage of Projectlanguage (LevelID)</title></a>
+<a xlink:href='#`belu_beta_project`.mindlanguagelevel'><use id='fk' x='154' y='131' xlink:href='#fk'/><title>References belu_level ( mindlanguagelevel -&gt; levelid ) </title></a>
+
+<!-- ============= Table '`belu_beta_job`' ============= -->
+<rect class='entity' x='60' y='173' width='105' height='165' rx='7' ry='7' style='fill:url(#tbg_ccffcc);stroke:#b6d8b6;'/>
+<line class='delim' style='stroke:#b6c4d8;' x1='60.00' y1='199.00' x2='165.00' y2='199.00'/>
+<line class='delim' x1='60.000000' y1='199.000000' x2='165.000000' y2='199.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='75.000000' y1='199.000000' x2='75.000000' y2='338.000000' style='stroke:#b6d8b6'/>
+<line class='delim' x1='154.000000' y1='199.000000' x2='154.000000' y2='338.000000' style='stroke:#b6d8b6'/>
+<a xlink:href='#`belu_beta_job`'><text x='69' y='191'>`belu_beta_job`</text><title>Table Default.`belu_beta_job`
+Table of betajobs on ducumentlevel with their status.</title></a>
+  <use id='nn' x='62' y='207' xlink:href='#nn'/><a xlink:href='#`belu_beta_job`.`JobID`'><use id='unq' x='62' y='206' xlink:href='#unq'/><title>Unq Primary ( `JobID` ) </title></a>
+<a xlink:href='#`belu_beta_job`.`JobID`'><text id='Default.`belu_beta_job`.`JobID`' x='78' y='216'>`JobID`</text><title>`JobID`
+* int</title></a>
+<text x='162' y='213' text-anchor='end' class='colType'>#</text>  <use id='nn' x='62' y='222' xlink:href='#nn'/><a xlink:href='#`belu_beta_job`.`BetaID`'><use id='idx' x='62' y='221' xlink:href='#idx'/><title>`BetaJobID` ( `BetaID` ) </title></a>
+<a xlink:href='#`belu_beta_job`.`BetaID`'><text id='Default.`belu_beta_job`.`BetaID`' x='78' y='231' onmouseover="hghl(['`belu_beta_job`_`BetaJobID`','Default.`belu_betareader`.`BetaID`'])" onmouseout="uhghl(['`belu_beta_job`_`BetaJobID`','Default.`belu_betareader`.`BetaID`'])">`BetaID`</text><title>`BetaID`
+* int</title></a>
+<a xlink:href='#`belu_beta_job`.`BetaID`'><use id='fk' x='154' y='221' xlink:href='#fk'/><title>References `belu_betareader` ( `BetaID` ) </title></a>
+  <use id='nn' x='62' y='237' xlink:href='#nn'/><a xlink:href='#`belu_beta_job`.`DocumentID`'><use id='idx' x='62' y='236' xlink:href='#idx'/><title>`DocumentID` ( `DocumentID` ) </title></a>
+<a xlink:href='#`belu_beta_job`.`DocumentID`'><text id='Default.`belu_beta_job`.`DocumentID`' x='78' y='246' onmouseover="hghl(['`belu_beta_job`_fk_`belu_beta_job`','Default.`belu_document`.`DocumentID`'])" onmouseout="uhghl(['`belu_beta_job`_fk_`belu_beta_job`','Default.`belu_document`.`DocumentID`'])">`DocumentID`</text><title>`DocumentID`
+* int</title></a>
+<a xlink:href='#`belu_beta_job`.`DocumentID`'><use id='fk' x='154' y='236' xlink:href='#fk'/><title>References `belu_document` ( `DocumentID` ) </title></a>
+  <a xlink:href='#`belu_beta_job`.`StartDate`'><text id='Default.`belu_beta_job`.`StartDate`' x='78' y='261'>`StartDate`</text><title>`StartDate`
+date
+The day the job gets "In Progress"</title></a>
+<text x='162' y='258' text-anchor='end' class='colType'>d</text>  <use id='nn' x='62' y='267' xlink:href='#nn'/><a xlink:href='#`belu_beta_job`.`Jobstatus`'><text id='Default.`belu_beta_job`.`Jobstatus`' x='78' y='276'>`Jobstatus`</text><title>`Jobstatus`
+* enum</title></a>
+<text x='162' y='273' text-anchor='end' class='colType'>t</text>  <a xlink:href='#`belu_beta_job`.`EndDate`'><text id='Default.`belu_beta_job`.`EndDate`' x='78' y='291'>`EndDate`</text><title>`EndDate`
+date
+The day the betareader set the status on Ready</title></a>
+<text x='162' y='288' text-anchor='end' class='colType'>d</text>  <a xlink:href='#`belu_beta_job`.`deadline`'><text id='Default.`belu_beta_job`.`deadline`' x='78' y='306'>`deadline`</text><title>`deadline`
+date
+The day the projectowner wants the betareader to finish the job</title></a>
+<text x='162' y='303' text-anchor='end' class='colType'>d</text>  <use id='nn' x='62' y='312' xlink:href='#nn'/><a xlink:href='#`belu_beta_job`.workorder'><text id='Default.`belu_beta_job`.workorder' x='78' y='321'>workorder</text><title>workorder
+* tinyblob
+Workorder for betareader</title></a>
+<text x='162' y='318' text-anchor='end' class='colType'>~</text>
+<!-- ============= Table '`belu_project`' ============= -->
+<rect class='entity' x='480' y='53' width='105' height='135' rx='7' ry='7' style='fill:url(#tbg_c8f5bf);stroke:#bcd8b6;'/>
+<line class='delim' style='stroke:#b6c4d8;' x1='480.00' y1='79.00' x2='585.00' y2='79.00'/>
+<line class='delim' x1='480.000000' y1='79.000000' x2='585.000000' y2='79.000000' style='stroke:#bcd8b6'/>
+<line class='delim' x1='495.000000' y1='79.000000' x2='495.000000' y2='188.000000' style='stroke:#bcd8b6'/>
+<line class='delim' x1='574.000000' y1='79.000000' x2='574.000000' y2='188.000000' style='stroke:#bcd8b6'/>
+<a xlink:href='#`belu_project`'><text x='493' y='71'>`belu_project`</text><title>Table Default.`belu_project`
+Table of writingprojects from users</title></a>
+  <use id='nn' x='482' y='87' xlink:href='#nn'/><a xlink:href='#`belu_project`.`ProjectID`'><use id='unq' x='482' y='86' xlink:href='#unq'/><title>Unq Primary ( `ProjectID` ) </title></a>
+<a xlink:href='#`belu_project`.`ProjectID`'><text id='Default.`belu_project`.`ProjectID`' x='498' y='96' onmouseover="hghl(['`belu_document`_fk_`belu_document`','Default.`belu_document`.`ProjectID`','`belu_project_theme`_`_ProjektID`','Default.`belu_project_theme`.`ProjektID`','belu_project_betasearch_fk_belu_project_betasearch','Default.belu_project_betasearch.projectid','`belu_beta_project`_fk_`belu_beta_project`','Default.`belu_beta_project`.`ProjectID`','`belu_beta_project`_fk_`belu_beta_project`','Default.`belu_beta_project`.`ProjectID`'])" onmouseout="uhghl(['`belu_document`_fk_`belu_document`','Default.`belu_document`.`ProjectID`','`belu_project_theme`_`_ProjektID`','Default.`belu_project_theme`.`ProjektID`','belu_project_betasearch_fk_belu_project_betasearch','Default.belu_project_betasearch.projectid','`belu_beta_project`_fk_`belu_beta_project`','Default.`belu_beta_project`.`ProjectID`','`belu_beta_project`_fk_`belu_beta_project`','Default.`belu_beta_project`.`ProjectID`'])">`ProjectID`</text><title>`ProjectID`
+* int</title></a>
+<a xlink:href='#`belu_project`.`ProjectID`'><use id='ref' x='574' y='86' xlink:href='#ref'/><title>Referred by `belu_document` ( `ProjectID` ) 
+Referred by `belu_project_theme` ( `ProjektID` -&gt; `ProjectID` ) 
+Referred by belu_project_betasearch ( projectid -&gt; `ProjectID` ) 
+Referred by `belu_beta_project` ( `ProjectID` ) 
+Referred by `belu_beta_project` ( `ProjectID` ) </title></a>
+  <use id='nn' x='482' y='102' xlink:href='#nn'/><a xlink:href='#`belu_project`.`Title`'><text id='Default.`belu_project`.`Title`' x='498' y='111'>`Title`</text><title>`Title`
+* varchar(255)</title></a>
+<text x='582' y='108' text-anchor='end' class='colType'>t</text>  <use id='nn' x='482' y='117' xlink:href='#nn'/><a xlink:href='#`belu_project`.`TextsortID`'><use id='idx' x='482' y='116' xlink:href='#idx'/><title>`SortID` ( `TextsortID` ) </title></a>
+<a xlink:href='#`belu_project`.`TextsortID`'><text id='Default.`belu_project`.`TextsortID`' x='498' y='126' onmouseover="hghl(['`belu_project`_fk_`belu_project`','Default.`belu_textsort`.`TextsortID`'])" onmouseout="uhghl(['`belu_project`_fk_`belu_project`','Default.`belu_textsort`.`TextsortID`'])">`TextsortID`</text><title>`TextsortID`
+* int</title></a>
+<a xlink:href='#`belu_project`.`TextsortID`'><use id='fk' x='574' y='116' xlink:href='#fk'/><title>References `belu_textsort` ( `TextsortID` ) </title></a>
+  <use id='nn' x='482' y='132' xlink:href='#nn'/><a xlink:href='#`belu_project`.`GenreID`'><use id='idx' x='482' y='131' xlink:href='#idx'/><title>`ProjektGenreID` ( `GenreID` ) </title></a>
+<a xlink:href='#`belu_project`.`GenreID`'><text id='Default.`belu_project`.`GenreID`' x='498' y='141' onmouseover="hghl(['`belu_project`_`ProjektGenreID`','Default.`belu_genre`.`GenreID`'])" onmouseout="uhghl(['`belu_project`_`ProjektGenreID`','Default.`belu_genre`.`GenreID`'])">`GenreID`</text><title>`GenreID`
+* int</title></a>
+<a xlink:href='#`belu_project`.`GenreID`'><use id='fk' x='574' y='131' xlink:href='#fk'/><title>References `belu_genre` ( `GenreID` ) </title></a>
+  <a xlink:href='#`belu_project`.`Description`'><text id='Default.`belu_project`.`Description`' x='498' y='156'>`Description`</text><title>`Description`
+text
+Projektdescription (eg. Shortsummary)</title></a>
+<text x='582' y='153' text-anchor='end' class='colType'>t</text>  <use id='nn' x='482' y='162' xlink:href='#nn'/><a xlink:href='#`belu_project`.`UserID`'><use id='idx' x='482' y='161' xlink:href='#idx'/><title>`ProjektUser` ( `UserID` ) </title></a>
+<a xlink:href='#`belu_project`.`UserID`'><text id='Default.`belu_project`.`UserID`' x='498' y='171' onmouseover="hghl(['`belu_project`_fk_`belu_project`_`belu_user`','Default.`belu_user`.`UserID`'])" onmouseout="uhghl(['`belu_project`_fk_`belu_project`_`belu_user`','Default.`belu_user`.`UserID`'])">`UserID`</text><title>`UserID`
+* int
+ID of the owner the project</title></a>
+<a xlink:href='#`belu_project`.`UserID`'><use id='fk' x='574' y='161' xlink:href='#fk'/><title>References `belu_user` ( `UserID` ) </title></a>
+
+</g></svg></div>
+
+
 <br/><br/>
-<div class='card'><div class='card-block'><a name='`belu_beta_genre`' onclick='window.scrollTo(60, 345);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_beta_genre`</h4></a>
+<div class='card'><div class='card-block'><a name='`belu_beta_genre`' onclick='window.scrollTo(60, 645);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_beta_genre`</h4></a>
 <p class="text-muted">List of genres for a betareader</p>
 <table class='table-sm table-bordered'>
 <thead>
@@ -73,14 +1140,14 @@ body {
 </table></div></div>
 
 <br/><br/>
-<div class='card'><div class='card-block'><a name='`belu_beta_job`' onclick='window.scrollTo(60, 45);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_beta_job`</h4></a>
+<div class='card'><div class='card-block'><a name='`belu_beta_job`' onclick='window.scrollTo(60, 180);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_beta_job`</h4></a>
 <p class="text-muted">Table of betajobs on ducumentlevel with their status.</p>
 <table class='table-sm table-bordered'>
 <thead>
 <tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
 <tbody>
 	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg></td>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg></td>
 		<td><a name='`belu_beta_job`.`JobID`'>&#96;JobID&#96;</a></td>
 		<td> int  AUTOINCREMENT  </td>
 		<td>  </td>
@@ -121,8 +1188,14 @@ body {
 		<td> date   </td>
 		<td> The day the projectowner wants the betareader to finish the job </td>
 	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='`belu_beta_job`.workorder'>workorder</a></td>
+		<td> tinyblob   </td>
+		<td> Workorder for betareader </td>
+	</tr>
 <tr><th colspan='4'>Indexes</th></tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>Primary</td>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>Primary</td>
 		<td> ON &#96;JobID&#96;</td>
 		<td>  </td>
 	</tr>
@@ -149,14 +1222,14 @@ body {
 </table></div></div>
 
 <br/><br/>
-<div class='card'><div class='card-block'><a name='`belu_beta_project`' onclick='window.scrollTo(60, 255);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_beta_project`</h4></a>
+<div class='card'><div class='card-block'><a name='`belu_beta_project`' onclick='window.scrollTo(60, 45);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_beta_project`</h4></a>
 <p class="text-muted">Link betareader with projects</p>
 <table class='table-sm table-bordered'>
 <thead>
 <tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
 <tbody>
 	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg></td>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
 		<td><a name='`belu_beta_project`.`ProjectID`'>&#96;ProjectID&#96;</a></td>
 		<td> int   </td>
 		<td>  </td>
@@ -168,13 +1241,25 @@ body {
 		<td>  </td>
 	</tr>
 	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg></td>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg></td>
 		<td><a name='`belu_beta_project`.`KooperationID`'>&#96;KooperationID&#96;</a></td>
 		<td> int  AUTOINCREMENT  </td>
 		<td>  </td>
 	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='`belu_beta_project`.searchdeadline'>searchdeadline</a></td>
+		<td> date   </td>
+		<td> Deadline for searching for betareader &#40;if no betareader is linked&#41; </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='`belu_beta_project`.mindlanguagelevel'>mindlanguagelevel</a></td>
+		<td> int   </td>
+		<td> Minimal knowlage of Projectlanguage &#40;LevelID&#41; </td>
+	</tr>
 <tr><th colspan='4'>Indexes</th></tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>Primary</td>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>Primary</td>
 		<td> ON &#96;KooperationID&#96;</td>
 		<td>  </td>
 	</tr>
@@ -186,17 +1271,35 @@ body {
 		<td> ON &#96;BetaID&#96;</td>
 		<td>  </td>
 	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;&#96;belu&#95;beta&#95;project&#96;&#95;&#96;projectid&#96;</td>
+		<td> ON &#96;ProjectID&#96;</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;&#96;belu&#95;beta&#95;project&#96;&#95;mindlanguagelevel</td>
+		<td> ON mindlanguagelevel</td>
+		<td>  </td>
+	</tr>
 <tr><th colspan='4'>Foreign Keys</th></tr>
 	<tr>
 		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>`Beta_ID`</td>
 		<td > ( &#96;BetaID&#96; ) ref <a href='#&#96;belu&#95;betareader&#96;'>&#96;belu&#95;betareader&#96;</a> (&#96;BetaID&#96;) </td>
 		<td>  </td>
 	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_`belu_beta_project`</td>
+		<td > ( &#96;ProjectID&#96; ) ref <a href='#&#96;belu&#95;project&#96;'>&#96;belu&#95;project&#96;</a> (&#96;ProjectID&#96;) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_`belu_beta_plevel`</td>
+		<td > ( mindlanguagelevel ) ref <a href='#belu&#95;level'>belu&#95;level</a> (levelid) </td>
+		<td>  </td>
+	</tr>
 </tbody>
 </table></div></div>
 
 <br/><br/>
-<div class='card'><div class='card-block'><a name='`belu_beta_textsort`' onclick='window.scrollTo(60, 435);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_beta_textsort`</h4></a>
+<div class='card'><div class='card-block'><a name='`belu_beta_textsort`' onclick='window.scrollTo(60, 375);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_beta_textsort`</h4></a>
 <p class="text-muted">Table of textsortpreferences of betareader</p>
 <table class='table-sm table-bordered'>
 <thead>
@@ -244,7 +1347,7 @@ body {
 </table></div></div>
 
 <br/><br/>
-<div class='card'><div class='card-block'><a name='`belu_beta_theme`' onclick='window.scrollTo(60, 540);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_beta_theme`</h4></a>
+<div class='card'><div class='card-block'><a name='`belu_beta_theme`' onclick='window.scrollTo(60, 525);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_beta_theme`</h4></a>
 <p class="text-muted">Table of themepreferences of betareader</p>
 <table class='table-sm table-bordered'>
 <thead>
@@ -296,7 +1399,7 @@ body {
 </table></div></div>
 
 <br/><br/>
-<div class='card'><div class='card-block'><a name='`belu_betareader`' onclick='window.scrollTo(60, 255);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_betareader`</h4></a>
+<div class='card'><div class='card-block'><a name='`belu_betareader`' onclick='window.scrollTo(60, 495);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_betareader`</h4></a>
 <p class="text-muted">Table of all betareaders and their bind attributes</p>
 <table class='table-sm table-bordered'>
 <thead>
@@ -339,7 +1442,7 @@ body {
 </table></div></div>
 
 <br/><br/>
-<div class='card'><div class='card-block'><a name='`belu_document`' onclick='window.scrollTo(60, 45);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_document`</h4></a>
+<div class='card'><div class='card-block'><a name='`belu_document`' onclick='window.scrollTo(100, 90);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_document`</h4></a>
 <p class="text-muted">Documents of all projects. Every Document belongs to one project, which has a owner, who is implicit the owner of the documents. The document can be approved to a betareader for korrection.</p>
 <table class='table-sm table-bordered'>
 <thead>
@@ -400,7 +1503,7 @@ body {
 </table></div></div>
 
 <br/><br/>
-<div class='card'><div class='card-block'><a name='`belu_genre`' onclick='window.scrollTo(205, 330);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_genre`</h4></a>
+<div class='card'><div class='card-block'><a name='`belu_genre`' onclick='window.scrollTo(250, 630);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_genre`</h4></a>
 <p class="text-muted">List of valid genres for projects</p>
 <table class='table-sm table-bordered'>
 <thead>
@@ -443,7 +1546,7 @@ body {
 </table></div></div>
 
 <br/><br/>
-<div class='card'><div class='card-block'><a name='`belu_project_theme`' onclick='window.scrollTo(340, 360);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_project_theme`</h4></a>
+<div class='card'><div class='card-block'><a name='`belu_project_theme`' onclick='window.scrollTo(400, 375);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_project_theme`</h4></a>
 <p class="text-muted">Link projects with one or many themes</p>
 <table class='table-sm table-bordered'>
 <thead>
@@ -489,7 +1592,7 @@ body {
 </table></div></div>
 
 <br/><br/>
-<div class='card'><div class='card-block'><a name='`belu_project`' onclick='window.scrollTo(220, 45);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_project`</h4></a>
+<div class='card'><div class='card-block'><a name='`belu_project`' onclick='window.scrollTo(280, 60);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_project`</h4></a>
 <p class="text-muted">Table of writingprojects from users</p>
 <table class='table-sm table-bordered'>
 <thead>
@@ -568,7 +1671,7 @@ body {
 </table></div></div>
 
 <br/><br/>
-<div class='card'><div class='card-block'><a name='`belu_textsort`' onclick='window.scrollTo(205, 450);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_textsort`</h4></a>
+<div class='card'><div class='card-block'><a name='`belu_textsort`' onclick='window.scrollTo(250, 375);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_textsort`</h4></a>
 <p class="text-muted">List of valid sorts of texts</p>
 <table class='table-sm table-bordered'>
 <thead>
@@ -601,7 +1704,7 @@ body {
 </table></div></div>
 
 <br/><br/>
-<div class='card'><div class='card-block'><a name='`belu_theme`' onclick='window.scrollTo(205, 540);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_theme`</h4></a>
+<div class='card'><div class='card-block'><a name='`belu_theme`' onclick='window.scrollTo(250, 525);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_theme`</h4></a>
 <table class='table-sm table-bordered'>
 <thead>
 <tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
@@ -639,7 +1742,7 @@ body {
 </table></div></div>
 
 <br/><br/>
-<div class='card'><div class='card-block'><a name='`belu_user_absence`' onclick='window.scrollTo(595, 225);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_user_absence`</h4></a>
+<div class='card'><div class='card-block'><a name='`belu_user_absence`' onclick='window.scrollTo(910, 420);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_user_absence`</h4></a>
 <p class="text-muted">Absencetime of users.</p>
 <table class='table-sm table-bordered'>
 <thead>
@@ -688,7 +1791,7 @@ body {
 </table></div></div>
 
 <br/><br/>
-<div class='card'><div class='card-block'><a name='`belu_user`' onclick='window.scrollTo(415, 165);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_user`</h4></a>
+<div class='card'><div class='card-block'><a name='`belu_user`' onclick='window.scrollTo(700, 420);return false;' style='cursor:pointer;'><h4 class='card-title'>Table `belu_user`</h4></a>
 <p class="text-muted">Usertable</p>
 <table class='table-sm table-bordered'>
 <thead>
@@ -761,287 +1864,7 @@ body {
 </table></div></div>
 
 <br/><br/>
-<div class='card'><div class='card-block'><a name='belu_beta_dialect' onclick='window.scrollTo(60, 900);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_beta_dialect</h4></a>
-<p class="text-muted">knowlege of betareader over dialects</p>
-<table class='table-sm table-bordered'>
-<thead>
-<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
-<tbody>
-	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
-		<td><a name='belu_beta_dialect.dialectid'>dialectid</a></td>
-		<td> int   </td>
-		<td>  </td>
-	</tr>
-	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
-		<td><a name='belu_beta_dialect.betaid'>betaid</a></td>
-		<td> int   </td>
-		<td>  </td>
-	</tr>
-	<tr>
-		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
-		<td><a name='belu_beta_dialect.levelid'>levelid</a></td>
-		<td> int   </td>
-		<td>  </td>
-	</tr>
-<tr><th colspan='4'>Indexes</th></tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;belu&#95;beta&#95;dialect&#95;dialectid</td>
-		<td> ON dialectid&#44; betaid</td>
-		<td>  </td>
-	</tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;dialect&#95;dialectid</td>
-		<td> ON dialectid</td>
-		<td>  </td>
-	</tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;dialect&#95;betaid</td>
-		<td> ON betaid</td>
-		<td>  </td>
-	</tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;dialect&#95;levelid</td>
-		<td> ON levelid</td>
-		<td>  </td>
-	</tr>
-<tr><th colspan='4'>Foreign Keys</th></tr>
-	<tr>
-		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_beta_dialect</td>
-		<td > ( dialectid ) ref <a href='#belu&#95;language&#95;dialect'>belu&#95;language&#95;dialect</a> (dialectid) </td>
-		<td>  </td>
-	</tr>
-	<tr>
-		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_dialect_beta</td>
-		<td > ( betaid ) ref <a href='#&#96;belu&#95;betareader&#96;'>&#96;belu&#95;betareader&#96;</a> (&#96;BetaID&#96;) </td>
-		<td>  </td>
-	</tr>
-	<tr>
-		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_level_dialect</td>
-		<td > ( levelid ) ref <a href='#belu&#95;level'>belu&#95;level</a> (levelid) </td>
-		<td>  </td>
-	</tr>
-</tbody>
-</table></div></div>
-
-<br/><br/>
-<div class='card'><div class='card-block'><a name='belu_beta_facts' onclick='window.scrollTo(60, 765);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_beta_facts</h4></a>
-<p class="text-muted">knwolege about topic areas from betareader</p>
-<table class='table-sm table-bordered'>
-<thead>
-<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
-<tbody>
-	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
-		<td><a name='belu_beta_facts.factid'>factid</a></td>
-		<td> int   </td>
-		<td>  </td>
-	</tr>
-	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
-		<td><a name='belu_beta_facts.betaid'>betaid</a></td>
-		<td> int   </td>
-		<td>  </td>
-	</tr>
-	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
-		<td><a name='belu_beta_facts.levelid'>levelid</a></td>
-		<td> int   </td>
-		<td>  </td>
-	</tr>
-	<tr>
-		<td>&nbsp;</td>
-		<td><a name='belu_beta_facts.comment'>comment</a></td>
-		<td> tinyblob   </td>
-		<td> Usercomment for topicarea </td>
-	</tr>
-	<tr>
-		<td>&nbsp;</td>
-		<td><a name='belu_beta_facts.verification'>verification</a></td>
-		<td> date   </td>
-		<td>  </td>
-	</tr>
-<tr><th colspan='4'>Indexes</th></tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;belu&#95;beta&#95;facts&#95;factid</td>
-		<td> ON factid&#44; betaid</td>
-		<td>  </td>
-	</tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;facts&#95;factid</td>
-		<td> ON factid</td>
-		<td>  </td>
-	</tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;facts&#95;betaid</td>
-		<td> ON betaid</td>
-		<td>  </td>
-	</tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;facts&#95;levelid</td>
-		<td> ON levelid</td>
-		<td>  </td>
-	</tr>
-<tr><th colspan='4'>Foreign Keys</th></tr>
-	<tr>
-		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_beta_facts_belu_facts</td>
-		<td > ( factid ) ref <a href='#belu&#95;facts'>belu&#95;facts</a> (factid) </td>
-		<td>  </td>
-	</tr>
-	<tr>
-		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_facts_beta</td>
-		<td > ( betaid ) ref <a href='#&#96;belu&#95;betareader&#96;'>&#96;belu&#95;betareader&#96;</a> (&#96;BetaID&#96;) </td>
-		<td>  </td>
-	</tr>
-	<tr>
-		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_beta_facts_belu_level</td>
-		<td > ( levelid ) ref <a href='#belu&#95;level'>belu&#95;level</a> (levelid) </td>
-		<td>  </td>
-	</tr>
-</tbody>
-</table></div></div>
-
-<br/><br/>
-<div class='card'><div class='card-block'><a name='belu_beta_language' onclick='window.scrollTo(60, 1005);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_beta_language</h4></a>
-<p class="text-muted">Languages a betareader knows</p>
-<table class='table-sm table-bordered'>
-<thead>
-<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
-<tbody>
-	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
-		<td><a name='belu_beta_language.languageid'>languageid</a></td>
-		<td> int   </td>
-		<td>  </td>
-	</tr>
-	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
-		<td><a name='belu_beta_language.betaid'>betaid</a></td>
-		<td> int   </td>
-		<td>  </td>
-	</tr>
-	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
-		<td><a name='belu_beta_language.levelid'>levelid</a></td>
-		<td> int   </td>
-		<td> Level of knowlege </td>
-	</tr>
-	<tr>
-		<td>*</td>
-		<td><a name='belu_beta_language.colloquial?'>colloquial&#63;</a></td>
-		<td> bit   DEFAULT 1 </td>
-		<td> Has the reader knowlege over colloquial language&#63; </td>
-	</tr>
-	<tr>
-		<td>*</td>
-		<td><a name='belu_beta_language.formal?'>formal&#63;</a></td>
-		<td> bit   DEFAULT 1 </td>
-		<td> Can the reader understand and speak formal language&#63; </td>
-	</tr>
-	<tr>
-		<td>*</td>
-		<td><a name='belu_beta_language.antiquated?'>antiquated&#63;</a></td>
-		<td> bit   DEFAULT 1 </td>
-		<td> Has the reader knowlege over antiquated langauge&#63; </td>
-	</tr>
-<tr><th colspan='4'>Indexes</th></tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;belu&#95;beta&#95;language&#95;languageid</td>
-		<td> ON languageid&#44; betaid</td>
-		<td>  </td>
-	</tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;language&#95;levelid</td>
-		<td> ON levelid</td>
-		<td>  </td>
-	</tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;language&#95;betaid</td>
-		<td> ON betaid</td>
-		<td>  </td>
-	</tr>
-<tr><th colspan='4'>Foreign Keys</th></tr>
-	<tr>
-		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_beta_language</td>
-		<td > ( levelid ) ref <a href='#belu&#95;level'>belu&#95;level</a> (levelid) </td>
-		<td>  </td>
-	</tr>
-	<tr>
-		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_language_beta</td>
-		<td > ( betaid ) ref <a href='#&#96;belu&#95;betareader&#96;'>&#96;belu&#95;betareader&#96;</a> (&#96;BetaID&#96;) </td>
-		<td>  </td>
-	</tr>
-</tbody>
-</table></div></div>
-
-<br/><br/>
-<div class='card'><div class='card-block'><a name='belu_beta_language_focus' onclick='window.scrollTo(60, 645);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_beta_language_focus</h4></a>
-<p class="text-muted">Table for knowlege per betareader, which correctionsfocus he can serve for which language</p>
-<table class='table-sm table-bordered'>
-<thead>
-<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
-<tbody>
-	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
-		<td><a name='belu_beta_language_focus.betaid'>betaid</a></td>
-		<td> int   </td>
-		<td>  </td>
-	</tr>
-	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
-		<td><a name='belu_beta_language_focus.languageid'>languageid</a></td>
-		<td> int   </td>
-		<td>  </td>
-	</tr>
-	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
-		<td><a name='belu_beta_language_focus.focusid'>focusid</a></td>
-		<td> int   </td>
-		<td>  </td>
-	</tr>
-	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
-		<td><a name='belu_beta_language_focus.levelid'>levelid</a></td>
-		<td> int   </td>
-		<td>  </td>
-	</tr>
-<tr><th colspan='4'>Indexes</th></tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;belu&#95;beta&#95;language&#95;focus&#95;betaid</td>
-		<td> ON betaid&#44; focusid&#44; languageid</td>
-		<td>  </td>
-	</tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;language&#95;focus&#95;betaid</td>
-		<td> ON betaid</td>
-		<td>  </td>
-	</tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;language&#95;focus&#95;focusid</td>
-		<td> ON focusid</td>
-		<td>  </td>
-	</tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;language&#95;focus&#95;languageid</td>
-		<td> ON languageid</td>
-		<td>  </td>
-	</tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;language&#95;focus&#95;levelid</td>
-		<td> ON levelid</td>
-		<td>  </td>
-	</tr>
-<tr><th colspan='4'>Foreign Keys</th></tr>
-	<tr>
-		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_beta_language_focus</td>
-		<td > ( betaid ) ref <a href='#&#96;belu&#95;betareader&#96;'>&#96;belu&#95;betareader&#96;</a> (&#96;BetaID&#96;) </td>
-		<td>  </td>
-	</tr>
-	<tr>
-		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_beta_focus_language</td>
-		<td > ( focusid ) ref <a href='#belu&#95;focus'>belu&#95;focus</a> (focusid) </td>
-		<td>  </td>
-	</tr>
-	<tr>
-		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_focus_language_beta</td>
-		<td > ( languageid ) ref <a href='#belu&#95;language'>belu&#95;language</a> (languageid) </td>
-		<td>  </td>
-	</tr>
-	<tr>
-		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_level_language_focus</td>
-		<td > ( levelid ) ref <a href='#belu&#95;level'>belu&#95;level</a> (levelid) </td>
-		<td>  </td>
-	</tr>
-</tbody>
-</table></div></div>
-
-<br/><br/>
-<div class='card'><div class='card-block'><a name='belu_facts' onclick='window.scrollTo(490, 795);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_facts</h4></a>
+<div class='card'><div class='card-block'><a name='belu_facts' onclick='window.scrollTo(400, 555);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_facts</h4></a>
 <p class="text-muted">topicareas of knowlege for projects and betareader</p>
 <table class='table-sm table-bordered'>
 <thead>
@@ -1108,7 +1931,7 @@ body {
 </table></div></div>
 
 <br/><br/>
-<div class='card'><div class='card-block'><a name='belu_focus' onclick='window.scrollTo(220, 750);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_focus</h4></a>
+<div class='card'><div class='card-block'><a name='belu_focus' onclick='window.scrollTo(235, 945);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_focus</h4></a>
 <p class="text-muted">Possible focus for correction</p>
 <table class='table-sm table-bordered'>
 <thead>
@@ -1147,7 +1970,7 @@ body {
 </table></div></div>
 
 <br/><br/>
-<div class='card'><div class='card-block'><a name='belu_language' onclick='window.scrollTo(220, 900);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_language</h4></a>
+<div class='card'><div class='card-block'><a name='belu_language' onclick='window.scrollTo(415, 795);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_language</h4></a>
 <p class="text-muted">Languages for projects and corrections</p>
 <table class='table-sm table-bordered'>
 <thead>
@@ -1180,7 +2003,7 @@ body {
 </table></div></div>
 
 <br/><br/>
-<div class='card'><div class='card-block'><a name='belu_language_dialect' onclick='window.scrollTo(190, 1005);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_language_dialect</h4></a>
+<div class='card'><div class='card-block'><a name='belu_language_dialect' onclick='window.scrollTo(235, 840);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_language_dialect</h4></a>
 <p class="text-muted">Dialects of Languages</p>
 <table class='table-sm table-bordered'>
 <thead>
@@ -1223,7 +2046,7 @@ body {
 </table></div></div>
 
 <br/><br/>
-<div class='card'><div class='card-block'><a name='belu_level' onclick='window.scrollTo(220, 645);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_level</h4></a>
+<div class='card'><div class='card-block'><a name='belu_level' onclick='window.scrollTo(235, 1050);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_level</h4></a>
 <p class="text-muted">Levels of knowledge</p>
 <table class='table-sm table-bordered'>
 <thead>
@@ -1256,63 +2079,289 @@ body {
 </table></div></div>
 
 <br/><br/>
-<div class='card'><div class='card-block'><a name='belu_project_betasearch' onclick='window.scrollTo(535, 525);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_project_betasearch</h4></a>
+<div class='card'><div class='card-block'><a name='belu_user_dialect' onclick='window.scrollTo(565, 630);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_user_dialect</h4></a>
+<p class="text-muted">knowlege of user over dialects</p>
 <table class='table-sm table-bordered'>
 <thead>
 <tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
 <tbody>
 	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
-		<td><a name='belu_project_betasearch.betasearchid'>betasearchid</a></td>
-		<td> int  AUTOINCREMENT  </td>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_user_dialect.dialectid'>dialectid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_user_dialect.userid'>userid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_user_dialect.levelid'>levelid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;belu&#95;beta&#95;dialect&#95;dialectid</td>
+		<td> ON dialectid&#44; userid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;dialect&#95;dialectid</td>
+		<td> ON dialectid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;dialect&#95;betaid</td>
+		<td> ON userid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;dialect&#95;levelid</td>
+		<td> ON levelid</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_beta_dialect</td>
+		<td > ( dialectid ) ref <a href='#belu&#95;language&#95;dialect'>belu&#95;language&#95;dialect</a> (dialectid) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_level_dialect</td>
+		<td > ( levelid ) ref <a href='#belu&#95;level'>belu&#95;level</a> (levelid) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_dialect_beta</td>
+		<td > ( userid ) ref <a href='#&#96;belu&#95;user&#96;'>&#96;belu&#95;user&#96;</a> (&#96;UserID&#96;) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='belu_user_facts' onclick='window.scrollTo(700, 915);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_user_facts</h4></a>
+<p class="text-muted">knwolege about topic areas from betareader</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_user_facts.factid'>factid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_user_facts.userid'>userid</a></td>
+		<td> int   </td>
 		<td>  </td>
 	</tr>
 	<tr>
 		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
-		<td><a name='belu_project_betasearch.projectid'>projectid</a></td>
+		<td><a name='belu_user_facts.levelid'>levelid</a></td>
 		<td> int   </td>
 		<td>  </td>
 	</tr>
 	<tr>
 		<td>&nbsp;</td>
-		<td><a name='belu_project_betasearch.deadline'>deadline</a></td>
+		<td><a name='belu_user_facts.comment'>comment</a></td>
+		<td> tinyblob   </td>
+		<td> Usercomment for topicarea </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='belu_user_facts.verification'>verification</a></td>
 		<td> date   </td>
 		<td>  </td>
 	</tr>
-	<tr>
-		<td>*</td>
-		<td><a name='belu_project_betasearch.betacount'>betacount</a></td>
-		<td> int   DEFAULT 1 </td>
-		<td> Count of betareader </td>
-	</tr>
-	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
-		<td><a name='belu_project_betasearch.minlanguagelevel'>minlanguagelevel</a></td>
-		<td> int   DEFAULT 0 </td>
-		<td> Minimal level of language for betareader </td>
-	</tr>
 <tr><th colspan='4'>Indexes</th></tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;belu&#95;project&#95;betasearch&#95;betasearchid</td>
-		<td> ON betasearchid</td>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;belu&#95;beta&#95;facts&#95;factid</td>
+		<td> ON factid&#44; userid</td>
 		<td>  </td>
 	</tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;project&#95;betasearch&#95;projectid</td>
-		<td> ON projectid</td>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;facts&#95;factid</td>
+		<td> ON factid</td>
 		<td>  </td>
 	</tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;project&#95;betasearch&#95;minlanguagelevel</td>
-		<td> ON minlanguagelevel</td>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;facts&#95;betaid</td>
+		<td> ON userid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;facts&#95;levelid</td>
+		<td> ON levelid</td>
 		<td>  </td>
 	</tr>
 <tr><th colspan='4'>Foreign Keys</th></tr>
 	<tr>
-		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_project_betasearch</td>
-		<td > ( projectid ) ref <a href='#&#96;belu&#95;project&#96;'>&#96;belu&#95;project&#96;</a> (&#96;ProjectID&#96;) </td>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_beta_facts_belu_facts</td>
+		<td > ( factid ) ref <a href='#belu&#95;facts'>belu&#95;facts</a> (factid) </td>
 		<td>  </td>
 	</tr>
 	<tr>
-		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_project_languagelevel</td>
-		<td > ( minlanguagelevel ) ref <a href='#belu&#95;level'>belu&#95;level</a> (levelid) </td>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_beta_facts_belu_level</td>
+		<td > ( levelid ) ref <a href='#belu&#95;level'>belu&#95;level</a> (levelid) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_facts_beta</td>
+		<td > ( userid ) ref <a href='#&#96;belu&#95;user&#96;'>&#96;belu&#95;user&#96;</a> (&#96;UserID&#96;) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='belu_user_language' onclick='window.scrollTo(745, 765);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_user_language</h4></a>
+<p class="text-muted">Languages a betareader knows</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_user_language.languageid'>languageid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_user_language.userid'>userid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_user_language.levelid'>levelid</a></td>
+		<td> int   </td>
+		<td> Level of knowlege </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='belu_user_language.colloquial?'>colloquial&#63;</a></td>
+		<td> bit   DEFAULT 1 </td>
+		<td> Has the reader knowlege over colloquial language&#63; </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='belu_user_language.formal?'>formal&#63;</a></td>
+		<td> bit   DEFAULT 1 </td>
+		<td> Can the reader understand and speak formal language&#63; </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='belu_user_language.antiquated?'>antiquated&#63;</a></td>
+		<td> bit   DEFAULT 1 </td>
+		<td> Has the reader knowlege over antiquated langauge&#63; </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;belu&#95;beta&#95;language&#95;languageid</td>
+		<td> ON languageid&#44; userid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;language&#95;levelid</td>
+		<td> ON levelid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;language&#95;betaid</td>
+		<td> ON userid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;user&#95;language&#95;languageid</td>
+		<td> ON languageid</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_beta_language</td>
+		<td > ( levelid ) ref <a href='#belu&#95;level'>belu&#95;level</a> (levelid) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_user_language</td>
+		<td > ( userid ) ref <a href='#&#96;belu&#95;user&#96;'>&#96;belu&#95;user&#96;</a> (&#96;UserID&#96;) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_user_language_level</td>
+		<td > ( languageid ) ref <a href='#belu&#95;language'>belu&#95;language</a> (languageid) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br/><br/>
+<div class='card'><div class='card-block'><a name='belu_user_language_topic' onclick='window.scrollTo(415, 960);return false;' style='cursor:pointer;'><h4 class='card-title'>Table belu_user_language_topic</h4></a>
+<p class="text-muted">Table for knowlege per user about languages gramma</p>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_user_language_topic.userid'>userid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_user_language_topic.languageid'>languageid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_user_language_topic.focusid'>focusid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='belu_user_language_topic.levelid'>levelid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;belu&#95;beta&#95;language&#95;focus&#95;betaid</td>
+		<td> ON userid&#44; focusid&#44; languageid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;language&#95;focus&#95;betaid</td>
+		<td> ON userid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;language&#95;focus&#95;focusid</td>
+		<td> ON focusid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;language&#95;focus&#95;languageid</td>
+		<td> ON languageid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idx&#95;belu&#95;beta&#95;language&#95;focus&#95;levelid</td>
+		<td> ON levelid</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_beta_focus_language</td>
+		<td > ( focusid ) ref <a href='#belu&#95;focus'>belu&#95;focus</a> (focusid) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_focus_language_beta</td>
+		<td > ( languageid ) ref <a href='#belu&#95;language'>belu&#95;language</a> (languageid) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_level_language_focus</td>
+		<td > ( levelid ) ref <a href='#belu&#95;level'>belu&#95;level</a> (levelid) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_belu_beta_language_focus</td>
+		<td > ( userid ) ref <a href='#&#96;belu&#95;user&#96;'>&#96;belu&#95;user&#96;</a> (&#96;UserID&#96;) </td>
 		<td>  </td>
 	</tr>
 </tbody>
