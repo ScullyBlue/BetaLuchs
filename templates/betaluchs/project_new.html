@@ -1,6 +1,6 @@
 <h1>Neues Projekt</h1>
-<form action="{% url 'polls:vote' question.id %}" method="post">
+<form action="/project/new" method="post">
 {% csrf_token %}
-<input type="text" name="Vote" />
-<input type="submit" value="Vote" />
+    {{ form.as_p }}
+    <input type="submit" value="save">
 </form>
