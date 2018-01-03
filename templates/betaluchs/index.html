@@ -1,3 +1,6 @@
+{% extends 'betaluchs/blocks/header.html' %}
+
+{% block content %}
 {% if project_list %}
     <ul>
     {% for project in project_list %}
@@ -7,3 +10,4 @@
 {% else %}
     <p>No projects are available.</p>
 {% endif %}
+{% endblock %}
