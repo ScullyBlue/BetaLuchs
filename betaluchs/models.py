@@ -66,8 +66,8 @@ class Facts(models.Model):
 class Project(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField(max_length=240)
-    textsortID = models.ForeignKey(Textsort, on_delete=models.PROTECT)
-    genreID = models.ForeignKey(Genre, on_delete=models.PROTECT)
+    textsort = models.ForeignKey(Textsort, on_delete=models.PROTECT, default=0)
+    genre = models.ForeignKey(Genre, on_delete=models.PROTECT, default=0)
     themes = models.ManyToManyField(Theme)
 
     def __str__(self):
