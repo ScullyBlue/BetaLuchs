@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager)
+from django.utils import timezone
 
 
 class BetaluchsUserManager(BaseUserManager):
@@ -24,13 +25,29 @@ class BetaluchsUserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
+    def create_superuser(self, username, email, date_of_birth, password):
+        """
+        Creates and saves a Superuser with given
+        username, email and date of birth
+        and a password.
+        """
+        user = self.create_user(
+            username=username,
+            email=email,
+            password=password,
+            date_of_birth=date_of_birth,
+        )
+        user.is_admin = True
+        user.save(using=self._db)
+        return user
+
 
 class User(AbstractBaseUser):
     username = models.CharField(max_length=40, unique=True)
     password = models.CharField(max_length=128)
     date_of_birth = models.DateField()
-    date_joined = models.DateTimeField(default='date_pubished')
-    last_login = models.DateTimeField()
+    date_joined = models.DateTimeField(auto_now_add=True)
+    last_login = models.DateTimeField(default=timezone.now)
     email = models.EmailField(verbose_name='E-Mail Adresse', max_length=255, unique=True)
     is_superuser = models.BooleanField(default='False')
     is_staff = models.BooleanField(default='False')
