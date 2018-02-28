@@ -6,7 +6,17 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField
 
 
 from .models import Project
+from .models import Textsort
+from .models import Genre
+from .models import Theme
+from .models import Facts
+from .models import Document
+from .models import Language
+from .models import Level
+from .models import Priority
+from .models import Focus
 from .models import User
+from .models import Betareader
 
 
 class UserCreationForm(forms.ModelForm):
@@ -95,5 +105,16 @@ class UserAdmin(BaseUserAdmin):
 
 
 admin.site.register(Project)
+admin.site.register(Textsort)
+admin.site.register(Theme)
+admin.site.register(Genre)
+admin.site.register(Facts)
+admin.site.register(Betareader)
+admin.site.register(Document)
+admin.site.register(Language)
+admin.site.register(Level)
+admin.site.register(Priority)
+admin.site.register(Focus)
+
 admin.site.register(User, UserAdmin)
 admin.site.unregister(Group)

@@ -102,13 +102,13 @@ class Genre(models.Model):
     genredefinition = models.CharField(max_length=500)
 
     def __str__(self):
-        return Textsort.textsort + '>' + self.genre
+        return self.genre
 
 
 class Theme(models.Model):
     theme = models.CharField(max_length=30)
     themedefinition = models.CharField(max_length=500)
-    themeparent = models.PositiveIntegerField()
+    themeparent = models.PositiveIntegerField(null=True)
 
     def __str__(self):
         return self.theme
