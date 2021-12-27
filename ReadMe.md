@@ -1,4 +1,4 @@
-# Backend für Marina-Team
+# Backend für BetaLuchs
 
 ## Project setup
 
