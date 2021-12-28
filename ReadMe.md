@@ -24,8 +24,8 @@ Install the Migration Tool
 Update database schema:
 ```
 > dotnet ef migrations add InitialCreate --context BetaluchsContext
-> dotnet ef database update --context BetaluchsIdContext
 > dotnet ef database update --context BetaluchsContext
+> dotnet ef migrations add CreateIdentitySchema --context BetaluchsIdContext
 > dotnet ef database update --context BetaluchsIdContext
 ```
 We have to do this twice, once for the User Schema and once for the normal Schema
