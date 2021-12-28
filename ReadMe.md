@@ -7,6 +7,7 @@
 ```
 > dotnet dev-certs https --trust
 > dotnet nuget add source --name nuget.org https://api.nuget.org/v3/index.json
+> dotnet tool install -g dotnet-aspnet-codegenerator
 > dotnet restore
 ```
 
@@ -22,9 +23,12 @@ Install the Migration Tool
 
 Update database schema:
 ```
-> dotnet ef migrations add InitialCreate
-> dotnet ef database update
+> dotnet ef migrations add InitialCreate --context BetaluchsContext
+> dotnet ef database update --context BetaluchsIdContext
+> dotnet ef database update --context BetaluchsContext
+> dotnet ef database update --context BetaluchsIdContext
 ```
+We have to do this twice, once for the User Schema and once for the normal Schema
 
 ## Running
 

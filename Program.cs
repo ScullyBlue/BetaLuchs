@@ -3,11 +3,22 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("BetaluchsContextConnection");
+
+builder.Services.AddDbContext<BetaluchsIdContext>(options =>
+     options.UseNpgsql(builder.Configuration["ConnectionStrings:DBConnection"]));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+       .AddEntityFrameworkStores<BetaluchsIdContext>();
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.AddRazorPages().AddRazorPagesOptions(options =>
+ {
+     options.Conventions.AuthorizePage("/New");
+ });
 
 builder.Services.AddEntityFrameworkNpgsql().AddDbContext<BetaluchsContext>(opt => opt.UseNpgsql(builder.Configuration["ConnectionStrings:DBConnection"]));
 
@@ -25,7 +36,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
